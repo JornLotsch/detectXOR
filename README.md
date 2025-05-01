@@ -1,15 +1,13 @@
 # xorAnalysis: Advanced XOR Pattern Detection in R
 Detect non-linear relationships in classification data with statistical confidence
 
-Key Features
+# Key Features
 🔍 XOR Pattern Detection - Identify non-linear XOR relationships between variables using statistical tests (χ², Wilcoxon)
 📊 Interactive Visualizations - Generate publication-ready spaghetti plots and decision boundary maps
 ⚡ Parallel Processing - Accelerate analysis using multi-core support (future/pbmcapply)
 📈 Dependency Analysis - Compute class-wise τ coefficients to quantify variable relationships
 🔬 Scientific Validation - Tested against synthetic datasets with known patterns
 
-Quick Start
-r
 # Install from GitHub
 devtools::install_github("yourusername/xorAnalysis")
 
