@@ -23,7 +23,7 @@ Provides statistical detection and advanced visualization of XOR-shaped relation
 }
 }
 \author{
-Your Name <your.email@example.com>
+Jorn Lotsch <j.lotsch@em.uni-frankfurt.de>
 }
 \references{
 Methodological foundations:
@@ -36,8 +36,8 @@ Methodological foundations:
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/yourusername/xorAnalysis}
-  \item Report bugs at \url{https://github.com/yourusername/xorAnalysis/issues}
+  \item \url{https://github.com/JornLotsch/xorAnalysis}
+  \item Report bugs at \url{https://github.com/JornLotsch/xorAnalysis/issues}
 }
 
 Related packages:

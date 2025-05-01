@@ -1,7 +1,8 @@
 Package: xorAnalysis
 Title: XOR Pattern Detection and Visualization
 Version: 0.1.0
-Authors@R: person("Your", "Name", email = "your.email@example.com", role = c("cre", "aut"))
+Authors@R: c(person(given = "Jorn", family = "Lotsch", role = c("aut", "cre"), email = "j.lotsch@em.uni-frankfurt.de"),
+               person(given = "Alfred", family = "Ultsch", role = "aut"))
 Description: Detect and visualize XOR patterns in classification data through statistical analysis and advanced plotting.
 License: MIT
 Encoding: UTF-8
