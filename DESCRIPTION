@@ -1,0 +1,32 @@
+Package: xorAnalysis
+Title: XOR Pattern Detection and Visualization
+Version: 0.1.0
+Authors@R: person("Your", "Name", email = "your.email@example.com", role = c("cre", "aut"))
+Description: Detect and visualize XOR patterns in classification data through statistical analysis and advanced plotting.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr (>= 1.1.0),
+    ggplot2 (>= 3.4.0),
+    ggh4x (>= 0.2.3),
+    tibble (>= 3.1.8),
+    reshape2 (>= 1.4.4),
+    glue (>= 1.6.0),
+    scales (>= 1.2.0),
+    stats,
+    parallel (>= 4.2.0),
+    future (>= 1.28.0),
+    future.apply (>= 1.10.0),
+    pbmcapply (>= 1.5.0),
+    DescTools (>= 0.99.50),
+    utils,
+    methods
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown,
+    doParallel,
+    foreach
+RoxygenNote: 7.2.3
+SystemRequirements: GNU make
