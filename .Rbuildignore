@@ -5,3 +5,5 @@
 ^analyses
 ^issues
 
+^.*\.Rproj$
+^\.Rproj\.user$
