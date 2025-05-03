@@ -9,7 +9,7 @@ Detect non-linear relationships in classification data with statistical confiden
 🔬 Scientific Validation - Tested against synthetic datasets with known patterns
 
 # Install from GitHub
-devtools::install_github("yourusername/xorAnalysis")
+devtools::install_github("JornLotsch/xorAnalysis")
 
 # Detect XOR patterns
 data(XOR_data)
