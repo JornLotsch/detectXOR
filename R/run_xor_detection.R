@@ -419,9 +419,9 @@ run_xor_detection <- function(
 
   # Required packages for parallel processing
   if (use_parallel) {
-    require(future)
-    require(future.apply)
-    require(pbmcapply)
+    requireNamespace("future")
+    requireNamespace("future.apply")
+    requireNamespace("pbmcapply")
   }
 
   message("\nStep 1: Creating pairwise datasets...")
@@ -443,7 +443,7 @@ run_xor_detection <- function(
 
     if (is_windows) {
       future::plan(future::multisession, workers = n_cores)
-      processed_chunks <- future_lapply(chunks, function(chunk_indices) {
+      processed_chunks <- future.apply::future_lapply(chunks, function(chunk_indices) {
         chunk_data <- orig_pair_list[chunk_indices]
         compute_tile_patterns_for_pairs(
           chunk_data,
@@ -454,7 +454,7 @@ run_xor_detection <- function(
         )
       })
     } else {
-      processed_chunks <- pbmclapply(chunks, function(chunk_indices) {
+      processed_chunks <- pbmcapply::pbmclapply(chunks, function(chunk_indices) {
         chunk_data <- orig_pair_list[chunk_indices]
         compute_tile_patterns_for_pairs(
           chunk_data,
@@ -502,7 +502,7 @@ run_xor_detection <- function(
                         ceiling(seq_along(xor_pairs) / chunk_size))
 
         if (is_windows) {
-          processed_tau_chunks <- future_lapply(chunks, function(chunk_pairs) {
+          processed_tau_chunks <- future.apply::future_lapply(chunks, function(chunk_pairs) {
             chunk_data <- orig_pair_list[chunk_pairs]
             compute_classwise_tau_for_pairs(
               chunk_data,
@@ -511,7 +511,7 @@ run_xor_detection <- function(
             )
           })
         } else {
-          processed_tau_chunks <- pbmclapply(chunks, function(chunk_pairs) {
+          processed_tau_chunks <- pbmcapply::pbmclapply(chunks, function(chunk_pairs) {
             chunk_data <- orig_pair_list[chunk_pairs]
             compute_classwise_tau_for_pairs(
               chunk_data,
@@ -540,7 +540,7 @@ run_xor_detection <- function(
                       ceiling(seq_along(orig_pair_list) / chunk_size))
 
       if (is_windows) {
-        processed_wilcox_chunks <- future_lapply(chunks, function(chunk_indices) {
+        processed_wilcox_chunks <- future.apply::future_lapply(chunks, function(chunk_indices) {
           chunk_data <- orig_pair_list[chunk_indices]
           compute_tile_wilcox_significance_for_pairs(
             chunk_data,
@@ -550,7 +550,7 @@ run_xor_detection <- function(
           )
         })
       } else {
-        processed_wilcox_chunks <- pbmclapply(chunks, function(chunk_indices) {
+        processed_wilcox_chunks <- pbmcapply::pbmclapply(chunks, function(chunk_indices) {
           chunk_data <- orig_pair_list[chunk_indices]
           compute_tile_wilcox_significance_for_pairs(
             chunk_data,
@@ -608,5 +608,5 @@ lapply_with_bar <- function(X, FUN, ...) {
   result
 }
 
-results <- run_xor_detection(data = XOR_data, class_col = "class")
-results <- run_xor_detection_parallel(data = XOR_data, class_col = "class")
+# results <- run_xor_detection(data = XOR_data, class_col = "class")
+# results <- run_xor_detection_parallel(data = XOR_data, class_col = "class")

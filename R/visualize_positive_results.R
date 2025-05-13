@@ -83,7 +83,7 @@ generate_spaghetti_plot_from_results <- function(results, data, class_col, outpu
                 }))) +
     geom_text(
       data = annotation_data,
-      aes(x = -Inf, y = Inf, label = glue("χ²={signif(chi_sq_p_value,3)}")),
+      aes(x = -Inf, y = Inf, label = glue("\\u00cf\\u0087\\u00c2\\u00b2={signif(chi_sq_p_value,3)}") ),
       inherit.aes = FALSE, hjust = -0.1, vjust = 1.5, size = 3
     ) +
     labs(title = "XOR Pattern Spaghetti Plots", x = "Variables", y = "Values") +
@@ -209,7 +209,7 @@ generate_xy_plot_from_results <- function(results, data, class_col, output_dir =
                 }))) +
     geom_text(
       data = annotation_data,
-      aes(x = -Inf, y = Inf, label = glue("χ²={signif(chi_sq_p_value,3)}")),
+      aes(x = -Inf, y = Inf, label = glue("\\u00cf\\u0087\\u00c2\\u00b2={signif(chi_sq_p_value,3)}") ),
       inherit.aes = FALSE, hjust = -0.1, vjust = 1.5, size = 3
     ) +
     labs(title = "XOR Pattern Scatterplots", x = "Variable 1", y = "Variable 2") +
@@ -238,3 +238,4 @@ utils::globalVariables(c(
   "pair_id", "variable", "value", "x", "y",
   "x_q1", "x_q2", "y_q1", "y_q2", "chi_sq_p_value"
 ))
+

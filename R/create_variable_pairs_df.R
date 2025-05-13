@@ -29,6 +29,7 @@
 #' Only the first two unique values in the class column are used. Non-numeric columns (other than the class column)
 #' are not allowed for variable pairs. If \code{extreme_handling = "trim"}, rows with any numeric variable
 #' outside the specified quantiles are removed before further processing.
+#' Variables with no variance (containing only one unique value) are excluded from creating pairs.
 #'
 #' @importFrom DescTools Winsorize
 #'
@@ -61,6 +62,23 @@ create_pairwise_datasets <- function(
   if (!all(is_num)) {
     non_num_vars <- vars[!is_num]
     stop(sprintf("All variable columns must be numeric. Non-numeric columns: %s", paste(non_num_vars, collapse = ", ")))
+  }
+
+  # --- Check for variables with no variance ---
+  var_unique_counts <- sapply(data[vars], function(x) length(unique(na.omit(x))))
+  no_variance_vars <- vars[var_unique_counts <= 1]
+  if (length(no_variance_vars) > 0) {
+    message(sprintf("Removing %d variable(s) with no variance: %s",
+                   length(no_variance_vars),
+                   paste(no_variance_vars, collapse = ", ")))
+
+    # Remove variables with no variance
+    vars <- setdiff(vars, no_variance_vars)
+
+    # Check if we still have enough variables
+    if (length(vars) < 2) {
+      stop("Not enough variables with variance to create pairs (at least 2 needed).")
+    }
   }
 
   # Helper: Filter complete cases
@@ -111,8 +129,9 @@ create_pairwise_datasets <- function(
   }
 
   # Helper: Create original pairs (now returns a list of lists: list(data=..., results=NULL))
-  create_orig_pair_dfs <- function(df, class_col) {
-    vars <- setdiff(names(df), class_col)
+  create_orig_pair_dfs <- function(df, class_col, vars_with_variance) {
+    # Use only variables with variance
+    vars <- intersect(names(df), vars_with_variance)
     if (length(vars) < 2) return(list())
     pairs <- t(combn(vars, 2))
     pair_list <- list()
@@ -163,10 +182,16 @@ create_pairwise_datasets <- function(
   )
 
   # Step 5: Generate all pairwise data frames (as list of lists)
-  orig_pair_list <- create_orig_pair_dfs(data_prep, class_col)
+  # Pass the list of variables with variance to the pair creation function
+  orig_pair_list <- create_orig_pair_dfs(data_prep, class_col, vars)
+
+  # Return message if no pairs were created
+  if (length(orig_pair_list) == 0) {
+    message("No variable pairs were created. Check if you have at least two numeric variables with variance.")
+  }
+
   return(orig_pair_list)
 }
-
 
 
 # # Default (winsorize)

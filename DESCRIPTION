@@ -4,7 +4,7 @@ Version: 0.1.0
 Authors@R: c(person(given = "Jorn", family = "Lotsch", role = c("aut", "cre"), email = "j.lotsch@em.uni-frankfurt.de"),
                person(given = "Alfred", family = "Ultsch", role = "aut"))
 Description: Detect and visualize XOR patterns in classification data through statistical analysis and advanced plotting.
-License: MIT
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports:
@@ -22,7 +22,8 @@ Imports:
     pbmcapply (>= 1.5.0),
     DescTools (>= 0.99.50),
     utils,
-    methods
+    methods,
+    grDevices
 Suggests:
     testthat (>= 3.0.0),
     knitr,
@@ -31,3 +32,5 @@ Suggests:
     foreach
 RoxygenNote: 7.2.3
 SystemRequirements: GNU make
+Depends: R (>= 3.5.0)
+

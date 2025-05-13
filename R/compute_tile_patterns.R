@@ -7,14 +7,31 @@
 #' @keywords internal
 assign_3x3_tiles <- function(data, var1_name, var2_name, split_method = "quantile") {
   if (split_method == "quantile") {
-    x_limits <- quantile(data[[var1_name]], probs = c(1 / 3, 2 / 3), na.rm = TRUE)
-    y_limits <- quantile(data[[var2_name]], probs = c(1 / 3, 2 / 3), na.rm = TRUE)
+    xq <- quantile(data[[var1_name]], probs = c(1/3, 2/3), na.rm = TRUE)
+    yq <- quantile(data[[var2_name]], probs = c(1/3, 2/3), na.rm = TRUE)
+    
+    # Check if quantile limits are unique for x
+    if (length(unique(xq)) < 2) {
+      x_limits <- split_range_three(data[[var1_name]])
+    } else {
+      x_limits <- xq
+    }
+    
+    # Check if quantile limits are unique for y
+    if (length(unique(yq)) < 2) {
+      y_limits <- split_range_three(data[[var2_name]])
+    } else {
+      y_limits <- yq
+    }
+    
   } else {
     x_limits <- split_range_three(data[[var1_name]])
     y_limits <- split_range_three(data[[var2_name]])
   }
+
   x_group <- cut(data[[var1_name]], c(-Inf, x_limits, Inf), labels = c("Left", "Mid", "Right"), include.lowest = TRUE)
   y_group <- cut(data[[var2_name]], c(-Inf, y_limits, Inf), labels = c("Lower", "Mid", "Upper"), include.lowest = TRUE)
+
   tile <- mapply(function(x, y) {
     switch(paste(x, y),
            "Left Upper" = "Upper Left",
