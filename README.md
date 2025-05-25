@@ -13,7 +13,7 @@ devtools::install_github("JornLotsch/detectXOR")
 
 # Detect XOR patterns
 data(XOR_data)
-results <- run_xor_detection(XOR_data, class_col = "class")
+results <-detect_xor(XOR_data, class_col = "class")
 
 # Visualize results
 generate_spaghetti_plot_from_results(results, XOR_data)
