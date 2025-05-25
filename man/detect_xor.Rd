@@ -5,7 +5,7 @@
 Identifies XOR-shaped relationships between variables using statistical tests and pattern detection.
 }
 \usage{
-detectXOR(
+detect_xor(
   data,
   class_col = "class",
   check_tau = TRUE,
@@ -46,7 +46,7 @@ List containing:
 data <- data.frame(class = rep(letters[1:2], each = 50),
                    x = c(rnorm(50), rnorm(50, 2)),
                    y = c(rnorm(50), rnorm(50, 2)))
-results <- detectXOR(data, class_col = "class")
+results <- detect_xor(data, class_col = "class")
 }
 }
 \seealso{

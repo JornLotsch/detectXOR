@@ -15,7 +15,7 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' results <- detectXOR(
+#' results <- detect_xor(
 #'   data = my_data,
 #'   class_col = "class",
 #'   p_threshold = 0.05,
@@ -608,5 +608,5 @@ lapply_with_bar <- function(X, FUN, ...) {
   result
 }
 
-# results <- detectXOR(data = XOR_data, class_col = "class")
+# results <- detect_xor(data = XOR_data, class_col = "class")
 # results <- detectXOR_parallel(data = XOR_data, class_col = "class")

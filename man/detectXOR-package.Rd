@@ -52,7 +52,7 @@ Related packages:
 data(XOR_data)
 
 # Detect XOR patterns
-results <- detectXOR(XOR_data, class_col = "class")
+results <- detect_xor(XOR_data, class_col = "class")
 
 # Generate visualizations
 generate_spaghetti_plot_from_results(
