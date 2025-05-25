@@ -1,6 +1,6 @@
 #' @title Generate Spaghetti Plots for XOR-Detected Pairs
 #' @description Creates connected line plots for variable pairs flagged with XOR patterns.
-#' @param results Data frame from \code{run_xor_detection} containing detected pairs.
+#' @param results Data frame from \code{detectXOR} containing detected pairs.
 #' @param data Original dataset containing variables and classes.
 #' @param class_col Character specifying the class column name.
 #' @param output_dir Directory path for saving plots. Default: current directory.

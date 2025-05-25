@@ -1,4 +1,4 @@
-# xorAnalysis: Advanced XOR Pattern Detection in R
+# detectXOR: Advanced XOR Pattern Detection in R
 Detect non-linear relationships in classification data with statistical confidence
 
 # Key Features
@@ -9,7 +9,7 @@ Detect non-linear relationships in classification data with statistical confiden
 🔬 Scientific Validation - Tested against synthetic datasets with known patterns
 
 # Install from GitHub
-devtools::install_github("JornLotsch/xorAnalysis")
+devtools::install_github("JornLotsch/detectXOR")
 
 # Detect XOR patterns
 data(XOR_data)
@@ -18,7 +18,7 @@ results <- run_xor_detection(XOR_data, class_col = "class")
 # Visualize results
 generate_spaghetti_plot_from_results(results, XOR_data)
 generate_xy_plot_from_results(results, XOR_data)
-Why xorAnalysis?
+Why detectXOR?
 Traditional feature selection often misses complex non-linear relationships. Our package specifically targets XOR patterns - where class differences only emerge through variable interactions - using rigorous statistical methods and intuitive visualizations.
 
 # Ideal for:

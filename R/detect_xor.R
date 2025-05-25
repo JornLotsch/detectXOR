@@ -15,14 +15,14 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' results <- run_xor_detection(
+#' results <- detectXOR(
 #'   data = my_data,
 #'   class_col = "class",
 #'   p_threshold = 0.05,
 #'   tau_threshold = 0.3
 #' )
 #' }
-# run_xor_detection <- function(
+# detectXOR <- function(
 #     data,
 #     class_col = "class",
 #     check_tau = TRUE,
@@ -88,7 +88,7 @@
 # # - compute_tile_wilcox_significance_for_pairs()
 # # - create_results_df_from_orig_pair_list()
 #
-# run_xor_detection_parallel <- function(
+# detectXOR_parallel <- function(
 #   data,
 #   class_col = "class",
 #   check_tau = TRUE,
@@ -226,7 +226,7 @@
 # }
 
 
-# run_xor_detection <- function(
+# detectXOR <- function(
 #   data,
 #   class_col = "class",
 #   check_tau = TRUE,
@@ -398,7 +398,7 @@
 # }
 
 
-run_xor_detection <- function(
+detectXOR <- function(
   data,
   class_col = "class",
   check_tau = TRUE,
@@ -608,5 +608,5 @@ lapply_with_bar <- function(X, FUN, ...) {
   result
 }
 
-# results <- run_xor_detection(data = XOR_data, class_col = "class")
-# results <- run_xor_detection_parallel(data = XOR_data, class_col = "class")
+# results <- detectXOR(data = XOR_data, class_col = "class")
+# results <- detectXOR_parallel(data = XOR_data, class_col = "class")

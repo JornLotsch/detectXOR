@@ -1,11 +1,11 @@
-\name{run_xor_detection}
-\alias{run_xor_detection}
+\name{detectXOR}
+\alias{detectXOR}
 \title{Detect XOR Patterns in Classification Data}
 \description{
 Identifies XOR-shaped relationships between variables using statistical tests and pattern detection.
 }
 \usage{
-run_xor_detection(
+detectXOR(
   data,
   class_col = "class",
   check_tau = TRUE,
@@ -46,7 +46,7 @@ List containing:
 data <- data.frame(class = rep(letters[1:2], each = 50),
                    x = c(rnorm(50), rnorm(50, 2)),
                    y = c(rnorm(50), rnorm(50, 2)))
-results <- run_xor_detection(data, class_col = "class")
+results <- detectXOR(data, class_col = "class")
 }
 }
 \seealso{

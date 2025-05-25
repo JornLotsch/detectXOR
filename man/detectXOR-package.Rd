@@ -1,6 +1,5 @@
-\name{xorAnalysis-package}
-\alias{xorAnalysis-package}
-\alias{xorAnalysis}
+\name{detectXOR-package}
+\alias{detectXOR-package}
 \docType{package}
 \title{XOR Pattern Detection and Visualization}
 \description{
@@ -17,7 +16,7 @@ Provides statistical detection and advanced visualization of XOR-shaped relation
 
 \strong{Main Functions:}
 \itemize{
-  \item \code{\link{run_xor_detection}}: Core detection algorithm
+  \item \code{\link{detectXOR}}: Core detection algorithm
   \item \code{\link{generate_spaghetti_plot_from_results}}: Interactive line plots
   \item \code{\link{generate_xy_plot_from_results}}: Decision boundary plots
 }
@@ -36,8 +35,8 @@ Methodological foundations:
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/JornLotsch/xorAnalysis}
-  \item Report bugs at \url{https://github.com/JornLotsch/xorAnalysis/issues}
+  \item \url{https://github.com/JornLotsch/detectXOR}
+  \item Report bugs at \url{https://github.com/JornLotsch/detectXOR/issues}
 }
 
 Related packages:
@@ -53,7 +52,7 @@ Related packages:
 data(XOR_data)
 
 # Detect XOR patterns
-results <- run_xor_detection(XOR_data, class_col = "class")
+results <- detectXOR(XOR_data, class_col = "class")
 
 # Generate visualizations
 generate_spaghetti_plot_from_results(

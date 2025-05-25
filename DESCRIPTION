@@ -1,4 +1,4 @@
-Package: xorAnalysis
+Package: detectXOR
 Title: XOR Pattern Detection and Visualization
 Version: 0.1.0
 Authors@R: c(person(given = "Jorn", family = "Lotsch", role = c("aut", "cre"), email = "j.lotsch@em.uni-frankfurt.de"),
