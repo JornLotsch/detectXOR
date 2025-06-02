@@ -4,6 +4,6 @@
 ^data-raw
 ^analyses
 ^issues
-
+^\.idea
 ^.*\.Rproj$
 ^\.Rproj\.user$

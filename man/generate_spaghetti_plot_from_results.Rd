@@ -14,7 +14,7 @@ generate_spaghetti_plot_from_results(
 )
 }
 \arguments{
-\item{results}{Detection results from detectXOR}
+\item{results}{Detection results from detect_xor}
 \item{data}{Original dataset}
 \item{class_col}{Name of class column}
 \item{output_dir}{Output directory path (default: ".")}
@@ -33,7 +33,7 @@ generate_spaghetti_plot_from_results(
 }
 }
 \seealso{
-\code{\link{detectXOR}} for detection function
+\code{\link{detect_xor}} for detection function
 }
 \keyword{XOR}
 \keyword{visualization}

@@ -1,5 +1,5 @@
-\name{detectXOR}
-\alias{detectXOR}
+\name{detect_xor}
+\alias{detect_xor}
 \title{Detect XOR Patterns in Classification Data}
 \description{
 Identifies XOR-shaped relationships between variables using statistical tests and pattern detection.

@@ -1,4 +1,4 @@
-export(detectXOR)
+export(detect_xor)
 export(generate_spaghetti_plot_from_results)
 import(dplyr)
 import(ggplot2)

@@ -16,7 +16,7 @@ Provides statistical detection and advanced visualization of XOR-shaped relation
 
 \strong{Main Functions:}
 \itemize{
-  \item \code{\link{detectXOR}}: Core detection algorithm
+  \item \code{\link{detect_xor}}: Core detection algorithm
   \item \code{\link{generate_spaghetti_plot_from_results}}: Interactive line plots
   \item \code{\link{generate_xy_plot_from_results}}: Decision boundary plots
 }

@@ -22,7 +22,7 @@
 #'   tau_threshold = 0.3
 #' )
 #' }
-# detectXOR <- function(
+# detect_xor <- function(
 #     data,
 #     class_col = "class",
 #     check_tau = TRUE,
@@ -88,7 +88,7 @@
 # # - compute_tile_wilcox_significance_for_pairs()
 # # - create_results_df_from_orig_pair_list()
 #
-# detectXOR_parallel <- function(
+# detect_xor_parallel <- function(
 #   data,
 #   class_col = "class",
 #   check_tau = TRUE,
@@ -226,7 +226,7 @@
 # }
 
 
-# detectXOR <- function(
+# detect_xor <- function(
 #   data,
 #   class_col = "class",
 #   check_tau = TRUE,
@@ -398,7 +398,7 @@
 # }
 
 
-detectXOR <- function(
+detect_xor <- function(
   data,
   class_col = "class",
   check_tau = TRUE,
@@ -609,4 +609,4 @@ lapply_with_bar <- function(X, FUN, ...) {
 }
 
 # results <- detect_xor(data = XOR_data, class_col = "class")
-# results <- detectXOR_parallel(data = XOR_data, class_col = "class")
+# results <- detect_xor_parallel(data = XOR_data, class_col = "class")
