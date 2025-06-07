@@ -1,6 +1,6 @@
-# detectXOR: Advanced XOR pattern detection in R
+# detectXOR: XOR Pattern Detection and Visualization in R
 
-Detect non-linear XOR relationships in classification data with statistical confidence and publication-ready visualizations.
+Detect non-linear XOR relationships in classification data with statistical confidence and visualizations.
 
 ## Overview
 
@@ -28,9 +28,16 @@ devtools::install_github("JornLotsch/detectXOR")
 ### Dependencies
 
 The package requires R ≥ 3.5.0 and depends on:
-- `future`, `future.apply`, `pbmcapply` (parallel processing)
-- `ggplot2`, `plotly` (visualization)
-- Base R statistics functions
+- `dplyr`, `tibble` (data manipulation)
+- `ggplot2`, `ggh4x`, `scales` (visualization)
+- `future`, `future.apply`, `pbmcapply`, `parallel` (parallel processing)
+- `reshape2`, `glue` (data processing and string manipulation)
+- `DescTools` (statistical tools)
+- Base R packages: `stats`, `utils`, `methods`, `grDevices`
+
+Optional packages (suggested):
+- `testthat`, `knitr`, `rmarkdown` (development and documentation)
+- `doParallel`, `foreach` (additional parallel processing options)
 
 ## Quick start
 
@@ -146,7 +153,7 @@ Contains comprehensive analysis for each variable pair including:
 ### Cross-platform compatibility
 - **Windows**: Uses `future::multisession` for parallel processing
 - **Unix/Linux/macOS**: Uses `pbmcapply::pbmclapply` with fork-based parallelism
-- **Memory Management**: Automatic chunk-based processing for large datasets
+- **Memory management**: Automatic chunk-based processing for large datasets
 
 ### Package structure
 ``` 
