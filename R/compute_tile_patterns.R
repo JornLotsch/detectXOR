@@ -327,9 +327,3 @@ compute_tile_patterns_for_pairs <- function(
   }
   orig_pair_list
 }
-
-
-
-
-# Suppose you have already created orig_pair_list with create_pairwise_datasets()
-# pairwise_dfs <- compute_tile_patterns_for_pairs(pairwise_dfs)

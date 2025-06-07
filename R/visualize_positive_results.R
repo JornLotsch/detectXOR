@@ -12,7 +12,7 @@
 #' @importFrom dplyr filter mutate
 #' @importFrom tibble rownames_to_column
 #' @importFrom reshape2 melt
-#' @importFrom scales colorblind_pal
+#' @importFrom ggthemes colorblind_pal
 #' @importFrom glue glue
 #' @importFrom utils globalVariables
 generate_spaghetti_plot_from_results <- function(results, data, class_col, output_dir = ".", scale_data = TRUE) {
@@ -232,10 +232,4 @@ generate_xy_plot_from_results <- function(results, data, class_col, output_dir =
 
   return(invisible(p))
 }
-
-# Suppress package check notes
-utils::globalVariables(c(
-  "pair_id", "variable", "value", "x", "y",
-  "x_q1", "x_q2", "y_q1", "y_q2", "chi_sq_p_value"
-))
 

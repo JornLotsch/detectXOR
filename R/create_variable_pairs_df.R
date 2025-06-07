@@ -192,25 +192,3 @@ create_pairwise_datasets <- function(
 
   return(orig_pair_list)
 }
-
-
-# # Default (winsorize)
-# pairwise_dfs <- create_pairwise_datasets(
-#   data = XOR_data,
-#   class_col = "class"
-# )
-#
-# # Trim
-# pairwise_dfs_trim <- create_pairwise_datasets(
-#   data = XOR_data,
-#   class_col = "class",
-#   extreme_handling = "trim"
-# )
-#
-# # No extreme handling
-#
-# pairwise_dfs_none <- create_pairwise_datasets(
-#   data = XOR_data,
-#   class_col = "class",
-#   extreme_handling = "none"
-# )

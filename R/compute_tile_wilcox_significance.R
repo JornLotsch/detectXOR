@@ -3,7 +3,7 @@
 #' @param orig_pair_list List. Output from compute_tile_patterns_for_pairs.
 #' @param class_col Character. Name of the class column (default: "class").
 #' @param p_threshold Numeric. Significance threshold (default: 0.05).
-#' @param split_method Character. Tile assignment method ("quantile"/"range") (default: "quantile").
+#' @param split_method Character. Tile assignment method ("quantile" or "range") (default: "quantile").
 #' @return List with results$tile_wilcox_significance added for each pair.
 #' @export
 compute_tile_wilcox_significance_for_pairs <- function(
@@ -188,5 +188,3 @@ check_tile_groupwise_wilcox_significance <- function(
     chosen_tiles = chosen_tiles
   )
 }
-
-# pairwise_dfs <- compute_tile_wilcox_significance_for_pairs(pairwise_dfs)

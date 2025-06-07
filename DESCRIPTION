@@ -1,9 +1,18 @@
 Package: detectXOR
 Title: XOR Pattern Detection and Visualization
 Version: 0.1.0
-Authors@R: c(person(given = "Jorn", family = "Lotsch", role = c("aut", "cre"), email = "j.lotsch@em.uni-frankfurt.de"),
-               person(given = "Alfred", family = "Ultsch", role = "aut"))
-Description: Detect and visualize XOR patterns in classification data through statistical analysis and advanced plotting.
+Authors@R: c(person(given = "Jorn", family = "Lotsch",
+                    role = c("aut", "cre"),
+                    email = "j.lotsch@em.uni-frankfurt.de",
+                    comment = c(ORCID = "0000-0002-5818-6958")),
+             person(given = "Alfred", family = "Ultsch",
+                    role = "aut"))
+Description: Provides comprehensive tools for detecting XOR-like patterns in
+                        pairwise variable relationships within classification datasets. The package
+                        implements tile-based pattern analysis, classwise Kendall tau correlations,
+                        and group-wise Wilcoxon significance tests with parallel processing support
+                        for large datasets. Includes advanced visualization capabilities for pattern
+                        exploration and statistical validation.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -14,8 +23,8 @@ Imports:
     tibble (>= 3.1.8),
     reshape2 (>= 1.4.4),
     glue (>= 1.6.0),
-    scales (>= 1.2.0),
     stats,
+    ggthemes,
     parallel (>= 4.2.0),
     future (>= 1.28.0),
     future.apply (>= 1.10.0),
@@ -33,4 +42,5 @@ Suggests:
 RoxygenNote: 7.2.3
 SystemRequirements: GNU make
 Depends: R (>= 3.5.0)
-
+URL: https://github.com/JornLotsch/detectXOR
+BugReports: https://github.com/JornLotsch/detectXOR/issues

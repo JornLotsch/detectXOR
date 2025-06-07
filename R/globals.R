@@ -5,6 +5,8 @@
 #' @importFrom utils globalVariables
 if (getRversion() >= "2.15.1") {
   utils::globalVariables(c(
-    "ID", "xor_shape_detected", "xor_pattern"
+    "ID", "xor_shape_detected", "xor_pattern",
+    "pair_id", "variable", "value", "x", "y",
+	  "x_q1", "x_q2", "y_q1", "y_q2", "chi_sq_p_value"
   ))
 }

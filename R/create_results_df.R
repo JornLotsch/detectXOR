@@ -54,7 +54,3 @@ create_results_df_from_orig_pair_list <- function(orig_pair_list) {
 
   results_df
 }
-
-
-# results_df <- create_results_df_from_orig_pair_list(pairwise_dfs)
-
