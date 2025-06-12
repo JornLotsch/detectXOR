@@ -1,4 +1,4 @@
-create_results_df_from_orig_pair_list <- function(orig_pair_list) {
+create_results_df <- function(orig_pair_list) {
   if (is.null(orig_pair_list) || length(orig_pair_list) == 0) return(NULL)
 
   # Only keep pairs with tile_pattern (minimal requirement)

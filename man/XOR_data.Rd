@@ -5,7 +5,7 @@
 Synthetic XOR Pattern Dataset
 }
 \description{
-Simulated classification dataset containing 400 observations with 5 features demonstrating XOR patterns, linear class differences, and random noise. Created specifically for testing non-linear pattern detection algorithms.
+Simulated classification dataset containing 400 observations with 5 features demonstrating XOR patterns, linear class differences, and random noise.
 }
 \usage{data("XOR_data")}
 \format{

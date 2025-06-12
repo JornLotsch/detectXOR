@@ -1,5 +1,5 @@
 #' @title Detect XOR-like patterns in pairwise variable relationships
-#' @description Orchestrates the full XOR detection pipeline: tile pattern analysis, classwise Kendall tau correlation, and group-wise Wilcoxon significance tests.
+#' @description Full XOR detection pipeline: tile pattern analysis, classwise Kendall tau correlation, and group-wise Wilcoxon significance tests.
 #' @param data Data frame containing variables and class column.
 #' @param class_col Character. Name of the class column (default: "class").
 #' @param check_tau Logical. Whether to compute classwise Kendall tau correlations (default: TRUE).
@@ -13,15 +13,6 @@
 #' @importFrom stats cor.test
 #' @importFrom stats chisq.test
 #' @export
-#' @examples
-#' \dontrun{
-#' results <- detect_xor(
-#'   data = my_data,
-#'   class_col = "class",
-#'   p_threshold = 0.05,
-#'   tau_threshold = 0.3
-#' )
-#' }
 detect_xor <- function(
   data,
   class_col = "class",
@@ -31,7 +22,7 @@ detect_xor <- function(
   tau_threshold = 0.3,
   abs_diff_threshold = 20,
   split_method = "quantile",
-  max_cores = NULL,
+  max_cores = 1,
   extreme_handling = "winsorize",
   winsor_limits = c(0.05, 0.95),
   scale_data = TRUE,
@@ -58,6 +49,9 @@ detect_xor <- function(
     use_complete = use_complete
   )
 
+  # Store original names for reference
+  original_names <- names(orig_pair_list)
+
   message("\nStep 2: Computing tile patterns...")
   if (use_parallel) {
     chunks <- create_balanced_chunks(length(orig_pair_list), n_cores)
@@ -77,15 +71,9 @@ detect_xor <- function(
       n_cores = n_cores
     )
 
+    # Restore original names
+    names(processed_chunks) <- original_names
     orig_pair_list <- processed_chunks
-    names(orig_pair_list) <- names(create_pairwise_datasets(
-      data,
-      class_col = class_col,
-      extreme_handling = extreme_handling,
-      winsor_limits = winsor_limits,
-      scale_data = scale_data,
-      use_complete = use_complete
-    ))
   } else {
     orig_pair_list <- compute_tile_patterns_for_pairs(
       orig_pair_list,
@@ -126,6 +114,8 @@ detect_xor <- function(
           n_cores = n_cores
         )
 
+        # Preserve names for tau results
+        names(processed_tau_chunks) <- xor_pairs
         orig_pair_list[xor_pairs] <- processed_tau_chunks
       } else {
         orig_pair_list[xor_pairs] <- compute_classwise_tau_for_pairs(
@@ -157,6 +147,8 @@ detect_xor <- function(
         n_cores = n_cores
       )
 
+      # Restore original names
+      names(processed_wilcox_chunks) <- original_names
       orig_pair_list <- processed_wilcox_chunks
     } else {
       orig_pair_list <- compute_tile_wilcox_significance_for_pairs(
@@ -169,13 +161,13 @@ detect_xor <- function(
   }
 
   message("\nFinalizing results...")
-  if (!exists("create_results_df_from_orig_pair_list")) {
+  if (!exists("create_results_df")) {
     stop("Missing results formatting function")
   }
 
   # Return both the detailed pair list and the results dataframe
   list(
-    results_df = create_results_df_from_orig_pair_list(orig_pair_list),
+    results_df = create_results_df(orig_pair_list),
     pair_list = orig_pair_list
   )
 }

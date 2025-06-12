@@ -1,5 +1,6 @@
 export(detect_xor)
 export(generate_spaghetti_plot_from_results)
+export(generate_xy_plot_from_results)
 import(dplyr)
 import(ggplot2)
 import(ggh4x)

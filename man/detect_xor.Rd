@@ -1,6 +1,6 @@
 \name{detect_xor}
 \alias{detect_xor}
-\title{Detect XOR Patterns in Classification Data}
+\title{Detect XOR Patterns in Variable Pairs}
 \description{
 Identifies XOR-shaped relationships between variables using statistical tests and pattern detection.
 }
@@ -14,7 +14,7 @@ detect_xor(
   tau_threshold = 0.3,
   abs_diff_threshold = 20,
   split_method = "quantile",
-  max_cores = NULL,
+  max_cores = 1,
   extreme_handling = "winsorize",
   winsor_limits = c(0.05, 0.95),
   scale_data = TRUE,
@@ -38,19 +38,57 @@ detect_xor(
 }
 \value{
 List containing:
-  \item{results_df}{Data frame with detection results}
-  \item{pair_list}{Full analysis details for each pair}
+  \item{results_df}{Data frame with detection results for all variable pairs}
+  \item{pair_list}{Detailed analysis results for each variable pair}
+}
+\details{
+This function performs a comprehensive analysis to detect XOR-like patterns in pairwise variable relationships within two-class data sets. The analysis pipeline includes:
+
+\enumerate{
+  \item Data preprocessing (winsorization, scaling, complete cases)
+  \item Tile pattern analysis using chi-squared tests
+  \item Classwise Kendall tau correlation analysis
+  \item Group-wise Wilcoxon significance tests
+}
+
+The function automatically handles parallel processing when multiple cores are available and returns both a summary data frame and detailed results for further analysis.
 }
 \examples{
-\dontrun{
-data <- data.frame(class = rep(letters[1:2], each = 50),
-                   x = c(rnorm(50), rnorm(50, 2)),
-                   y = c(rnorm(50), rnorm(50, 2)))
-results <- detect_xor(data, class_col = "class")
+\donttest{
+# Load example data
+data(XOR_data)
+
+# Run XOR detection
+results <- detect_xor(data = XOR_data, class_col = "class")
+
+# View summary of detected patterns
+print(results$results_df["xor_shape_detected"])
+
+# Generate visualizations
+spaghetti_plot <- generate_spaghetti_plot_from_results(
+  results = results,
+  data = XOR_data,
+  class_col = "class"
+)
+
+print(spaghetti_plot)
+
+xy_plot <- generate_xy_plot_from_results(
+  results = results,
+  data = XOR_data,
+  class_col = "class"
+)
+
+print(xy_plot)
+
+# View detailed results for detected pairs
+detected_pairs <- results$results_df[results$results_df$xor_shape_detected == TRUE, ]
+print(detected_pairs)
+
 }
 }
 \seealso{
-\code{\link{generate_spaghetti_plot_from_results}} for visualization of results
+\code{\link{generate_spaghetti_plot_from_results}} for spaghetti plot visualization, \code{\link{generate_xy_plot_from_results}} for scatter plot visualization, \code{\link{XOR_data}} for example dataset
 }
 \keyword{XOR}
 \keyword{pattern}

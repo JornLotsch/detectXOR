@@ -567,8 +567,10 @@ generate_xy_plot_from_results <- function(results, data, class_col, output_dir =
       )
     }
     # 3. Plot
-    p <- ggplot(data, aes_string(x = x_var, y = y_var, color = paste0("as.factor(", class_var, ")"))) +
-      geom_point(alpha = 0.7, size = 2) +
+    p <- ggplot(data, aes(x = .data[[x_var]], 
+                 y = .data[[y_var]], 
+                 color = as.factor(.data[[class_var]]))) +
+	  geom_point(alpha = 0.7, size = 2) +
       facet_wrap2(~ var1_var2, scales = "free", strip = strip)   +
       scale_color_colorblind() +
       theme_light(base_size = 14) +

@@ -3,22 +3,19 @@
 \docType{package}
 \title{XOR Pattern Detection and Visualization}
 \description{
-Provides statistical detection and advanced visualization of XOR-shaped relationships in classification data. Implements parallel processing for large datasets and produces publication-quality ggplot2 visualizations.
+Provides tools for detecting XOR-like patterns in variable pairs. Includes visualizations for pattern exploration.
 }
 \details{
 \strong{Core Features:}
 \enumerate{
   \item Statistical detection using chi-square tests and Kendall's tau
-  \item Cross-platform parallel processing (future + pbmcapply)
-  \item Interactive spaghetti plots and decision boundary visualizations
-  \item Automatic pattern rotation detection
+  \item Spaghetti plots and xy plot for pattern visualization
 }
-
 \strong{Main Functions:}
 \itemize{
   \item \code{\link{detect_xor}}: Core detection algorithm
-  \item \code{\link{generate_spaghetti_plot_from_results}}: Interactive line plots
-  \item \code{\link{generate_xy_plot_from_results}}: Decision boundary plots
+  \item \code{\link{generate_spaghetti_plot_from_results}}: Line plots
+  \item \code{\link{generate_xy_plot_from_results}}: Plot for pattern visualization
 }
 }
 \author{
@@ -27,9 +24,8 @@ Jorn Lotsch <j.lotsch@em.uni-frankfurt.de>
 \references{
 Methodological foundations:
 \itemize{
-  \item Non-linear pattern detection in machine learning
+  \item Pattern detection in machine learning
   \item Statistical dependency measures (Kendall's tau)
-  \item Parallel computing frameworks in R
 }
 }
 \seealso{

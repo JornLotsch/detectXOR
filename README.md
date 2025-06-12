@@ -1,6 +1,6 @@
-# detectXOR: XOR Pattern Detection and Visualization in R
+# detectXOR: XOR pattern detection and visualization in R
 
-Detect non-linear XOR relationships in classification data with statistical confidence and visualizations.
+Provides tools for detecting XOR-like patterns in variable pairs. Includes visualizations for pattern exploration.
 
 ## Overview
 
@@ -9,11 +9,10 @@ Traditional feature selection methods often miss complex non-linear relationship
 ### Key capabilities
 
 🔍 **XOR pattern detection** - Statistical identification using χ² and Wilcoxon tests  
-📊 **Publication-ready plots** - Static spaghetti plots and decision boundary visualizations  
-⚡ **Parallel processing** - Multi-core acceleration for large datasets  
 📈 **Correlation analysis** - Class-wise Kendall τ coefficients  
+📊 **Visualization** - Spaghetti plots and decision boundary visualizations  
+⚡ **Parallel processing** - Multi-core acceleration for large datasets  
 🔬 **Robust statistics** - Winsorization and scaling options for outlier handling  
-✅ **Comprehensive testing** - 95% test coverage with synthetic validation datasets  
 
 ## Installation
 
@@ -23,10 +22,9 @@ Install the development version from GitHub:
 if (!requireNamespace("devtools", quietly = TRUE)) { install.packages("devtools") }
 # Install detectXOR
 devtools::install_github("JornLotsch/detectXOR")
-``` 
-
+```
+```
 ### Dependencies
-
 The package requires R ≥ 3.5.0 and depends on:
 - `dplyr`, `tibble` (data manipulation)
 - `ggplot2`, `ggh4x`, `scales` (visualization)
@@ -40,9 +38,8 @@ Optional packages (suggested):
 - `doParallel`, `foreach` (additional parallel processing options)
 
 ## Quick start
-
 ### Basic XOR detection
-```r 
+``` r
 library(detectXOR)
 # Load example data
 data(XOR_data)
@@ -50,11 +47,10 @@ data(XOR_data)
 results <- detectXOR(XOR_data, class_col = "class")
 # View summary
 print(results$results_df)
-``` 
-
-### Advanced usage with custom parameters
-```r
-# Advanced detection with custom thresholds and parallel processing
+```
+### Usage with custom parameters
+``` r
+# Detection with custom thresholds and parallel processing
 results <- detectXOR(
   data = XOR_data,
   class_col = "class",
@@ -65,13 +61,20 @@ results <- detectXOR(
   scale_data = TRUE
 )
 ```
-
 ### Visualization
-```r
+``` r
 # Generate publication-ready plots
 generate_spaghetti_plot_from_results(results, XOR_data) 
 generate_xy_plot_from_results(results, XOR_data)
 ```
+
+### Example plots 
+
+<img src="./spaghetti_plot.svg">
+
+<img src="./xy_plot.svg">
+
+
 
 ## Function parameters
 ### `detectXOR()` - Main detection function
@@ -91,8 +94,6 @@ generate_xy_plot_from_results(results, XOR_data)
 | `winsor_limits` | numeric vector | `c(0.05, 0.95)` | Winsorization percentiles |
 | `scale_data` | logical | `TRUE` | Standardize variables before analysis |
 | `use_complete` | logical | `TRUE` | Use only complete cases (remove NA values) |
-
-
 ### Visualization functions
 
 | Function | Description | Key Parameters |
@@ -100,8 +101,6 @@ generate_xy_plot_from_results(results, XOR_data)
 | `generate_spaghetti_plot_from_results()` | Creates connected line plots showing variable trajectories for XOR-detected pairs | `results`, `data`, `class_col`, `output_dir = "."`, `scale_data = TRUE` |
 | `generate_xy_plot_from_results()` | Generates scatter plots with decision boundary lines for detected XOR patterns | `results`, `data`, `class_col`, `output_dir = "."`, `quantile_lines = c(1/3, 2/3)`, `line_method = "quantile"` |
 Both functions return ggplot objects and automatically save SVG files to the specified output directory.
-
-
 ## Output structure
 The `detectXOR()` function returns a list with two components:
 ### `results_df` - Summary data frame
@@ -116,7 +115,6 @@ The `detectXOR()` function returns a list with two components:
 | `tau_difference` | Absolute difference between class τ values |
 | `wilcox_p_x`, `wilcox_p_y` | Wilcoxon test p-values for each axis |
 | `significant_wilcox` | Logical: significant group differences detected |
-
 ### `pair_list` - Detailed results
 Contains comprehensive analysis for each variable pair including:
 - Tile pattern analysis results
@@ -139,15 +137,10 @@ Contains comprehensive analysis for each variable pair including:
 
 ## Use cases
 ### Machine learning
-- **Feature engineering**: Identify interaction terms for model improvement
-- **Feature selection**: Find variables that work together but not alone
-- **Model interpretation**: Understand non-linear relationships in your data
-
-### Research applications
-- **Bioinformatics**: Gene-gene interactions in disease classification
-- **Medical research**: Biomarker combinations for diagnosis
-- **Social sciences**: Interactive effects in survey data
-- **Finance**: Multi-factor risk assessment
+- **Feature selection enhancement** - Identify interaction features that complement traditional univariate methods
+- **Variable interaction discovery** - Find synergistic variable pairs where class separation emerges only through combined effects
+- **Preprocessing for ensemble methods** - Generate interaction features for boosting algorithms and neural networks
+- **Dimensionality reduction guidance** - Preserve important variable interactions when reducing feature space
 
 ## Technical details
 ### Cross-platform compatibility
@@ -165,10 +158,10 @@ detectXOR/
 ├── data/              # Example datasets
 └── inst/              # Additional resources
 ```
-
+## Contributing
+Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests on GitHub.
 ## License
-
 GPL-3
-
 ## Citation
-If you use this tool in your work, please cite the repository or contact the maintainer for citation details.
+```
+For citation details or to request a formal publication reference, please contact the maintainer.

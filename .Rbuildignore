@@ -7,3 +7,6 @@
 ^\.idea
 ^.*\.Rproj$
 ^\.Rproj\.user$
+.*\.png$
+.*\.svg$
+^plots/
