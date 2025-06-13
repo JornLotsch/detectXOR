@@ -3,7 +3,9 @@
 \docType{package}
 \title{XOR Pattern Detection and Visualization}
 \description{
-Provides tools for detecting XOR-like patterns in variable pairs. Includes visualizations for pattern exploration.
+Provides tools for detecting XOR-like patterns in variable pairs in 
+    two-class data sets. Includes visualizations for pattern exploration and reporting
+    capabilities with both text and HTML output formats.
 }
 \details{
 \strong{Core Features:}

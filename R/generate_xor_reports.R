@@ -1,5 +1,5 @@
 #' @title Generate XOR Detection Report (Console-friendly)
-#' @description Creates a comprehensive report with formatted table and plots for XOR pattern detection results.
+#' @description Creates a report with formatted table and plots for XOR pattern detection results.
 #' @param results Either a data frame from \code{detect_xor$results_df} or the full list returned by \code{detect_xor}.
 #' @param data Original dataset containing variables and classes.
 #' @param class_col Character specifying the class column name.
@@ -10,7 +10,7 @@
 #' @return Invisibly returns a list containing the formatted table and plots (if generated).
 #' @export
 #' @importFrom dplyr arrange desc
-generate_xor_report <- function(results, data, class_col,
+generate_xor_reportConsole <- function(results, data, class_col,
                                 scale_data = TRUE,
                                 show_plots = TRUE,
                                 quantile_lines = c(1/3, 2/3),
@@ -187,7 +187,7 @@ generate_xor_report <- function(results, data, class_col,
 
 
 #' @title Generate XOR Detection HTML Report
-#' @description Creates a comprehensive HTML report with formatted table and plots for XOR pattern detection results.
+#' @description Creates a HTML report with formatted table and plots for XOR pattern detection results.
 #' @param results Either a data frame from \code{detect_xor$results_df} or the full list returned by \code{detect_xor}.
 #' @param data Original dataset containing variables and classes.
 #' @param class_col Character specifying the class column name.
@@ -203,7 +203,7 @@ generate_xor_report <- function(results, data, class_col,
 #' @importFrom dplyr arrange desc select
 #' @importFrom htmltools tags HTML save_html
 #' @importFrom base64enc dataURI
-generate_xor_htmlreport <- function(results, data, class_col,
+generate_xor_reportHTML <- function(results, data, class_col,
                                      output_file = "xor_detection_report.html",
                                      open_browser = TRUE,
                                      scale_data = TRUE,

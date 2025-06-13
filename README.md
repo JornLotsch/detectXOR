@@ -61,20 +61,6 @@ results <- detect_xor(
   scale_data = TRUE
 )
 ```
-### Visualization
-``` r
-# Generate publication-ready plots
-generate_spaghetti_plot_from_results(results, XOR_data) 
-generate_xy_plot_from_results(results, XOR_data)
-```
-
-### Example plots 
-
-<img src="./spaghetti_plot.svg">
-
-<img src="./xy_plot.svg">
-
-
 
 ## Function parameters
 ### `detectXOR()` - Main detection function
@@ -94,21 +80,7 @@ generate_xy_plot_from_results(results, XOR_data)
 | `winsor_limits` | numeric vector | `c(0.05, 0.95)` | Winsorization percentiles |
 | `scale_data` | logical | `TRUE` | Standardize variables before analysis |
 | `use_complete` | logical | `TRUE` | Use only complete cases (remove NA values) |
-### Visualization functions
 
-| Function | Description | Key Parameters |
-| --- | --- | --- |
-| `generate_spaghetti_plot_from_results()` | Creates connected line plots showing variable trajectories for XOR-detected pairs | `results`, `data`, `class_col`, `scale_data = TRUE` |
-| `generate_xy_plot_from_results()` | Generates scatter plots with decision boundary lines for detected XOR patterns | `results`, `data`, `class_col`, `scale_data = TRUE`, `quantile_lines = c(1/3, 2/3)`, `line_method = "quantile"` |
-
-Both functions return ggplot objects that can be displayed or saved manually.
-
-### Reporting functions
-
-| Function | Description | Key Parameters |
-| --- | --- | --- |
-| `generate_xor_report()` | Creates console-friendly formatted report with optional plots | `results`, `data`, `class_col`, `scale_data = TRUE`, `show_plots = TRUE` |
-| `generate_xor_htmlreport()` | Generates comprehensive HTML report with interactive elements | `results`, `data`, `class_col`, `output_file`, `open_browser = TRUE` |
 
 ## Output structure
 The `detectXOR()` function returns a list with two components:
@@ -129,6 +101,48 @@ Contains comprehensive analysis for each variable pair including:
 - Statistical test outputs
 - Processed data subsets
 - Intermediate calculations
+
+
+
+### Visualization functions
+
+| Function | Description | Key Parameters |
+| --- | --- | --- |
+| `generate_spaghetti_plot_from_results()` | Creates connected line plots showing variable trajectories for XOR-detected pairs | `results`, `data`, `class_col`, `scale_data = TRUE` |
+| `generate_xy_plot_from_results()` | Generates scatter plots with decision boundary lines for detected XOR patterns | `results`, `data`, `class_col`, `scale_data = TRUE`, `quantile_lines = c(1/3, 2/3)`, `line_method = "quantile"` |
+
+Both functions return ggplot objects that can be displayed or saved manually.
+
+``` r
+# Generate plots
+generate_spaghetti_plot_from_results(results, XOR_data) 
+generate_xy_plot_from_results(results, XOR_data)
+```
+
+### Example plots 
+
+<img src="./spaghetti_plot.svg">
+
+<img src="./xy_plot.svg">
+
+
+
+### Reporting functions
+
+| Function | Description | Key Parameters |
+| --- | --- | --- |
+| `generate_xor_report()` | Creates console-friendly formatted report with optional plots | `results`, `data`, `class_col`, `scale_data = TRUE`, `show_plots = TRUE` |
+| `generate_xor_htmlreport()` | Generates comprehensive HTML report with interactive elements | `results`, `data`, `class_col`, `output_file`, `open_browser = TRUE` |
+
+```r
+# Generate formatted report 
+generate_xor_reportHTML(results, XOR_data, class_col = "class")
+```
+
+The report will be automaticlaly opened in the system standard web browser.
+The above example can be viewed as 
+[Open xor_detection_report.html](xor_detection_report.html) 
+
 
 ## Methodology
 ### XOR detection pipeline

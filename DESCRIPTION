@@ -7,11 +7,9 @@ Authors@R: c(person(given = "Jorn", family = "Lotsch",
                     comment = c(ORCID = "0000-0002-5818-6958")),
              person(given = "Alfred", family = "Ultsch",
                     role = "aut"))
-Description: Provides tools for detecting XOR-like patterns in variable pairs.
-    Includes visualizations for pattern exploration and comprehensive reporting
-    capabilities with both text and HTML output formats. The package implements
-    statistical methods to identify exclusive OR relationships in data and
-    provides intuitive visualization tools for result interpretation.
+Description: Provides tools for detecting XOR-like patterns in variable pairs in 
+    two-class data sets. Includes visualizations for pattern exploration and reporting
+    capabilities with both text and HTML output formats.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

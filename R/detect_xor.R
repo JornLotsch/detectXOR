@@ -18,7 +18,7 @@
 #'     \item results_df: Data frame summarizing XOR detection results for all variable pairs
 #'     \item pair_list: List of detailed results for each variable pair
 #'   }
-#' @details This function implements a comprehensive XOR pattern detection pipeline with four main steps:
+#' @details This function implements a XOR pattern detection pipeline with four main steps:
 #'   \enumerate{
 #'     \item Create pairwise datasets with preprocessing
 #'     \item Compute tile patterns to identify XOR-like shapes

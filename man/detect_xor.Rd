@@ -44,7 +44,7 @@ List containing:
   \item{pair_list}{Detailed analysis results for each variable pair}
 }
 \details{
-This function performs a comprehensive analysis to detect XOR-like patterns in pairwise variable relationships within two-class data sets. The analysis pipeline includes:
+This function performs an analysis to detect XOR-like patterns in pairwise variable relationships within two-class data sets. The analysis pipeline includes:
 
 \enumerate{
   \item Data preprocessing (winsorization, scaling, complete cases)
@@ -84,7 +84,7 @@ xy_plot <- generate_xy_plot_from_results(
 print(xy_plot)
 
 # Generate console report (doesn't write files)
-generate_xor_report(results, XOR_data, "class", show_plots = FALSE)
+generate_xor_reportConsole(results, XOR_data, "class", show_plots = FALSE)
 
 # View detailed results for detected pairs
 detected_pairs <- results$results_df[results$results_df$xor_shape_detected == TRUE, ]
@@ -93,7 +93,7 @@ print(detected_pairs)
 }
 }
 \seealso{
-\code{\link{generate_spaghetti_plot_from_results}} for spaghetti plot visualization, \code{\link{generate_xy_plot_from_results}} for scatter plot visualization, \code{\link{generate_xor_report}} for console reporting, \code{\link{generate_xor_htmlreport}} for HTML report generation, \code{\link{XOR_data}} for example dataset
+\code{\link{generate_spaghetti_plot_from_results}} for spaghetti plot visualization, \code{\link{generate_xy_plot_from_results}} for scatter plot visualization, \code{\link{generate_xor_reportConsole}} for console reporting, \code{\link{generate_xor_reportHTML}} for HTML report generation, \code{\link{XOR_data}} for example dataset
 }
 \keyword{XOR}
 \keyword{pattern}

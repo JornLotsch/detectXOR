@@ -1,8 +1,8 @@
 export(detect_xor)
 export(generate_spaghetti_plot_from_results)
 export(generate_xy_plot_from_results)
-export(generate_xor_report)
-export(generate_xor_htmlreport)
+export(generate_xor_reportConsole)
+export(generate_xor_reportHTML)
 
 # Complete imports based on the error messages
 importFrom(magrittr, "%>%")
