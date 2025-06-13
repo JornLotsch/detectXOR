@@ -141,7 +141,7 @@ generate_xor_reportHTML(results, XOR_data, class_col = "class")
 
 The report will be automaticlaly opened in the system standard web browser.
 
-[View the HTML file](./xor_detection_report.html)
+([Open rendered HTML](https://github.com/JornLotsch/detectXOR/blob/main/xor_detection_report.html)
 
 
 ## Methodology
