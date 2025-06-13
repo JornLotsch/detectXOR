@@ -23,7 +23,6 @@ if (!requireNamespace("devtools", quietly = TRUE)) { install.packages("devtools"
 # Install detectXOR
 devtools::install_github("JornLotsch/detectXOR")
 ```
-```
 ### Dependencies
 The package requires R ≥ 3.5.0 and depends on:
 - `dplyr`, `tibble` (data manipulation)
@@ -36,6 +35,7 @@ The package requires R ≥ 3.5.0 and depends on:
 Optional packages (suggested):
 - `testthat`, `knitr`, `rmarkdown` (development and documentation)
 - `doParallel`, `foreach` (additional parallel processing options)
+
 
 ## Quick start
 ### Basic XOR detection
@@ -104,7 +104,7 @@ Contains comprehensive analysis for each variable pair including:
 
 
 
-### Visualization functions
+## Visualization functions
 
 | Function | Description | Key Parameters |
 | --- | --- | --- |
@@ -127,12 +127,14 @@ generate_xy_plot_from_results(results, XOR_data)
 
 
 
-### Reporting functions
+## Reporting functions
 
 | Function | Description | Key Parameters |
 | --- | --- | --- |
 | `generate_xor_reportConsole()` | Creates console-friendly formatted report with optional plots | `results`, `data`, `class_col`, `scale_data = TRUE`, `show_plots = TRUE` |
 | `generate_xor_reportHTML()` | Generates comprehensive HTML report with interactive elements | `results`, `data`, `class_col`, `output_file`, `open_browser = TRUE` |
+
+### Example report
 
 ```r
 # Generate formatted report 
