@@ -140,8 +140,8 @@ generate_xor_reportHTML(results, XOR_data, class_col = "class")
 ```
 
 The report will be automaticlaly opened in the system standard web browser.
-The above example can be viewed as 
-[Open xor_detection_report.html](xor_detection_report.html) 
+
+[View the HTML file](./xor_detection_report.html)
 
 
 ## Methodology
