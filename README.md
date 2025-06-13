@@ -131,8 +131,8 @@ generate_xy_plot_from_results(results, XOR_data)
 
 | Function | Description | Key Parameters |
 | --- | --- | --- |
-| `generate_xor_report()` | Creates console-friendly formatted report with optional plots | `results`, `data`, `class_col`, `scale_data = TRUE`, `show_plots = TRUE` |
-| `generate_xor_htmlreport()` | Generates comprehensive HTML report with interactive elements | `results`, `data`, `class_col`, `output_file`, `open_browser = TRUE` |
+| `generate_xor_reportConsole()` | Creates console-friendly formatted report with optional plots | `results`, `data`, `class_col`, `scale_data = TRUE`, `show_plots = TRUE` |
+| `generate_xor_reportHTML()` | Generates comprehensive HTML report with interactive elements | `results`, `data`, `class_col`, `output_file`, `open_browser = TRUE` |
 
 ```r
 # Generate formatted report 
@@ -140,8 +140,6 @@ generate_xor_reportHTML(results, XOR_data, class_col = "class")
 ```
 
 The report will be automaticlaly opened in the system standard web browser.
-
-([Open rendered HTML](https://github.com/JornLotsch/detectXOR/blob/main/xor_detection_report.html)
 
 
 ## Methodology
