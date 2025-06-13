@@ -8,10 +8,44 @@
 #' @param tau_threshold Numeric. Minimum absolute tau for "strong" correlation (default: 0.3).
 #' @param abs_diff_threshold Numeric. Minimum absolute difference for practical significance (default: 20).
 #' @param split_method Character. Method for splitting tiles ("quantile" or "range") (default: "quantile").
-#' @return Data frame summarizing XOR detection results for all variable pairs.
-#' @importFrom stats wilcox.test
-#' @importFrom stats cor.test
-#' @importFrom stats chisq.test
+#' @param max_cores Integer. Maximum number of cores to use for parallel processing (default: 1).
+#' @param extreme_handling Character. Method for handling extreme values: "winsorize", "remove", or "none" (default: "winsorize").
+#' @param winsor_limits Numeric vector of length 2. Lower and upper quantiles for winsorization (default: c(0.05, 0.95)).
+#' @param scale_data Logical. Whether to scale variables to unit variance (default: TRUE).
+#' @param use_complete Logical. Whether to use only complete cases (default: TRUE).
+#' @return List containing:
+#'   \itemize{
+#'     \item results_df: Data frame summarizing XOR detection results for all variable pairs
+#'     \item pair_list: List of detailed results for each variable pair
+#'   }
+#' @details This function implements a comprehensive XOR pattern detection pipeline with four main steps:
+#'   \enumerate{
+#'     \item Create pairwise datasets with preprocessing
+#'     \item Compute tile patterns to identify XOR-like shapes
+#'     \item Calculate classwise Kendall tau correlations (optional)
+#'     \item Perform group-wise Wilcoxon significance tests (optional)
+#'   }
+#'
+#'   The function supports parallel processing when max_cores > 1 and required packages are available.
+#'
+#' @examples
+#' \dontrun{
+#' # Basic usage
+#' data(iris)
+#' result <- detect_xor(iris, class_col = "Species")
+#'
+#' # With parallel processing
+#' result <- detect_xor(iris, class_col = "Species", max_cores = 4)
+#'
+#' # Custom thresholds
+#' result <- detect_xor(iris,
+#'                      class_col = "Species",
+#'                      p_threshold = 0.01,
+#'                      tau_threshold = 0.5)
+#' }
+#' @seealso \code{\link{generate_spaghetti_plot_from_results}}, \code{\link{generate_xy_plot_from_results}}
+#' @author Jorn Lotsch, Alfred Ultsch
+#' @importFrom stats wilcox.test cor.test chisq.test
 #' @export
 detect_xor <- function(
   data,

@@ -7,7 +7,11 @@ Authors@R: c(person(given = "Jorn", family = "Lotsch",
                     comment = c(ORCID = "0000-0002-5818-6958")),
              person(given = "Alfred", family = "Ultsch",
                     role = "aut"))
-Description: Provides tools for detecting XOR-like patterns in variable pairs. Includes visualizations for pattern exploration.
+Description: Provides tools for detecting XOR-like patterns in variable pairs.
+    Includes visualizations for pattern exploration and comprehensive reporting
+    capabilities with both text and HTML output formats. The package implements
+    statistical methods to identify exclusive OR relationships in data and
+    provides intuitive visualization tools for result interpretation.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -18,22 +22,26 @@ Imports:
     tibble (>= 3.1.8),
     reshape2 (>= 1.4.4),
     glue (>= 1.6.0),
+    magrittr (>= 2.0.0),
     stats,
     ggthemes,
-    parallel (>= 4.2.0),
-    future (>= 1.28.0),
-    future.apply (>= 1.10.0),
-    pbmcapply (>= 1.5.0),
     DescTools (>= 0.99.50),
     utils,
     methods,
-    grDevices
+    grDevices,
+    knitr,
+    kableExtra,
+    htmltools,
+    base64enc
 Suggests:
     testthat (>= 3.0.0),
-    knitr,
     rmarkdown,
     doParallel,
-    foreach
+    foreach,
+    parallel (>= 4.2.0),
+    future (>= 1.28.0),
+    future.apply (>= 1.10.0),
+    pbmcapply (>= 1.5.0)
 RoxygenNote: 7.2.3
 SystemRequirements: GNU make
 Depends: R (>= 3.5.0)

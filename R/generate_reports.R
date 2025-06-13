@@ -1,0 +1,470 @@
+#' @title Generate XOR Detection Report (Console-friendly)
+#' @description Creates a comprehensive report with formatted table and plots for XOR pattern detection results.
+#' @param results Either a data frame from \code{detect_xor$results_df} or the full list returned by \code{detect_xor}.
+#' @param data Original dataset containing variables and classes.
+#' @param class_col Character specifying the class column name.
+#' @param scale_data Logical indicating whether to scale variables in plots. Default: TRUE.
+#' @param show_plots Logical indicating whether to display plots. Default: TRUE.
+#' @param quantile_lines Numeric vector of quantiles for reference lines in XY plots. Default: c(1/3, 2/3).
+#' @param line_method Method for boundary calculation ("quantile" or "range"). Default: "quantile".
+#' @return Invisibly returns a list containing the formatted table and plots (if generated).
+#' @export
+#' @importFrom dplyr arrange desc
+generate_xor_report <- function(results, data, class_col,
+                                scale_data = TRUE,
+                                show_plots = TRUE,
+                                quantile_lines = c(1/3, 2/3),
+                                line_method = "quantile") {
+
+  # Handle both list and dataframe inputs
+  if (is.list(results) && "results_df" %in% names(results)) {
+    results_df <- results$results_df
+    results_name <- deparse(substitute(results))
+  } else if (is.data.frame(results)) {
+    results_df <- results
+    results_name <- deparse(substitute(results))
+  } else {
+    stop("Results must be either a data frame or a list containing 'results_df'")
+  }
+
+  # Print report header
+  cat("\n")
+  cat(rep("=", 80), "\n")
+  cat("                    XOR PATTERN DETECTION REPORT\n")
+  cat(rep("=", 80), "\n")
+  cat("Dataset:", results_name, "\n")
+  cat("Analysis date:", format(Sys.Date(), "%Y-%m-%d"), "\n")
+  cat("Total variable pairs analyzed:", nrow(results_df), "\n")
+
+  # Count positive results
+  positive_results <- sum(results_df$xor_shape_detected, na.rm = TRUE)
+  cat("XOR patterns detected:", positive_results, "\n")
+  cat(rep("-", 80), "\n\n")
+
+  # Format and display results table
+  cat("RESULTS SUMMARY TABLE\n")
+  cat(rep("-", 25), "\n")
+
+  # Prepare table for display - sort by detection status and p-value
+  display_df <- results_df %>%
+    arrange(desc(xor_shape_detected), chi_sq_p_value)
+
+  # Create a nicely formatted table for console
+  print_formatted_table <- function(df) {
+    # Format numeric columns
+    df_formatted <- df
+    numeric_cols <- sapply(df_formatted, is.numeric)
+    df_formatted[numeric_cols] <- lapply(df_formatted[numeric_cols], function(x) {
+      ifelse(x < 0.001,
+             formatC(x, format = "e", digits = 2),
+             sprintf("%.4f", x))
+    })
+
+    # Convert logical to Yes/No for better readability
+    if ("xor_shape_detected" %in% names(df_formatted)) {
+      df_formatted$xor_shape_detected <- ifelse(df_formatted$xor_shape_detected, "YES", "NO")
+    }
+
+    # Print with better spacing
+    col_names <- names(df_formatted)
+    col_widths <- pmax(nchar(col_names),
+                       apply(df_formatted, 2, function(x) max(nchar(as.character(x)), na.rm = TRUE)))
+
+    # Print header
+    header <- paste(sprintf(paste0("%-", col_widths, "s"), col_names), collapse = " | ")
+    cat(header, "\n")
+    cat(rep("-", nchar(header)), "\n")
+
+    # Print rows
+    for (i in 1:nrow(df_formatted)) {
+      row_data <- sprintf(paste0("%-", col_widths, "s"), df_formatted[i, ])
+      row_string <- paste(row_data, collapse = " | ")
+
+      # Highlight positive results
+      if (df$xor_shape_detected[i]) {
+        cat(">>> ", row_string, " <<<\n")
+      } else {
+        cat("    ", row_string, "\n")
+      }
+    }
+  }
+
+  print_formatted_table(display_df)
+  cat("\n")
+
+  # Generate summary statistics
+  if (positive_results > 0) {
+    cat("DETECTED PATTERNS SUMMARY\n")
+    cat(rep("-", 28), "\n")
+
+    positive_df <- results_df[results_df$xor_shape_detected == TRUE, ]
+
+    cat("Variable pairs with XOR patterns:\n")
+    for (i in 1:nrow(positive_df)) {
+      pattern_type <- if ("xor_pattern" %in% names(positive_df)) {
+        paste0(" (", positive_df$xor_pattern[i], ")")
+      } else {
+        ""
+      }
+      cat(sprintf("  * %s vs %s%s - Chi-square p-value: %s\n",
+                  positive_df$var1[i],
+                  positive_df$var2[i],
+                  pattern_type,
+                  ifelse(positive_df$chi_sq_p_value[i] < 0.001,
+                         formatC(positive_df$chi_sq_p_value[i], format = "e", digits = 3),
+                         round(positive_df$chi_sq_p_value[i], 4))))
+    }
+    cat("\n")
+
+    # Generate and display plots if requested
+    if (show_plots) {
+      cat("VISUALIZATION PLOTS\n")
+      cat(rep("-", 19), "\n")
+      cat("Generating plots for detected XOR patterns...\n\n")
+
+      # Generate spaghetti plot
+      cat("1. Spaghetti Plot (Connected Line Plot)\n")
+      cat("   Shows variable relationships across classes\n\n")
+
+      spaghetti_plot <- generate_spaghetti_plot_from_results(
+        results = results_df,
+        data = data,
+        class_col = class_col,
+        scale_data = scale_data
+      )
+      print(spaghetti_plot)
+
+      cat("\n")
+
+      # Generate XY scatter plot
+      cat("2. XY Scatter Plot (with Decision Boundaries)\n")
+      cat("   Shows spatial distribution and potential decision boundaries\n\n")
+
+      xy_plot <- generate_xy_plot_from_results(
+        results = results_df,
+        data = data,
+        class_col = class_col,
+        scale_data = scale_data,
+        quantile_lines = quantile_lines,
+        line_method = line_method
+      )
+      print(xy_plot)
+
+      # Store plots for return
+      plots_list <- list(
+        spaghetti_plot = spaghetti_plot,
+        xy_plot = xy_plot
+      )
+    } else {
+      plots_list <- NULL
+    }
+  } else {
+    cat("ANALYSIS RESULT\n")
+    cat(rep("-", 15), "\n")
+    cat("No XOR patterns were detected in the analyzed variable pairs.\n")
+    cat("This suggests that the relationships between variables are likely linear\n")
+    cat("or do not exhibit the characteristic XOR interaction pattern.\n\n")
+    plots_list <- NULL
+  }
+
+  # Print footer
+  cat(rep("=", 80), "\n")
+  cat("                        END OF REPORT\n")
+  cat(rep("=", 80), "\n\n")
+
+  # Return results invisibly
+  invisible(list(
+    results_table = results_df,
+    plots = plots_list,
+    summary = list(
+      total_pairs = nrow(results_df),
+      detected_patterns = positive_results,
+      detection_rate = round(positive_results / nrow(results_df) * 100, 2)
+    )
+  ))
+}
+
+
+
+#' @title Generate XOR Detection HTML Report
+#' @description Creates a comprehensive HTML report with formatted table and plots for XOR pattern detection results.
+#' @param results Either a data frame from \code{detect_xor$results_df} or the full list returned by \code{detect_xor}.
+#' @param data Original dataset containing variables and classes.
+#' @param class_col Character specifying the class column name.
+#' @param output_file Character specifying the output HTML file name. Default: "xor_detection_report.html".
+#' @param open_browser Logical indicating whether to open the report in browser automatically. Default: TRUE.
+#' @param scale_data Logical indicating whether to scale variables in plots. Default: TRUE.
+#' @param quantile_lines Numeric vector of quantiles for reference lines in XY plots. Default: c(1/3, 2/3).
+#' @param line_method Method for boundary calculation ("quantile" or "range"). Default: "quantile".
+#' @return Invisibly returns the file path of the generated HTML report.
+#' @export
+#' @importFrom knitr kable
+#' @importFrom kableExtra kable_styling row_spec
+#' @importFrom dplyr arrange desc select
+#' @importFrom htmltools tags HTML save_html
+#' @importFrom base64enc dataURI
+generate_xor_htmlreport <- function(results, data, class_col,
+                                     output_file = "xor_detection_report.html",
+                                     open_browser = TRUE,
+                                     scale_data = TRUE,
+                                     quantile_lines = c(1/3, 2/3),
+                                     line_method = "quantile") {
+
+  # Handle both list and dataframe inputs
+  if (is.list(results) && "results_df" %in% names(results)) {
+    results_df <- results$results_df
+    results_name <- deparse(substitute(results))
+  } else if (is.data.frame(results)) {
+    results_df <- results
+    results_name <- deparse(substitute(results))
+  } else {
+    stop("Results must be either a data frame or a list containing 'results_df'")
+  }
+
+  # Get data name
+  data_name <- deparse(substitute(data))
+
+  # Count positive results
+  positive_results <- sum(results_df$xor_shape_detected, na.rm = TRUE)
+
+  # Prepare table for display - keep specified columns only
+  specified_cols <- c("var1", "var2", "xor_shape_detected", "xor_pattern", "chi_sq",
+                      "chi_sq_p_value", "tau_class1", "tau_class1_p_value",
+                      "tau_class2", "tau_class2_p_value", "is_strong_reverse_correlated")
+
+  # Keep only columns that exist in the data
+  available_cols <- intersect(specified_cols, names(results_df))
+
+  display_df <- results_df[, available_cols, drop = FALSE] %>%
+    arrange(desc(xor_shape_detected), chi_sq_p_value)
+
+  # Format the table for display
+  table_df <- display_df
+
+  # Format numeric columns for better readability
+  numeric_cols <- sapply(table_df, is.numeric)
+  table_df[numeric_cols] <- lapply(table_df[numeric_cols], function(x) {
+    ifelse(x < 0.001,
+           formatC(x, format = "e", digits = 3),
+           round(x, 4))
+  })
+
+  # Convert logical columns to Yes/No for better readability
+  logical_cols <- sapply(table_df, is.logical)
+  table_df[logical_cols] <- lapply(table_df[logical_cols], function(x) {
+    ifelse(x, "YES", "NO")
+  })
+
+  # Create formatted table without column highlighting
+  formatted_table <- table_df %>%
+    kable("html", escape = FALSE,
+          caption = "XOR Pattern Detection Results",
+          table.attr = "class='table table-striped table-hover table-sm'") %>%
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+                  full_width = TRUE,
+                  font_size = 11)
+
+  # Only highlight entire rows for detected patterns (light blue background)
+  if (positive_results > 0) {
+    detected_rows <- which(display_df$xor_shape_detected == TRUE)
+    if (length(detected_rows) > 0) {
+      formatted_table <- formatted_table %>%
+        row_spec(detected_rows, background = "#E8F4FD", bold = TRUE)
+    }
+  }
+
+  # Generate plots if positive results exist
+  plots_html <- ""
+  if (positive_results > 0) {
+    # Create temporary files for plots
+    temp_dir <- tempdir()
+    spaghetti_file <- file.path(temp_dir, "spaghetti_plot.png")
+    xy_file <- file.path(temp_dir, "xy_plot.png")
+
+    # Generate spaghetti plot
+    spaghetti_plot <- generate_spaghetti_plot_from_results(
+      results = results_df,
+      data = data,
+      class_col = class_col,
+      scale_data = scale_data
+    )
+
+    # Generate XY scatter plot
+    xy_plot <- generate_xy_plot_from_results(
+      results = results_df,
+      data = data,
+      class_col = class_col,
+      scale_data = scale_data,
+      quantile_lines = quantile_lines,
+      line_method = line_method
+    )
+
+    # Save plots as PNG files
+    ggsave(spaghetti_file, spaghetti_plot, width = 12, height = 8, dpi = 150)
+    ggsave(xy_file, xy_plot, width = 12, height = 8, dpi = 150)
+
+    # Convert plots to base64 for embedding
+    spaghetti_base64 <- dataURI(file = spaghetti_file, mime = "image/png")
+    xy_base64 <- dataURI(file = xy_file, mime = "image/png")
+
+    # Create HTML for plots
+    plots_html <- paste0(
+      '<div class="plots-section">',
+      '<h2> Visualization Plots</h2>',
+      '<div class="plot-container">',
+      '<h3>1. Spaghetti Plot (Connected Line Plot)</h3>',
+      '<p><em>Shows variable relationships across classes</em></p>',
+      '<img src="', spaghetti_base64, '" style="max-width:100%; height:auto; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 20px;">',
+      '</div>',
+      '<div class="plot-container">',
+      '<h3>2. XY Scatter Plot (with Decision Boundaries)</h3>',
+      '<p><em>Shows spatial distribution and potential decision boundaries</em></p>',
+      '<img src="', xy_base64, '" style="max-width:100%; height:auto; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 20px;">',
+      '</div>',
+      '</div>'
+    )
+
+    # Clean up temporary files
+    unlink(c(spaghetti_file, xy_file))
+  }
+
+  # Create summary section
+  if (positive_results > 0) {
+    positive_df <- results_df[results_df$xor_shape_detected == TRUE, ]
+
+    summary_items <- paste(sapply(1:nrow(positive_df), function(i) {
+      pattern_type <- if ("xor_pattern" %in% names(positive_df)) {
+        paste0(" (", positive_df$xor_pattern[i], ")")
+      } else {
+        ""
+      }
+      p_val <- ifelse(positive_df$chi_sq_p_value[i] < 0.001,
+                      formatC(positive_df$chi_sq_p_value[i], format = "e", digits = 3),
+                      round(positive_df$chi_sq_p_value[i], 4))
+
+      paste0('<li><strong>', positive_df$var1[i], ' vs ', positive_df$var2[i], '</strong>',
+             pattern_type, ' - Chi-square p-value: ', p_val, '</li>')
+    }), collapse = "")
+
+    summary_section <- paste0(
+      '<div class="summary-section">',
+      '<h2> Detected Patterns Summary</h2>',
+      '<ul>', summary_items, '</ul>',
+      '</div>'
+    )
+  } else {
+    summary_section <- paste0(
+      '<div class="summary-section">',
+      '<h2> Analysis Result</h2>',
+      '<div class="alert alert-info">',
+      '<p>No XOR patterns were detected in the analyzed variable pairs.</p>',
+      '<p>This suggests that the relationships between variables are likely linear or do not exhibit the characteristic XOR interaction pattern.</p>',
+      '</div>',
+      '</div>'
+    )
+  }
+
+  # Create complete HTML document
+  html_content <- paste0(
+    '<!DOCTYPE html>',
+    '<html lang="en">',
+    '<head>',
+    '<meta charset="UTF-8">',
+    '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+    '<title>XOR Pattern Detection Report</title>',
+    '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">',
+    '<style>',
+    'body { font-family: Arial, sans-serif; margin: 10px; background-color: #f8f9fa; }',
+    '.container { max-width: 1400px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }',
+    '.header { text-align: center; margin-bottom: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; }',
+    '.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }',
+    '.stat-card { background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; border-left: 4px solid #007bff; }',
+    '.stat-number { font-size: 2em; font-weight: bold; color: #007bff; }',
+    '.alert-info { background-color: #d1ecf1; border-color: #bee5eb; color: #0c5460; padding: 15px; border-radius: 5px; }',
+    '.table { margin: 20px 0; font-size: 0.8em; }',
+    '.table-sm th, .table-sm td { padding: 0.25rem; }',
+    '.table th { background-color: #f8f9fa; font-weight: bold; }',
+    '.plots-section { margin-top: 30px; }',
+    '.plot-container { margin: 20px 0; }',
+    '@media (max-width: 768px) { .table { font-size: 0.7em; } }',
+    '</style>',
+    '</head>',
+    '<body>',
+    '<div class="container">',
+
+    # Header
+    '<div class="header">',
+    '<h1> XOR Pattern Detection Report</h1>',
+    '<p>Analysis of variable pair interactions</p>',
+    '</div>',
+
+    # Summary statistics
+    '<div class="stats-grid">',
+    '<div class="stat-card">',
+    '<div class="stat-number">', nrow(results_df), '</div>',
+    '<div>Total Pairs Analyzed</div>',
+    '</div>',
+    '<div class="stat-card">',
+    '<div class="stat-number">', positive_results, '</div>',
+    '<div>XOR Patterns Detected</div>',
+    '</div>',
+    '<div class="stat-card">',
+    '<div class="stat-number">', round(positive_results/nrow(results_df)*100, 1), '%</div>',
+    '<div>Detection Rate</div>',
+    '</div>',
+    '<div class="stat-card">',
+    '<div class="stat-number">', format(Sys.Date(), "%Y-%m-%d"), '</div>',
+    '<div>Analysis Date</div>',
+    '</div>',
+    '</div>',
+
+    # Results table
+    '<h2> Detailed Results Table</h2>',
+    '<p><em>Rows highlighted in blue indicate detected XOR patterns. Table shows all statistical measures.</em></p>',
+    '<div class="table-responsive">',
+    as.character(formatted_table),
+    '</div>',
+
+    # Summary section
+    summary_section,
+
+    # Plots section
+    plots_html,
+
+    # Footer
+    '<div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #dee2e6; color: #6c757d;">',
+    '<p>Report generated on ', format(Sys.time(), "%Y-%m-%d at %H:%M:%S"), '</p>',
+    '<p>Dataset: ', data_name, ', Results object: ', results_name, '</p>',
+    '<p><small>Columns: Variable pairs, XOR detection, pattern type, chi-square test, Kendall\'s tau for each class, reverse correlation indicator</small></p>',
+    '</div>',
+    '</div>',
+    '</body>',
+    '</html>'
+  )
+
+  # Write HTML file
+  writeLines(html_content, output_file)
+
+  # Print console summary
+  cat("\n")
+  cat(rep("=", 60), "\n")
+  cat("HTML REPORT GENERATED SUCCESSFULLY\n")
+  cat(rep("=", 60), "\n")
+  cat("File saved as:", output_file, "\n")
+  cat("Total pairs analyzed:", nrow(results_df), "\n")
+  cat("XOR patterns detected:", positive_results, "\n")
+  cat("Columns displayed:", length(available_cols), "\n")
+  cat("Available columns:", paste(available_cols, collapse = ", "), "\n")
+  cat(rep("-", 60), "\n\n")
+
+  # Open in browser if requested
+  if (open_browser) {
+    browseURL(paste0("file://", normalizePath(output_file)))
+    cat("Opening report in browser...\n\n")
+  } else {
+    cat("To view the report, open:", output_file, "in your browser\n\n")
+  }
+
+  # Return file path invisibly
+  invisible(output_file)
+}

@@ -51,7 +51,7 @@ print(results$results_df)
 ### Usage with custom parameters
 ``` r
 # Detection with custom thresholds and parallel processing
-results <- detectXOR(
+results <- detect_xor(
   data = XOR_data,
   class_col = "class",
   p_threshold = 0.01,
@@ -98,9 +98,18 @@ generate_xy_plot_from_results(results, XOR_data)
 
 | Function | Description | Key Parameters |
 | --- | --- | --- |
-| `generate_spaghetti_plot_from_results()` | Creates connected line plots showing variable trajectories for XOR-detected pairs | `results`, `data`, `class_col`, `output_dir = "."`, `scale_data = TRUE` |
-| `generate_xy_plot_from_results()` | Generates scatter plots with decision boundary lines for detected XOR patterns | `results`, `data`, `class_col`, `output_dir = "."`, `quantile_lines = c(1/3, 2/3)`, `line_method = "quantile"` |
-Both functions return ggplot objects and automatically save SVG files to the specified output directory.
+| `generate_spaghetti_plot_from_results()` | Creates connected line plots showing variable trajectories for XOR-detected pairs | `results`, `data`, `class_col`, `scale_data = TRUE` |
+| `generate_xy_plot_from_results()` | Generates scatter plots with decision boundary lines for detected XOR patterns | `results`, `data`, `class_col`, `scale_data = TRUE`, `quantile_lines = c(1/3, 2/3)`, `line_method = "quantile"` |
+
+Both functions return ggplot objects that can be displayed or saved manually.
+
+### Reporting functions
+
+| Function | Description | Key Parameters |
+| --- | --- | --- |
+| `generate_xor_report()` | Creates console-friendly formatted report with optional plots | `results`, `data`, `class_col`, `scale_data = TRUE`, `show_plots = TRUE` |
+| `generate_xor_htmlreport()` | Generates comprehensive HTML report with interactive elements | `results`, `data`, `class_col`, `output_file`, `open_browser = TRUE` |
+
 ## Output structure
 The `detectXOR()` function returns a list with two components:
 ### `results_df` - Summary data frame
@@ -109,8 +118,7 @@ The `detectXOR()` function returns a list with two components:
 | --- | --- |
 | `var1`, `var2` | Variable pair names |
 | `xor_shape_detected` | Logical: XOR pattern identified |
-| `chi_square_p` | χ² test p-value for tile independence |
-| `practical_significance` | Logical: meets practical significance threshold |
+| `chi_sq_p_value` | χ² test p-value for tile independence || `practical_significance` | Logical: meets practical significance threshold |
 | `tau_class_0`, `tau_class_1` | Class-wise Kendall τ coefficients |
 | `tau_difference` | Absolute difference between class τ values |
 | `wilcox_p_x`, `wilcox_p_y` | Wilcoxon test p-values for each axis |
