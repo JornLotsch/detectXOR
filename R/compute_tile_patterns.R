@@ -10,11 +10,9 @@ assign_3x3_tiles <- function(data, var1_name, var2_name, split_method = "quantil
   if (!is.data.frame(data) || nrow(data) == 0) {
     stop("'data' must be a non-empty data frame", call. = FALSE)
   }
-
   if (!all(c(var1_name, var2_name) %in% names(data))) {
     stop("Variables '", var1_name, "' and '", var2_name, "' must exist in data", call. = FALSE)
   }
-
   if (!split_method %in% c("quantile", "range")) {
     stop("'split_method' must be either 'quantile' or 'range'", call. = FALSE)
   }
@@ -25,32 +23,37 @@ assign_3x3_tiles <- function(data, var1_name, var2_name, split_method = "quantil
 
   # Check for sufficient variation
   if (length(unique(var1_values[!is.na(var1_values)])) < 2) {
-    warning("Variable '", var1_name, "' has insufficient variation for tile assignment", call. = FALSE)
+    warning("Variable '", var1_name, "' has insufficient variation for tile assignment", call. = = FALSE)
   }
-
   if (length(unique(var2_values[!is.na(var2_values)])) < 2) {
-    warning("Variable '", var2_name, "' has insufficient variation for tile assignment", call. = FALSE)
+    warning("Variable '", var2_name, "' has insufficient variation for tile assignment", call. = = FALSE)
   }
 
   # Determine split points
   if (split_method == "quantile") {
-    x_limits <- compute_robust_quantile_splits(var1_values)
-    y_limits <- compute_robust_quantile_splits(var2_values)
+    x_limits <- compute_quantile_splits(var1_values)
+    y_limits <- compute_quantile_splits(var2_values)
   } else {
     x_limits <- split_range_into_thirds(var1_values)
     y_limits <- split_range_into_thirds(var2_values)
   }
 
-  # Create group assignments
-  x_group <- cut(var1_values,
-                 breaks = c(-Inf, x_limits, Inf),
-                 labels = c("Left", "Mid", "Right"),
-                 include.lowest = TRUE)
+  # Internal function for flexible group assignment
+  assign_flex_groups <- function(values, limits, labels) {
+    breaks <- c(-Inf, limits, Inf)
+    groups <- cut(values, breaks = breaks, labels = labels, include.lowest = TRUE)
+    if (!any(values > limits[1] & values < limits[2]) &&
+        any(values == limits[2]) &&
+        !any(values > limits[2])) {
+      groups[values == limits[2]] <- labels[length(labels)]
+      groups <- factor(groups, levels = labels)
+    }
+    return(groups)
+  }
 
-  y_group <- cut(var2_values,
-                 breaks = c(-Inf, y_limits, Inf),
-                 labels = c("Lower", "Mid", "Upper"),
-                 include.lowest = TRUE)
+  # Create group assignments
+  x_group <- assign_flex_groups(var1_values, x_limits, c("Left", "Mid", "Right"))
+  y_group <- assign_flex_groups(var2_values, y_limits, c("Lower", "Mid", "Upper"))
 
   # Map to tile names
   tile_names <- mapply(map_coordinates_to_tile, x_group, y_group, USE.NAMES = FALSE)
@@ -65,9 +68,10 @@ assign_3x3_tiles <- function(data, var1_name, var2_name, split_method = "quantil
   factor(tile_names, levels = tile_levels)
 }
 
+
 #' Compute robust quantile splits with fallback to range splits
 #' @keywords internal
-compute_robust_quantile_splits <- function(x) {
+compute_quantile_splits <- function(x) {
   # Try quantile method first
   quantile_splits <- quantile(x, probs = c(1/3, 2/3), na.rm = TRUE)
 
