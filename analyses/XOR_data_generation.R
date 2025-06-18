@@ -175,7 +175,13 @@ initial_check_plot_XOR_uniform_data <-
 print(initial_check_plot_XOR_uniform_data)
 
 ##############################################
-# 5. XOR linear shapes 
+# 4. XOR dataset only 1st 250 cases
+##############################################
+
+pseudoXOR_data_first250 <- head(XOR_data, 250)
+
+##############################################
+# 6. XOR linear shapes
 ##############################################
 
 set.seed(123)
@@ -261,3 +267,107 @@ initial_check_plot_XOR_data_linear <-
   )
 print(initial_check_plot_XOR_data_linear)
 
+
+##############################################
+# 7. XOR pseudo genetic dataset
+##############################################
+set.seed(123)
+
+n_total <- 1000  # Start with more cases to ensure enough per class
+n1 <- 200
+n2 <- 200
+
+# Allele frequencies (choose as desired, but here we use p = 0.5 for C and D for simplicity)
+pA1 <- 0.55; pA2 <- 0.45  # Slightly different for A
+pB1 <- 0.55; pB2 <- 0.45  # Slightly different for B
+pC <- 0.5; pD <- 0.5      # Same for C and D (could be different if you wish)
+pE <- 0.5                 # Same for E
+
+# Function to generate genotype (0,1,2) from allele frequency p under HWE
+genotype <- function(n, p) {
+  q <- 1 - p
+  sample(0:2, n, replace = TRUE, prob = c(p^2, 2*p*q, q^2))
+}
+
+# Function to transform genotype to binary using dominant model
+to_dominant <- function(g) ifelse(g >= 1, 1, 0)
+
+# Generate all variables for all cases (genotype, not binary)
+A_all <- genotype(n_total, pA1)  # Will be overwritten for class 2
+B_all <- genotype(n_total, pB1)  # Will be overwritten for class 2
+C_all <- genotype(n_total, pC)
+D_all <- genotype(n_total, pD)
+E_all <- genotype(n_total, pE)
+
+# Transform C and D to binary (dominant model) for class assignment
+C_bin_all <- to_dominant(C_all)
+D_bin_all <- to_dominant(D_all)
+
+# Assign class by XOR on (C_bin, D_bin)
+class_all <- ifelse(C_bin_all == D_bin_all, 1, 2)
+
+# Sample exactly n1 and n2 cases from each class
+idx1_all <- which(class_all == 1)
+idx2_all <- which(class_all == 2)
+
+if (length(idx1_all) < n1 || length(idx2_all) < n2) {
+  stop("Not enough cases in one of the classes. Increase n_total or adjust allele frequencies.")
+}
+
+set.seed(5678)  # For reproducibility in sampling
+idx1 <- sample(idx1_all, n1)
+idx2 <- sample(idx2_all, n2)
+selected_idx <- c(idx1, idx2)
+
+# Generate A and B with class-specific allele frequencies for selected cases
+A_selected <- c(genotype(n1, pA1), genotype(n2, pA2))
+B_selected <- c(genotype(n1, pB1), genotype(n2, pB2))
+
+# Subset C, D, E to the selected cases (still as genotypes)
+C_selected <- C_all[selected_idx]
+D_selected <- D_all[selected_idx]
+E_selected <- E_all[selected_idx]
+
+# Transform all to binary (dominant model)
+A_bin <- to_dominant(A_selected)
+B_bin <- to_dominant(B_selected)
+C_bin <- to_dominant(C_selected)
+D_bin <- to_dominant(D_selected)
+E_bin <- to_dominant(E_selected)
+
+# Construct final data frame
+XOR_genetic_data <- data.frame(
+  class = c(rep(1, n1), rep(2, n2)),
+  Variable_A = A_bin,
+  Variable_B = B_bin,
+  Variable_C = C_bin,
+  Variable_D = D_bin,
+  Variable_E = E_bin
+)
+
+# Genotype version (before dominant transformation)
+XOR_genetic_data_genotype <- data.frame(
+  class = c(rep(1, n1), rep(2, n2)),
+  Variable_A = A_selected,
+  Variable_B = B_selected,
+  Variable_C = C_selected,
+  Variable_D = D_selected,
+  Variable_E = E_selected
+)
+
+# --- Verification ---
+cat("Number of cases per variable (binary):", nrow(XOR_genetic_data), "\n")
+cat("Number of cases per variable (genotype):", nrow(XOR_genetic_data_genotype), "\n")
+
+cat("\nClass distribution:\n")
+print(table(XOR_genetic_data$class))
+
+cat("\nChi-square test for Variable_C (binary) vs class:\n")
+print(chisq.test(table(XOR_genetic_data$class, XOR_genetic_data$Variable_C)))
+
+cat("\nChi-square test for Variable_D (binary) vs class:\n")
+print(chisq.test(table(XOR_genetic_data$class, XOR_genetic_data$Variable_D)))
+
+cat("\nCheck for missing values:\n")
+print(sum(is.na(XOR_genetic_data)))
+print(sum(is.na(XOR_genetic_data_genotype)))
