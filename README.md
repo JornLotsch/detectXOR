@@ -184,5 +184,5 @@ Contributions are welcome! Please feel free to submit issues, feature requests, 
 ## License
 GPL-3
 ## Citation
-```
+
 For citation details or to request a formal publication reference, please contact the maintainer.
