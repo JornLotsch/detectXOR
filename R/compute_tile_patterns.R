@@ -23,10 +23,10 @@ assign_3x3_tiles <- function(data, var1_name, var2_name, split_method = "quantil
 
   # Check for sufficient variation
   if (length(unique(var1_values[!is.na(var1_values)])) < 2) {
-    warning("Variable '", var1_name, "' has insufficient variation for tile assignment", call. = = FALSE)
+    warning("Variable '", var1_name, "' has insufficient variation for tile assignment", call. = FALSE)
   }
   if (length(unique(var2_values[!is.na(var2_values)])) < 2) {
-    warning("Variable '", var2_name, "' has insufficient variation for tile assignment", call. = = FALSE)
+    warning("Variable '", var2_name, "' has insufficient variation for tile assignment", call. = FALSE)
   }
 
   # Determine split points
