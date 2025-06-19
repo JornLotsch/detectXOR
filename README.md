@@ -39,7 +39,7 @@ Optional packages (suggested):
 
 ## Quick start
 ### Basic XOR detection
-``` r
+```r
 library(detectXOR)
 # Load example data
 data(XOR_data)
@@ -49,7 +49,7 @@ results <- detectXOR(XOR_data, class_col = "class")
 print(results$results_df)
 ```
 ### Usage with custom parameters
-``` r
+```r
 # Detection with custom thresholds and parallel processing
 results <- detect_xor(
   data = XOR_data,
@@ -171,7 +171,7 @@ The report will be automaticlaly opened in the system standard web browser.
 - **Memory management**: Automatic chunk-based processing for large datasets
 
 ### Package structure
-``` 
+```r
 detectXOR/
 ├── R/                 # Package source code
 ├── man/               # Package documentation
