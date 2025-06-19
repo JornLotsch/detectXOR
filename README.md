@@ -173,12 +173,11 @@ The report will be automaticlaly opened in the system standard web browser.
 ### Package structure
 ``` 
 detectXOR/
-├── R/                  # Source code
-├── man/               # Documentation
-├── tests/             # Unit tests (testthat)
-├── vignettes/         # Long-form documentation
-├── data/              # Example datasets
-└── inst/              # Additional resources
+├── R/                 # Package source code
+├── man/               # Package documentation
+├── data/              # Example dataset
+├── issues/            # Problem reporting
+└── analyses/          # Files used to generate or plot publictaion data sets (not in library)
 ```
 ## Contributing
 Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests on GitHub.
