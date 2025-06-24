@@ -45,7 +45,7 @@ Related packages:
 }
 }
 \examples{
-\dontrun{
+\donttest{
 # Basic workflow with included dataset
 data(XOR_data)
 
