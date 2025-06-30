@@ -179,10 +179,11 @@ detectXOR/
 ├── issues/            # Problem reporting
 └── analyses/          # Files used to generate or plot publictaion data sets (not in library)
 ```
-## Contributing
-Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests on GitHub.
+
 ## License
-GPL-3
+
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0)
+
 ## Citation
 
-For citation details or to request a formal publication reference, please contact the maintainer.
+Lötsch, J, Kringel D & Ultsch A. (2025). Exclusive OR (XOR) patterns as accurate predictors in multivariate data independent of statistical significance. [submitted]
