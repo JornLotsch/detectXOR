@@ -16,12 +16,14 @@ Traditional feature selection methods often miss complex non-linear relationship
 
 ## Installation
 
-Install the development version from GitHub:
+The R libary can be found on The Comprehensive R Archive Network at
+https://cran.r-project.org/package=detectXOR
+
+
+Install the libary from CRAN:
 ```r
-# Install devtools if needed
-if (!requireNamespace("devtools", quietly = TRUE)) { install.packages("devtools") }
 # Install detectXOR
-devtools::install_github("JornLotsch/detectXOR")
+install.packages("detectXOR")
 ```
 ### Dependencies
 The package requires R ≥ 3.5.0 and depends on:
