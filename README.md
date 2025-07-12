@@ -188,4 +188,4 @@ This project is licensed under the GNU General Public License v3.0 (GPL-3.0)
 
 ## Citation
 
-Lötsch, J, Kringel D & Ultsch A. (2025). Exclusive OR (XOR) patterns as accurate predictors in multivariate data independent of statistical significance. [submitted]
+Lötsch, J, Kringel D & Ultsch A. (2025). Generalized extended OR (XOR) pattern discovery: Accurate predictors without statistical significance in multivariate data. [submitted]
