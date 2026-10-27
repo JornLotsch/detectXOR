@@ -1,6 +1,6 @@
 # Application to real data (manuscript Sections 3.4.9 and 4.6).
 #  1. Serum lipid mediators in multiple sclerosis (102 patients, 301 controls,
-#     44 lipid mediators; Lötsch et al., Sci Rep 2018). The data are not part of
+#     43 markers, mainly lipid mediators; Lötsch et al., Sci Rep 2018). The data are not part of
 #     the repository; set the environment variable XOR_LIPIDOMICS_DIR to the
 #     directory containing the .lrn and .cls files to include this analysis.
 #  2. Pima Indians Diabetes data (R package MASS, 532 complete cases).
