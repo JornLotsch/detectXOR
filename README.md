@@ -13,6 +13,13 @@ Traditional feature selection methods often miss complex non-linear relationship
 📊 **Visualization** - Spaghetti plots and decision boundary visualizations  
 ⚡ **Parallel processing** - Multi-core acceleration for large datasets  
 🔬 **Robust statistics** - Winsorization and scaling options for outlier handling  
+🎯 **Specificity** - Distinguishes XOR patterns from other interactions (e.g., AND) and from main effects  
+
+### What is new in version 0.2.0
+The decision rule was revised: XOR patterns are now identified by the XOR purity with a permutation test and
+multiple-testing control, a confidence-bound criterion for the strength of the pattern, and a completeness
+criterion, replacing the chi-square comparison of version 0.1.0. Several bugs were fixed (e.g., detection no
+longer depends on class coding, and class columns can have any name). See [NEWS.md](NEWS.md) for details.
 
 ## Installation
 
@@ -24,6 +31,12 @@ Install the library from CRAN:
 ```r
 # Install detectXOR
 install.packages("detectXOR")
+```
+
+Version 0.2.0 can also be installed from GitHub (release tag `v0.2.0`):
+```r
+# install.packages("remotes")
+remotes::install_github("JornLotsch/detectXOR@v0.2.0")
 ```
 ### Dependencies
 The package requires R ≥ 3.5.0 and depends on:
@@ -129,9 +142,11 @@ Both functions return ggplot objects that can be displayed or saved manually.
 
 ``` r
 # Generate plots
-generate_spaghetti_plot_from_results(results, XOR_data) 
-generate_xy_plot_from_results(results, XOR_data)
+generate_spaghetti_plot_from_results(results, XOR_data, class_col = "class")
+generate_xy_plot_from_results(results, XOR_data, class_col = "class")
 ```
+
+Facet headers show the XOR purity and the adjusted p-value of each detected pair; their shading reflects the purity.
 
 ### Example plots 
 
@@ -192,9 +207,18 @@ detectXOR/
 ├── R/                 # Package source code
 ├── man/               # Package documentation
 ├── data/              # Example dataset
+├── tests/             # Unit tests (testthat)
 ├── issues/            # Problem reporting
-└── analyses/          # Files used to generate or plot publication data sets (not in library)
+├── analyses/          # Scripts reproducing the analyses of the publication (not part of the package)
+└── NEWS.md            # Changes between versions
 ```
+
+## Reproducing the analyses of the publication
+The folder [`analyses`](analyses) contains the R scripts that generate all data sets, tables and figures
+of the publication, including the simulation study, the sensitivity analysis, the comparison with other
+interaction-detection methods, the machine-learning benchmark, and the real-data analyses. All analyses
+were performed with the release tagged `v0.2.0`. See [analyses/README.md](analyses/README.md) for the order
+of execution and the outputs.
 
 ## License
 
