@@ -46,8 +46,8 @@ generate_xor_reportConsole <- function(results, data, class_col,
   cat(rep("-", 25), "\n")
 
   # Prepare table for display - sort by detection status and p-value
-  display_df <- results_df %>%
-    arrange(desc(xor_shape_detected), chi_sq_p_value)
+  display_df <- results_df[, setdiff(names(results_df), "interpretation"), drop = FALSE] %>%
+    arrange(desc(xor_shape_detected), desc(xor_purity))
 
   # Create a nicely formatted table for console
   print_formatted_table <- function(df) {
@@ -106,13 +106,14 @@ generate_xor_reportConsole <- function(results, data, class_col,
       } else {
         ""
       }
-      cat(sprintf("  * %s vs %s%s - Chi-square p-value: %s\n",
+      cat(sprintf("  * %s vs %s%s - XOR purity: %s, adjusted p-value: %s\n",
                   positive_df$var1[i],
                   positive_df$var2[i],
                   pattern_type,
-                  ifelse(positive_df$chi_sq_p_value[i] < 0.001,
-                         formatC(positive_df$chi_sq_p_value[i], format = "e", digits = 3),
-                         round(positive_df$chi_sq_p_value[i], 4))))
+                  round(positive_df$xor_purity[i], 3),
+                  ifelse(positive_df$p_adjusted[i] < 0.001,
+                         formatC(positive_df$p_adjusted[i], format = "e", digits = 3),
+                         round(positive_df$p_adjusted[i], 4))))
     }
     cat("\n")
 
@@ -228,15 +229,16 @@ generate_xor_reportHTML <- function(results, data, class_col,
   positive_results <- sum(results_df$xor_shape_detected, na.rm = TRUE)
 
   # Prepare table for display - keep specified columns only
-  specified_cols <- c("var1", "var2", "xor_shape_detected", "xor_pattern", "chi_sq",
-                      "chi_sq_p_value", "tau_class1", "tau_class1_p_value",
-                      "tau_class2", "tau_class2_p_value", "is_strong_reverse_correlated")
+  specified_cols <- c("var1", "var2", "xor_shape_detected", "xor_pattern", "xor_purity",
+                      "purity_lower", "coverage_ok", "p_value", "p_adjusted",
+                      "tau_class1", "tau_class1_p_value", "tau_class2", "tau_class2_p_value",
+                      "is_strong_reverse_correlated", "axis_tests_passed")
 
   # Keep only columns that exist in the data
   available_cols <- intersect(specified_cols, names(results_df))
 
   display_df <- results_df[, available_cols, drop = FALSE] %>%
-    arrange(desc(xor_shape_detected), chi_sq_p_value)
+    arrange(desc(xor_shape_detected), desc(xor_purity))
 
   # Format the table for display
   table_df <- display_df
@@ -252,7 +254,7 @@ generate_xor_reportHTML <- function(results, data, class_col,
   # Convert logical columns to Yes/No for better readability
   logical_cols <- sapply(table_df, is.logical)
   table_df[logical_cols] <- lapply(table_df[logical_cols], function(x) {
-    ifelse(x, "YES", "NO")
+    ifelse(is.na(x), "-", ifelse(x, "YES", "NO"))
   })
 
   # Create formatted table without column highlighting
@@ -338,12 +340,13 @@ generate_xor_reportHTML <- function(results, data, class_col,
       } else {
         ""
       }
-      p_val <- ifelse(positive_df$chi_sq_p_value[i] < 0.001,
-                      formatC(positive_df$chi_sq_p_value[i], format = "e", digits = 3),
-                      round(positive_df$chi_sq_p_value[i], 4))
+      p_val <- ifelse(positive_df$p_adjusted[i] < 0.001,
+                      formatC(positive_df$p_adjusted[i], format = "e", digits = 3),
+                      round(positive_df$p_adjusted[i], 4))
 
       paste0('<li><strong>', positive_df$var1[i], ' vs ', positive_df$var2[i], '</strong>',
-             pattern_type, ' - Chi-square p-value: ', p_val, '</li>')
+             pattern_type, ' - XOR purity: ', round(positive_df$xor_purity[i], 3),
+             ', adjusted p-value: ', p_val, '</li>')
     }), collapse = "")
 
     summary_section <- paste0(
@@ -435,7 +438,7 @@ generate_xor_reportHTML <- function(results, data, class_col,
     '<div style="text-align: center; margin-top: 40px; padding: 20px; border-top: 1px solid #dee2e6; color: #6c757d;">',
     '<p>Report generated on ', format(Sys.time(), "%Y-%m-%d at %H:%M:%S"), '</p>',
     '<p>Dataset: ', data_name, ', Results object: ', results_name, '</p>',
-    '<p><small>Columns: Variable pairs, XOR detection, pattern type, chi-square test, Kendall\'s tau for each class, reverse correlation indicator</small></p>',
+    '<p><small>Columns: Variable pairs, XOR detection, pattern type, XOR purity with lower confidence bound, tile coverage, permutation p-values, Kendall\'s tau for each class, reverse correlation indicator, axis-wise tests</small></p>',
     '</div>',
     '</div>',
     '</body>',

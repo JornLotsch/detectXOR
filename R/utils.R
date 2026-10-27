@@ -7,7 +7,7 @@
 #' @details This function ensures at least one core remains available for system
 #' operations by using \code{parallel::detectCores() - 1}. If \code{max_cores} is
 #' specified, it returns the minimum of the detected cores and the user limit.
-#' @keywords internal
+#' @noRd
 #' @importFrom parallel detectCores
 #' @examples
 #' \dontrun{
@@ -35,7 +35,7 @@ determine_n_cores <- function(max_cores = NULL) {
 #' it after processing each element. The progress bar is automatically closed
 #' upon completion. This function is particularly useful when parallel processing
 #' is not available or desired.
-#' @keywords internal
+#' @noRd
 #' @importFrom utils txtProgressBar setTxtProgressBar
 #' @examples
 #' \dontrun{
@@ -65,7 +65,7 @@ lapply_with_bar <- function(X, FUN, ...) {
 #' @details This function uses \code{requireNamespace} to check package
 #' availability without loading them. It's designed to be used before
 #' attempting parallel operations to provide clear error messages.
-#' @keywords internal
+#' @noRd
 #' @examples
 #' \dontrun{
 #' # Check if parallel packages are available
@@ -98,7 +98,7 @@ check_parallel_packages <- function(packages = c("future", "future.apply", "pbmc
 #' @details This function ensures balanced workload distribution by creating
 #' chunks of similar sizes. The last chunk may contain fewer items if
 #' \code{n_items} is not evenly divisible by \code{n_cores}.
-#' @keywords internal
+#' @noRd
 #' @examples
 #' \dontrun{
 #' # Split 100 items across 4 cores
@@ -111,35 +111,30 @@ create_balanced_chunks <- function(n_items, n_cores) {
 }
 
 #' @title Safe parallel execution wrapper
-#' @description Executes a function in parallel with proper error handling and
-#' fallback to sequential processing if parallel execution fails.
+#' @description Applies a function to each chunk in parallel with proper error
+#' handling and fallback to sequential processing if parallel execution fails.
 #' @param chunks List. Data chunks for parallel processing.
 #' @param FUN Function. Function to apply to each chunk.
 #' @param n_cores Integer. Number of cores to use.
 #' @param use_windows_future Logical. Whether to use future package on Windows
 #' (default: TRUE).
+#' @param flatten Logical. Whether to concatenate the per-chunk result lists
+#' (default: TRUE). If FALSE, a list with one result per chunk is returned.
 #' @param ... Additional arguments passed to FUN.
 #' @return List. Combined results from all chunks.
 #' @details This function automatically detects the operating system and uses
 #' appropriate parallel processing methods. On Windows, it uses the future
 #' package; on Unix-like systems, it uses pbmcapply. If parallel processing
 #' fails, it falls back to sequential execution.
-#' @keywords internal
-#' @examples
-#' \dontrun{
-#' chunks <- create_balanced_chunks(100, 4)
-#' results <- safe_parallel_execution(
-#'   chunks,
-#'   function(chunk) lapply(chunk, sqrt),
-#'   n_cores = 4
-#' )
-#' }
+#' @noRd
 safe_parallel_execution <- function(chunks, FUN, n_cores,
-                                    use_windows_future = TRUE, ...) {
+                                    use_windows_future = TRUE, flatten = TRUE, ...) {
   is_windows <- .Platform$OS.type == "windows"
 
-  tryCatch({
-    if (is_windows && use_windows_future) {
+  results <- tryCatch({
+    if (n_cores <= 1) {
+      lapply(chunks, FUN, ...)
+    } else if (is_windows && use_windows_future) {
       if (!requireNamespace("future", quietly = TRUE) ||
         !requireNamespace("future.apply", quietly = TRUE)) {
         stop("Windows parallel processing requires 'future' and 'future.apply' packages")
@@ -148,23 +143,22 @@ safe_parallel_execution <- function(chunks, FUN, n_cores,
       future::plan(future::multisession, workers = n_cores)
       on.exit(future::plan(future::sequential), add = TRUE)
 
-      results <- future.apply::future_lapply(chunks, FUN, ...)
+      future.apply::future_lapply(chunks, FUN, ..., future.seed = TRUE)
     } else {
       if (!requireNamespace("pbmcapply", quietly = TRUE)) {
         stop("Unix parallel processing requires 'pbmcapply' package")
       }
 
-      results <- pbmcapply::pbmclapply(chunks, FUN, mc.cores = n_cores, ...)
+      res <- pbmcapply::pbmclapply(chunks, FUN, mc.cores = n_cores, ...)
+      failed <- vapply(res, inherits, logical(1), what = "try-error")
+      if (any(failed)) stop(as.character(res[[which(failed)[1]]]))
+      res
     }
-
-    return(unlist(results, recursive = FALSE))
-
   }, error = function(e) {
-    warning("Parallel processing failed: ", e$message,
+    warning("Parallel processing failed: ", conditionMessage(e),
             ". Falling back to sequential processing.")
-
-    # Flatten chunks and apply function sequentially
-    all_items <- unlist(chunks, recursive = FALSE)
-    return(lapply_with_bar(all_items, function(item) FUN(list(item), ...)[[1]]))
+    lapply(chunks, FUN, ...)
   })
+
+  if (flatten) unlist(results, recursive = FALSE) else results
 }

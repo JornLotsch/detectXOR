@@ -11,3 +11,4 @@
 .*\.svg$
 ^plots/
 .*\.html$
+^cran-comments\.md$

@@ -17,20 +17,19 @@
 #'   connecting its values across the two variables in each detected XOR pair. 
 #'   Different colors represent different classes, helping visualize the XOR pattern.
 #'   
-#'   Facet headers are colored based on chi-square p-values, and rotation is applied
+#'   Facet headers are shaded by XOR purity, and rotation is applied
 #'   automatically for pairs detected as "rotated" XOR patterns.
 #' 
 #' @examples
-#' \dontrun{
-#' # Basic usage
-#' data(iris)
-#' iris$class <- iris$Species
-#' results <- detect_xor(iris, class_col = "class")
-#' plot <- generate_spaghetti_plot_from_results(results, iris, "class")
+#' \donttest{
+#' data(XOR_data)
+#' set.seed(42)
+#' results <- detect_xor(XOR_data, class_col = "class", n_perm = 199)
+#' plot <- generate_spaghetti_plot_from_results(results, XOR_data, "class")
 #' print(plot)
-#' 
+#'
 #' # Using just the results dataframe
-#' plot <- generate_spaghetti_plot_from_results(results$results_df, iris, "class")
+#' plot <- generate_spaghetti_plot_from_results(results$results_df, XOR_data, "class")
 #' }
 #' 
 #' @seealso \code{\link{detect_xor}}, \code{\link{generate_xy_plot_from_results}}
@@ -84,20 +83,19 @@ generate_spaghetti_plot_from_results <- function(results, data, class_col, scale
 #'   diagonal separation of classes.
 #' 
 #' @examples
-#' \dontrun{
-#' # Basic usage
-#' data(iris)
-#' iris$class <- iris$Species
-#' results <- detect_xor(iris, class_col = "class")
-#' plot <- generate_xy_plot_from_results(results, iris, "class")
+#' \donttest{
+#' data(XOR_data)
+#' set.seed(42)
+#' results <- detect_xor(XOR_data, class_col = "class", n_perm = 199)
+#' plot <- generate_xy_plot_from_results(results, XOR_data, "class")
 #' print(plot)
-#' 
+#'
 #' # With custom quantile lines
-#' plot <- generate_xy_plot_from_results(results, iris, "class", 
-#'                                      quantile_lines = c(0.25, 0.75))
+#' plot <- generate_xy_plot_from_results(results, XOR_data, "class",
+#'                                       quantile_lines = c(0.25, 0.75))
 #' 
 #' # Using range-based boundaries
-#' plot <- generate_xy_plot_from_results(results, iris, "class", 
+#' plot <- generate_xy_plot_from_results(results, XOR_data, "class",
 #'                                      line_method = "range")
 #' }
 #' 
@@ -146,6 +144,7 @@ generate_xy_plot_from_results <- function(results, data, class_col, scale_data =
 # ============================================================================
 
 #' Extract results dataframe and validate all inputs
+#' @noRd
 extract_and_validate_results <- function(results, data, class_col) {
   # Handle both list and dataframe inputs
   if (is.list(results) && "results_df" %in% names(results)) {
@@ -165,6 +164,7 @@ extract_and_validate_results <- function(results, data, class_col) {
 }
 
 #' Comprehensive input validation for visualization functions
+#' @noRd
 validate_visualization_inputs <- function(results_df, data, class_col) {
   # Check required columns in results
   required_cols <- c("var1", "var2", "xor_shape_detected")
@@ -207,6 +207,7 @@ validate_visualization_inputs <- function(results_df, data, class_col) {
 }
 
 #' Get variable pairs that have XOR patterns detected
+#' @noRd
 get_xor_variable_pairs <- function(results_df) {
   xor_pairs <- results_df[results_df$xor_shape_detected == TRUE, c("var1", "var2"), drop = FALSE]
 
@@ -220,6 +221,7 @@ get_xor_variable_pairs <- function(results_df) {
 }
 
 #' Create empty plot for cases with no XOR patterns
+#' @noRd
 create_empty_plot <- function(message_text, title_text) {
   ggplot() +
     geom_text(aes(x = 0.5, y = 0.5, label = message_text),
@@ -230,6 +232,7 @@ create_empty_plot <- function(message_text, title_text) {
 }
 
 #' Apply XOR transformations (rotation and scaling) to pair data
+#' @noRd
 apply_xor_transformations <- function(pair_data, rotate_condition, scale_data, class_col) {
   # Apply rotation if needed
   if (rotate_condition) {
@@ -253,6 +256,7 @@ apply_xor_transformations <- function(pair_data, rotate_condition, scale_data, c
 }
 
 #' Process variable pairs for spaghetti plot
+#' @noRd
 process_pairs_for_spaghetti <- function(variable_pairs, data, results_df, class_col, scale_data) {
   message("Processing ", nrow(variable_pairs), " variable pairs for spaghetti plot...")
 
@@ -298,6 +302,7 @@ process_pairs_for_spaghetti <- function(variable_pairs, data, results_df, class_
 }
 
 #' Process variable pairs for XY scatter plot
+#' @noRd
 process_pairs_for_xy <- function(variable_pairs, data, results_df, class_col, scale_data) {
   message("Processing ", nrow(variable_pairs), " variable pairs for XY plot...")
 
@@ -337,6 +342,7 @@ process_pairs_for_xy <- function(variable_pairs, data, results_df, class_col, sc
 }
 
 #' Calculate boundaries for XY plot
+#' @noRd
 calculate_boundaries <- function(combined_data, quantile_lines, line_method) {
   if (line_method == "quantile") {
     boundaries <- combined_data %>%
@@ -363,24 +369,22 @@ calculate_boundaries <- function(combined_data, quantile_lines, line_method) {
   return(boundaries)
 }
 
-#' Create facet annotations with chi-square p-values
+#' Create facet annotations with XOR purity and adjusted permutation p-values
+#' @noRd
 create_facet_annotations <- function(results_df, variable_pairs) {
   tryCatch({
+    format_p <- function(p) ifelse(p < 0.001, formatC(p, format = "e", digits = 2), sprintf("%.3f", p))
+
     # Filter for XOR-detected pairs and create annotations
     facet_colors <- results_df %>%
       dplyr::filter(xor_shape_detected == TRUE) %>%
       dplyr::mutate(
         pair_key = paste(var1, var2, sep = "||"),
-        pair_key = ifelse("xor_pattern" %in% names(results_df) &
-                            !is.na(xor_pattern) & xor_pattern == "rotated",
+        pair_key = ifelse(!is.na(xor_pattern) & xor_pattern == "rotated",
                           paste0(pair_key, "||rotated"), pair_key),
-        chi_sq_label = dplyr::case_when(
-          is.na(chi_sq_p_value) ~ "Chi sq: N/A",
-          round(chi_sq_p_value, 3) == 0 ~ paste("Chi sq =", formatC(chi_sq_p_value, format = "e", digits = 3)),
-          TRUE ~ paste("Chi sq =", round(chi_sq_p_value, 3))
-        )
+        stat_label = paste0("purity = ", sprintf("%.3f", xor_purity), ", p_adj = ", format_p(p_adjusted))
       ) %>%
-      dplyr::select(pair_key, chi_sq_label, chi_sq_p_value)
+      dplyr::select(pair_key, stat_label, xor_purity)
 
     # Rename for consistency with plot data
     names(facet_colors)[names(facet_colors) == "pair_key"] <- "var1_var2"
@@ -388,25 +392,30 @@ create_facet_annotations <- function(results_df, variable_pairs) {
     return(facet_colors)
   }, error = function(e) {
     warning("Could not create facet annotations: ", e$message, call. = FALSE)
-    return(data.frame(var1_var2 = character(0), chi_sq_label = character(0),
-                      chi_sq_p_value = numeric(0)))
+    return(data.frame(var1_var2 = character(0), stat_label = character(0),
+                      xor_purity = numeric(0)))
   })
 }
 
 #' Create color mapping for facet strips
+#' @noRd
 create_strip_colors <- function(facet_colors) {
   if (nrow(facet_colors) == 0) {
     return(NULL)
   }
 
-  unique_facet_values <- unique(facet_colors$var1_var2)
-  score_colors <- grDevices::colorRampPalette(c("gold", "cornsilk"))(length(unique_facet_values))
-  names(score_colors) <- unique_facet_values
+  # Shade strips by XOR purity: gold for purity 1, cornsilk for purity 0.5
+  palette <- grDevices::colorRampPalette(c("cornsilk", "gold"))(101)
+  facet_colors <- facet_colors[!duplicated(facet_colors$var1_var2), ]
+  facet_colors <- facet_colors[order(facet_colors$var1_var2), ]
+  score_colors <- palette[1 + round(100 * pmin(pmax(2 * (facet_colors$xor_purity - 0.5), 0), 1))]
+  names(score_colors) <- facet_colors$var1_var2
 
   return(score_colors)
 }
 
 #' Create the actual spaghetti plot
+#' @noRd
 create_spaghetti_plot <- function(long_data, facet_colors, results_name) {
   # Create strip colors
   score_colors <- create_strip_colors(facet_colors)
@@ -442,12 +451,12 @@ create_spaghetti_plot <- function(long_data, facet_colors, results_name) {
     ) +
     ggh4x::facet_wrap2(~var1_var2, scales = "free_y", strip = strip)
 
-  # Add chi-square annotations if available
-  if (nrow(facet_colors) > 0 && "chi_sq_label" %in% names(facet_colors)) {
+  # Add XOR statistics annotations if available
+  if (nrow(facet_colors) > 0 && "stat_label" %in% names(facet_colors)) {
     p <- p +
       ggplot2::geom_text(
         data = facet_colors,
-        aes(x = -Inf, y = Inf, label = chi_sq_label),
+        aes(x = -Inf, y = Inf, label = stat_label),
         inherit.aes = FALSE,
         hjust = -0.1, vjust = 1.5,
         size = 4,
@@ -459,6 +468,7 @@ create_spaghetti_plot <- function(long_data, facet_colors, results_name) {
 }
 
 #' Create the actual XY scatter plot
+#' @noRd
 create_xy_plot <- function(combined_data, boundaries, facet_colors, results_name) {
   # Create strip colors
   score_colors <- create_strip_colors(facet_colors)

@@ -32,14 +32,7 @@
 #' Variables with no variance (containing only one unique value) are excluded from creating pairs.
 #'
 #' @importFrom DescTools Winsorize
-#'
-#' @examples
-#' # pairwise_dfs <- create_pairwise_datasets(
-#' #   data = XOR_data,
-#' #   class_col = "class"
-#' # )
-#' # str(pairwise_dfs[[1]])
-#'
+#' @noRd
 create_pairwise_datasets <- function(
     data,
     class_col,
@@ -91,17 +84,15 @@ create_pairwise_datasets <- function(
 
   # Helper: Winsorize numeric columns
   winsorize_data <- function(df, winsor_limits) {
-    as.data.frame(lapply(df, function(x) DescTools::Winsorize(x, val = quantile(x, probs = winsor_limits))))
+    as.data.frame(lapply(df, function(x) DescTools::Winsorize(x, val = quantile(x, probs = winsor_limits, na.rm = TRUE))))
   }
 
-  # Helper: Trim (cut extremes) from numeric columns
-  trim_data <- function(df, winsor_limits) {
-    is_num <- sapply(df, is.numeric)
-    num_df <- df[, is_num, drop = FALSE]
-    bounds <- lapply(num_df, function(x) quantile(x, probs = winsor_limits))
+  # Helper: Trim (remove rows with extreme values in any analysis variable)
+  trim_data <- function(df, vars, winsor_limits) {
     mask <- rep(TRUE, nrow(df))
-    for (v in names(bounds)) {
-      mask <- mask & (df[[v]] >= bounds[[v]][1]) & (df[[v]] <= bounds[[v]][2])
+    for (v in vars) {
+      bounds <- quantile(df[[v]], probs = winsor_limits, na.rm = TRUE)
+      mask <- mask & (is.na(df[[v]]) | (df[[v]] >= bounds[1] & df[[v]] <= bounds[2]))
     }
     df[mask, , drop = FALSE]
   }
@@ -144,7 +135,8 @@ create_pairwise_datasets <- function(
         var1 = df[[v1]],
         var2 = df[[v2]]
       )
-      names(pair_data) <- c("class", v1, v2)
+      # Keep the user's class column name, which all later stages look up
+      names(pair_data) <- c(class_col, v1, v2)
       pair_list[[name]] <- list(
         data = pair_data,
         results = list(tile_pattern = NULL, tile_wilcox_significance = NULL, classwise_tau = NULL)
@@ -160,14 +152,7 @@ create_pairwise_datasets <- function(
 
   # Step 2: Handle extremes if trimming (cutting extremes)
   if (extreme_handling == "trim") {
-    is_num <- sapply(data, is.numeric)
-    num_df <- data[, is_num, drop = FALSE]
-    bounds <- lapply(num_df, function(x) quantile(x, probs = winsor_limits))
-    mask <- rep(TRUE, nrow(data))
-    for (v in names(bounds)) {
-      mask <- mask & (data[[v]] >= bounds[[v]][1]) & (data[[v]] <= bounds[[v]][2])
-    }
-    data <- data[mask, , drop = FALSE]
+    data <- trim_data(data, vars, winsor_limits)
   }
 
   # Step 3: Filter for complete cases if requested

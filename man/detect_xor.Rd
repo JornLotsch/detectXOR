@@ -2,99 +2,141 @@
 % Please edit documentation in R/detect_xor.R
 \name{detect_xor}
 \alias{detect_xor}
-\title{Detect XOR Patterns in Variable Pairs}
-\description{
-Identifies XOR-shaped relationships between variables using statistical tests and pattern detection.
-}
+\title{Detect XOR-like patterns in pairwise variable relationships}
 \usage{
 detect_xor(
   data,
   class_col = "class",
   check_tau = TRUE,
-  compute_axes_parallel_significance = TRUE,
+  compute_axes_parallel_significance = FALSE,
   p_threshold = 0.05,
   tau_threshold = 0.3,
-  abs_diff_threshold = 20,
+  purity_threshold = 0.8,
+  min_tile_share = 0.05,
+  n_perm = 999,
+  p_adjust_method = "maxT",
   split_method = "quantile",
+  split_quantiles = c(1/3, 2/3),
   max_cores = 1,
   extreme_handling = "winsorize",
   winsor_limits = c(0.05, 0.95),
   scale_data = TRUE,
-  use_complete = TRUE
+  use_complete = TRUE,
+  balance_classes = FALSE,
+  abs_diff_threshold = NULL
 )
 }
 \arguments{
-  \item{data}{Data frame containing features and class column}
-  \item{class_col}{Name of class column (default: "class")}
-  \item{check_tau}{Logical - compute classwise tau coefficients (default: TRUE)}
-  \item{compute_axes_parallel_significance}{Logical - compute Wilcoxon tests (default: TRUE)}
-  \item{p_threshold}{Significance threshold (default: 0.05)}
-  \item{tau_threshold}{Tau coefficient threshold (default: 0.3)}
-  \item{abs_diff_threshold}{Absolute difference threshold for patterns (default: 20)}
-  \item{split_method}{Method for splitting data ("quantile" or "range") (default: "quantile")}
-  \item{max_cores}{Maximum cores for parallel processing (default: NULL = automatic)}
-  \item{extreme_handling}{Method for handling extreme values; options include "winsorize" or "none" (default: "winsorize")}
-  \item{winsor_limits}{Numeric vector of length 2 specifying lower and upper quantiles for winsorization (default: c(0.05, 0.95))}
-  \item{scale_data}{Logical; whether to scale/standardize the data before analysis (default: TRUE)}
-  \item{use_complete}{Logical; whether to use only complete cases (default: TRUE)}
+\item{data}{Data frame containing variables and class column.}
+
+\item{class_col}{Character. Name of the class column (default: "class").}
+
+\item{check_tau}{Logical. Whether to require opposite class-wise Kendall tau
+correlations for a positive XOR call (default: TRUE).}
+
+\item{compute_axes_parallel_significance}{Logical. Whether to compute the four
+group-wise Wilcoxon tests along the axes of the critical tiles and require
+all of them to be significant for a positive XOR call (default: FALSE). The
+tests are not applied to pairs of binary variables.}
+
+\item{p_threshold}{Numeric. Significance level for the adjusted permutation
+p-value, the one-sided lower confidence bound of the XOR purity, and the
+Wilcoxon tests (default: 0.05).}
+
+\item{tau_threshold}{Numeric. Minimum absolute class-wise Kendall tau (default: 0.3).}
+
+\item{purity_threshold}{Numeric in (0.5, 1). Minimum XOR purity that the lower
+confidence bound must reach (default: 0.8).}
+
+\item{min_tile_share}{Numeric in [0, 0.5). Minimum share of a class' points in
+the critical tiles that each of its two expected tiles must contain
+(default: 0.05). Rejects incomplete XOR patterns with an empty or nearly
+empty quadrant, while tolerating unequal tile populations, e.g., for binary
+variables with unbalanced value frequencies.}
+
+\item{n_perm}{Integer. Number of class-label permutations for the null
+distribution (default: 999).}
+
+\item{p_adjust_method}{Character. Multiple-testing adjustment across all
+variable pairs: "maxT" (Westfall-Young single-step max-T, controls the
+family-wise error rate; default) or any method of \code{stats::p.adjust}
+(e.g., "BH", "holm", "none").}
+
+\item{split_method}{Character. Method for splitting tiles ("quantile" or "range") (default: "quantile").}
+
+\item{split_quantiles}{Numeric vector of length 2. Lower and upper quantile of the
+tile boundaries for \code{split_method = "quantile"} (default: tertiles, c(1/3, 2/3)).}
+
+\item{max_cores}{Integer. Maximum number of cores to use for parallel processing (default: 1).}
+
+\item{extreme_handling}{Character. Method for handling extreme values: "winsorize",
+"trim" (remove rows with extreme values; "remove" is accepted as a synonym),
+or "none" (default: "winsorize").}
+
+\item{winsor_limits}{Numeric vector of length 2. Lower and upper quantiles for
+winsorization or trimming (default: c(0.05, 0.95)).}
+
+\item{scale_data}{Logical. Whether to scale variables to unit variance (default: TRUE).}
+
+\item{use_complete}{Logical. Whether to use only complete cases (default: TRUE).}
+
+\item{balance_classes}{Logical. Whether to randomly down-sample the larger class
+to the size of the smaller class before screening (default: FALSE). Recommended
+for marked class imbalance, under which the quantile-based tile boundaries can
+misrepresent rotated XOR patterns.}
+
+\item{abs_diff_threshold}{Deprecated and ignored (used by detectXOR < 0.2.0).}
 }
 \value{
 List containing:
-  \item{results_df}{Data frame with detection results for all variable pairs}
-  \item{pair_list}{Detailed analysis results for each variable pair}
+  \itemize{
+    \item results_df: Data frame summarizing XOR detection results for all variable pairs
+    \item pair_list: List of detailed results for each variable pair
+    \item settings: List of the parameter values used
+  }
+}
+\description{
+Screens all pairs of numeric variables in a two-class data set for
+  XOR-like patterns. Each pair is partitioned into a 3 x 3 tertile grid, and
+  the class composition of the four critical tiles of the default (corner
+  tiles) and rotated (edge-center tiles) XOR manifestation is evaluated.
 }
 \details{
-This function performs an analysis to detect XOR-like patterns in pairwise variable relationships within two-class data sets. The analysis pipeline includes:
+For a given XOR manifestation, the XOR rule assigns one class to two
+  diagonally opposite critical tiles and the other class to the remaining two.
+  The XOR purity is the balanced accuracy of this rule among the observations
+  in the critical tiles, maximized over both label assignments (so that the
+  result does not depend on class coding) and over the two manifestations.
+  It is 0.5 for no XOR structure and 1 for a perfect XOR pattern.
 
-\enumerate{
-  \item Data preprocessing (winsorization, scaling, complete cases)
-  \item Tile pattern analysis using chi-squared tests
-  \item Classwise Kendall tau correlation analysis
-  \item Group-wise Wilcoxon significance tests
-}
-
-The function automatically handles parallel processing when multiple cores are available and returns both a summary data frame and detailed results for further analysis.
+  A pair is called XOR-positive if all of the following hold:
+  \enumerate{
+    \item the purity exceeds chance: the permutation p-value, adjusted for the
+      number of variable pairs, is below \code{p_threshold}. All pairs share
+      the same label permutations, which allows max-T adjustment;
+    \item the purity is large: its one-sided \code{1 - p_threshold} lower
+      confidence bound is at least \code{purity_threshold};
+    \item the pattern is complete: each class populates both of its expected
+      tiles with at least \code{min_tile_share} of its critical-tile points;
+    \item if \code{check_tau}, the class-wise Kendall tau correlations have
+      opposite signs and absolute values of at least \code{tau_threshold};
+    \item if \code{compute_axes_parallel_significance}, all four group-wise
+      Wilcoxon tests are significant (continuous variables only).
+  }
+  Criteria 4 and 5 are evaluated only for pairs meeting criteria 1 to 3.
+  Permutations are drawn from the session's random number generator; call
+  \code{set.seed()} beforehand for reproducible p-values. Parallel processing
+  is used when \code{max_cores > 1} and the required packages are available.
 }
 \examples{
-\donttest{
-# Load example data
 data(XOR_data)
-
-# Run XOR detection
-results <- detect_xor(data = XOR_data, class_col = "class")
-
-# View summary of detected patterns
-print(results$results_df["xor_shape_detected"])
-
-# Generate visualizations
-spaghetti_plot <- generate_spaghetti_plot_from_results(
-  results = results,
-  data = XOR_data,
-  class_col = "class"
-)
-
-print(spaghetti_plot)
-
-xy_plot <- generate_xy_plot_from_results(
-  results = results,
-  data = XOR_data,
-  class_col = "class"
-)
-
-print(xy_plot)
-
-# Generate console report (doesn't write files)
-generate_xor_reportConsole(results, XOR_data, "class", show_plots = FALSE)
-
-# View detailed results for detected pairs
-detected_pairs <- results$results_df[results$results_df$xor_shape_detected == TRUE, ]
-print(detected_pairs)
-
-}
+set.seed(42)
+result <- detect_xor(XOR_data, class_col = "class", n_perm = 199)
+result$results_df[, c("var1", "var2", "xor_shape_detected", "xor_pattern", "xor_purity")]
 }
 \seealso{
-\code{\link{generate_spaghetti_plot_from_results}} for spaghetti plot visualization, \code{\link{generate_xy_plot_from_results}} for scatter plot visualization, \code{\link{generate_xor_reportConsole}} for console reporting, \code{\link{generate_xor_reportHTML}} for HTML report generation, \code{\link{XOR_data}} for example dataset
+\code{\link{generate_spaghetti_plot_from_results}}, \code{\link{generate_xy_plot_from_results}}
 }
-\keyword{XOR}
-\keyword{pattern}
-\keyword{detection}
+\author{
+Jorn Lotsch, Alfred Ultsch
+}

@@ -1,66 +1,26 @@
 #' Compute group-wise Wilcoxon significance for tile groups
 #'
-#' @param orig_pair_list List. Output from compute_tile_patterns_for_pairs.
-#' @param class_col Character. Name of the class column (default: "class").
+#' @param orig_pair_list List of pairs with results$tile_pattern filled.
+#' @param class_col Character. Name of the class column.
 #' @param p_threshold Numeric. Significance threshold (default: 0.05).
 #' @param split_method Character. Tile assignment method ("quantile" or "range") (default: "quantile").
 #' @return List with results$tile_wilcox_significance added for each pair.
-#' @export
+#' @noRd
 compute_tile_wilcox_significance_for_pairs <- function(
   orig_pair_list,
-  class_col = "class",
+  class_col,
   p_threshold = 0.05,
-  split_method = "quantile"
+  split_method = "quantile",
+  split_quantiles = c(1/3, 2/3)
 ) {
-  # Input validation
-  if (!is.list(orig_pair_list) || length(orig_pair_list) == 0) {
-    stop("'orig_pair_list' must be a non-empty list", call. = FALSE)
-  }
-
-  if (!is.character(class_col) || length(class_col) != 1) {
-    stop("'class_col' must be a single character string", call. = FALSE)
-  }
-
-  if (!is.numeric(p_threshold) || p_threshold <= 0 || p_threshold >= 1) {
-    stop("'p_threshold' must be a numeric value between 0 and 1", call. = FALSE)
-  }
-
-  if (!split_method %in% c("quantile", "range")) {
-    stop("'split_method' must be either 'quantile' or 'range'", call. = FALSE)
-  }
-
-  # Process each pair
   for (nm in names(orig_pair_list)) {
-    tryCatch({
-      pair <- orig_pair_list[[nm]]
+    df <- orig_pair_list[[nm]]$data
+    var_names <- setdiff(names(df), class_col)
+    tile_pattern <- orig_pair_list[[nm]]$results$tile_pattern
+    if (is.null(tile_pattern)) next
 
-      # Validate pair structure
-      if (is.null(pair$data) || !is.data.frame(pair$data)) {
-        warning("Pair '", nm, "' missing valid data, skipping", call. = FALSE)
-        next
-      }
-
-      df <- pair$data
-      var_names <- setdiff(names(df), class_col)
-
-      if (length(var_names) != 2) {
-        warning("Pair '", nm, "' must contain exactly 2 variables + class column, skipping", call. = FALSE)
-        next
-      }
-
-      if (!class_col %in% names(df)) {
-        warning("Class column '", class_col, "' not found in pair '", nm, "', skipping", call. = FALSE)
-        next
-      }
-
-      tile_pattern <- pair$results$tile_pattern
-      if (is.null(tile_pattern)) {
-        warning("Pair '", nm, "' missing tile_pattern results, skipping", call. = FALSE)
-        next
-      }
-
-      # Compute Wilcoxon significance
-      tile_wilcox_result <- check_tile_groupwise_wilcox_significance(
+    orig_pair_list[[nm]]$results$tile_wilcox_significance <- tryCatch(
+      check_tile_groupwise_wilcox_significance(
         data = df,
         var1_name = var_names[1],
         var2_name = var_names[2],
@@ -68,14 +28,14 @@ compute_tile_wilcox_significance_for_pairs <- function(
         chosen_tiles = colnames(tile_pattern$observed_table),
         scenario = tile_pattern$xor_pattern,
         p_threshold = p_threshold,
-        split_method = split_method
-      )
-
-      orig_pair_list[[nm]]$results$tile_wilcox_significance <- tile_wilcox_result
-
-    }, error = function(e) {
-      warning("Error processing pair '", nm, "': ", e$message, call. = FALSE)
-    })
+        split_method = split_method,
+        split_quantiles = split_quantiles
+      ),
+      error = function(e) {
+        warning("Error processing pair '", nm, "': ", e$message, call. = FALSE)
+        NULL
+      }
+    )
   }
 
   orig_pair_list
@@ -83,11 +43,12 @@ compute_tile_wilcox_significance_for_pairs <- function(
 
 #' Check group-wise Wilcoxon significance for tile groups (for a single pair)
 #' Uses scenario and chosen tiles as determined by tile_pattern.
-#' @keywords internal
+#' @noRd
 check_tile_groupwise_wilcox_significance <- function(
   data, var1_name, var2_name, class_name, chosen_tiles, scenario,
   p_threshold = 0.05,
-  split_method = "quantile"
+  split_method = "quantile",
+  split_quantiles = c(1/3, 2/3)
 ) {
   # Input validation
   if (!is.data.frame(data) || nrow(data) == 0) {
@@ -105,8 +66,16 @@ check_tile_groupwise_wilcox_significance <- function(
     return(create_empty_wilcox_result("Less than 2 classes present", scenario, chosen_tiles))
   }
 
+  # Axis-wise rank tests are not applicable to binary variables
+  n_unique <- vapply(data[c(var1_name, var2_name)], function(x) length(unique(stats::na.omit(x))), integer(1))
+  if (all(n_unique <= 2)) {
+    result <- create_empty_wilcox_result("Not applicable to binary variables", scenario, chosen_tiles)
+    result$pass_groups <- NA
+    return(result)
+  }
+
   # Assign tiles to all data points
-  tiles_population <- assign_tiles_to_data(data, var1_name, var2_name, split_method)
+  tiles_population <- assign_3x3_tiles(data, var1_name, var2_name, split_method, split_quantiles)
 
   # Filter to chosen tiles only
   data_tiles <- filter_to_chosen_tiles(data, tiles_population, chosen_tiles, class_name)
@@ -129,67 +98,8 @@ check_tile_groupwise_wilcox_significance <- function(
 # HELPER FUNCTIONS
 # ============================================================================
 
-#' Assign tiles to data points using 3x3 grid
-assign_tiles_to_data <- function(data, var1_name, var2_name, split_method) {
-  if (split_method == "quantile") {
-    x_limits <- quantile(data[[var1_name]], probs = c(1/3, 2/3), na.rm = TRUE)
-    y_limits <- quantile(data[[var2_name]], probs = c(1/3, 2/3), na.rm = TRUE)
-  } else {
-    x_limits <- split_range_into_thirds(data[[var1_name]])
-    y_limits <- split_range_into_thirds(data[[var2_name]])
-  }
-
-  x_group <- cut(data[[var1_name]],
-                 breaks = c(-Inf, x_limits, Inf),
-                 labels = c("Left", "Mid", "Right"),
-                 include.lowest = TRUE)
-
-  y_group <- cut(data[[var2_name]],
-                 breaks = c(-Inf, y_limits, Inf),
-                 labels = c("Lower", "Mid", "Upper"),
-                 include.lowest = TRUE)
-
-  # Create tile names from x and y groups
-  tile_names <- mapply(combine_to_tile_name, x_group, y_group, USE.NAMES = FALSE)
-
-  # Define proper factor levels for tiles
-  tile_levels <- c(
-    "Upper Left", "Upper Mid", "Upper Right",
-    "Mid Left", "Center", "Mid Right",
-    "Lower Left", "Lower Mid", "Lower Right"
-  )
-
-  factor(tile_names, levels = tile_levels)
-}
-
-#' Split numeric range into three equal parts
-split_range_into_thirds <- function(x) {
-  min_val <- min(x, na.rm = TRUE)
-  max_val <- max(x, na.rm = TRUE)
-  range_size <- max_val - min_val
-
-  c(min_val + range_size/3, min_val + 2*range_size/3)
-}
-
-#' Combine x and y group labels into tile names
-combine_to_tile_name <- function(x, y) {
-  tile_map <- c(
-    "Left Upper" = "Upper Left",
-    "Right Upper" = "Upper Right",
-    "Left Lower" = "Lower Left",
-    "Right Lower" = "Lower Right",
-    "Mid Upper" = "Upper Mid",
-    "Left Mid" = "Mid Left",
-    "Right Mid" = "Mid Right",
-    "Mid Lower" = "Lower Mid",
-    "Mid Mid" = "Center"
-  )
-
-  key <- paste(x, y)
-  tile_map[key]
-}
-
 #' Filter data to chosen tiles and prepare for analysis
+#' @noRd
 filter_to_chosen_tiles <- function(data, tiles_population, chosen_tiles, class_name) {
   # Keep only observations in chosen tiles
   in_chosen_tiles <- tiles_population %in% chosen_tiles
@@ -203,6 +113,7 @@ filter_to_chosen_tiles <- function(data, tiles_population, chosen_tiles, class_n
 }
 
 #' Apply rotation transformation for rotated XOR scenarios
+#' @noRd
 apply_scenario_transformation <- function(data_tiles, var1_name, var2_name, scenario) {
   if (scenario == "default") {
     # No transformation needed
@@ -241,6 +152,7 @@ apply_scenario_transformation <- function(data_tiles, var1_name, var2_name, scen
 }
 
 #' Run Wilcoxon tests for all four tile groups
+#' @noRd
 run_all_group_tests <- function(processed_data, class_name) {
   # Define tile groupings
   group_definitions <- list(
@@ -261,6 +173,7 @@ run_all_group_tests <- function(processed_data, class_name) {
 }
 
 #' Run combined Wilcoxon test for a specific tile group
+#' @noRd
 run_combined_wilcox_test <- function(df, tiles, var1, var2, class_col) {
   # Select observations in specified tiles
   in_tiles <- df$tile %in% tiles
@@ -305,6 +218,7 @@ run_combined_wilcox_test <- function(df, tiles, var1, var2, class_col) {
 }
 
 #' Create empty test result for cases with insufficient data
+#' @noRd
 create_empty_test_result <- function() {
   list(
     p_value = NA,
@@ -317,6 +231,7 @@ create_empty_test_result <- function() {
 }
 
 #' Generate summary string for test results
+#' @noRd
 generate_test_summary <- function(test, group_name) {
   if (test$valid && !is.na(test$p_value)) {
     sprintf(
@@ -333,6 +248,7 @@ generate_test_summary <- function(test, group_name) {
 }
 
 #' Create final Wilcoxon test result
+#' @noRd
 create_wilcox_result <- function(test_results, p_threshold, scenario, chosen_tiles) {
   # Generate summaries
   summaries <- mapply(generate_test_summary, test_results,
@@ -367,6 +283,7 @@ create_wilcox_result <- function(test_results, p_threshold, scenario, chosen_til
 }
 
 #' Create empty result for cases where analysis cannot proceed
+#' @noRd
 create_empty_wilcox_result <- function(reason, scenario, chosen_tiles) {
   list(
     pass_groups = FALSE,

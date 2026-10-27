@@ -1,0 +1,1601 @@
+"dataset","feature_set","repetition","fold","classifier","balanced_accuracy","sensitivity","specificity","roc_auc"
+"XOR_data","A, B",1,1,"Random forest",0.45,0.5,0.4,0.4259375
+"XOR_data","A, B",1,1,"SVM",0.4375,0.475,0.4,0.43625
+"XOR_data","A, B",1,1,"Logistic regression, main effects",0.625,0.6,0.65,0.675625
+"XOR_data","A, B",1,1,"Logistic regression with interaction",0.6125,0.625,0.6,0.685
+"XOR_data","A, B",1,2,"Random forest",0.575,0.6,0.55,0.60625
+"XOR_data","A, B",1,2,"SVM",0.5,0.35,0.65,0.579375
+"XOR_data","A, B",1,2,"Logistic regression, main effects",0.6125,0.55,0.675,0.66625
+"XOR_data","A, B",1,2,"Logistic regression with interaction",0.5875,0.575,0.6,0.64375
+"XOR_data","A, B",1,3,"Random forest",0.5375,0.5,0.575,0.5121875
+"XOR_data","A, B",1,3,"SVM",0.5625,0.5,0.625,0.59375
+"XOR_data","A, B",1,3,"Logistic regression, main effects",0.55,0.45,0.65,0.609375
+"XOR_data","A, B",1,3,"Logistic regression with interaction",0.55,0.5,0.6,0.623125
+"XOR_data","A, B",1,4,"Random forest",0.475,0.575,0.375,0.435
+"XOR_data","A, B",1,4,"SVM",0.575,0.675,0.475,0.63
+"XOR_data","A, B",1,4,"Logistic regression, main effects",0.5625,0.625,0.5,0.6075
+"XOR_data","A, B",1,4,"Logistic regression with interaction",0.6,0.7,0.5,0.62375
+"XOR_data","A, B",1,5,"Random forest",0.575,0.625,0.525,0.555625
+"XOR_data","A, B",1,5,"SVM",0.5,0.5,0.5,0.5275
+"XOR_data","A, B",1,5,"Logistic regression, main effects",0.525,0.55,0.5,0.52375
+"XOR_data","A, B",1,5,"Logistic regression with interaction",0.5375,0.575,0.5,0.52375
+"XOR_data_nonsig","A, B",1,1,"Random forest",0.4625,0.375,0.55,0.420625
+"XOR_data_nonsig","A, B",1,1,"SVM",0.45,0.45,0.45,0.44
+"XOR_data_nonsig","A, B",1,1,"Logistic regression, main effects",0.5125,0.5,0.525,0.540625
+"XOR_data_nonsig","A, B",1,1,"Logistic regression with interaction",0.475,0.55,0.4,0.505
+"XOR_data_nonsig","A, B",1,2,"Random forest",0.4625,0.475,0.45,0.4965625
+"XOR_data_nonsig","A, B",1,2,"SVM",0.45,0.3,0.6,0.44
+"XOR_data_nonsig","A, B",1,2,"Logistic regression, main effects",0.5625,0.45,0.675,0.5675
+"XOR_data_nonsig","A, B",1,2,"Logistic regression with interaction",0.525,0.575,0.475,0.541875
+"XOR_data_nonsig","A, B",1,3,"Random forest",0.475,0.5,0.45,0.45125
+"XOR_data_nonsig","A, B",1,3,"SVM",0.5,0.525,0.475,0.479375
+"XOR_data_nonsig","A, B",1,3,"Logistic regression, main effects",0.45,0.375,0.525,0.505625
+"XOR_data_nonsig","A, B",1,3,"Logistic regression with interaction",0.475,0.5,0.45,0.52125
+"XOR_data_nonsig","A, B",1,4,"Random forest",0.4875,0.475,0.5,0.485625
+"XOR_data_nonsig","A, B",1,4,"SVM",0.525,0.6,0.45,0.514375
+"XOR_data_nonsig","A, B",1,4,"Logistic regression, main effects",0.4375,0.5,0.375,0.4475
+"XOR_data_nonsig","A, B",1,4,"Logistic regression with interaction",0.4875,0.675,0.3,0.495625
+"XOR_data_nonsig","A, B",1,5,"Random forest",0.5625,0.6,0.525,0.6
+"XOR_data_nonsig","A, B",1,5,"SVM",0.5,0.625,0.375,0.439375
+"XOR_data_nonsig","A, B",1,5,"Logistic regression, main effects",0.4375,0.45,0.425,0.416875
+"XOR_data_nonsig","A, B",1,5,"Logistic regression with interaction",0.4625,0.475,0.45,0.43125
+"XOR_data","C, D",1,1,"Random forest",1,1,1,1
+"XOR_data","C, D",1,1,"SVM",1,1,1,1
+"XOR_data","C, D",1,1,"Logistic regression, main effects",0.4125,0.475,0.35,0.363125
+"XOR_data","C, D",1,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",1,2,"Random forest",1,1,1,1
+"XOR_data","C, D",1,2,"SVM",1,1,1,1
+"XOR_data","C, D",1,2,"Logistic regression, main effects",0.4375,0.35,0.525,0.349375
+"XOR_data","C, D",1,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",1,3,"Random forest",1,1,1,1
+"XOR_data","C, D",1,3,"SVM",1,1,1,1
+"XOR_data","C, D",1,3,"Logistic regression, main effects",0.375,0.375,0.375,0.370625
+"XOR_data","C, D",1,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",1,4,"Random forest",1,1,1,1
+"XOR_data","C, D",1,4,"SVM",1,1,1,1
+"XOR_data","C, D",1,4,"Logistic regression, main effects",0.425,0.375,0.475,0.379375
+"XOR_data","C, D",1,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",1,5,"Random forest",1,1,1,1
+"XOR_data","C, D",1,5,"SVM",1,1,1,1
+"XOR_data","C, D",1,5,"Logistic regression, main effects",0.425,0.425,0.425,0.405
+"XOR_data","C, D",1,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",1,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",1,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",1,1,"Logistic regression, main effects",0.4125,0.475,0.35,0.363125
+"XOR_data_nonsig","C, D",1,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",1,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",1,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",1,2,"Logistic regression, main effects",0.4375,0.35,0.525,0.349375
+"XOR_data_nonsig","C, D",1,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",1,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",1,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",1,3,"Logistic regression, main effects",0.375,0.375,0.375,0.370625
+"XOR_data_nonsig","C, D",1,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",1,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",1,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",1,4,"Logistic regression, main effects",0.425,0.375,0.475,0.379375
+"XOR_data_nonsig","C, D",1,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",1,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",1,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",1,5,"Logistic regression, main effects",0.425,0.425,0.425,0.405
+"XOR_data_nonsig","C, D",1,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",2,1,"Random forest",0.525,0.5,0.55,0.4621875
+"XOR_data","A, B",2,1,"SVM",0.5,0.425,0.575,0.50375
+"XOR_data","A, B",2,1,"Logistic regression, main effects",0.5125,0.45,0.575,0.5625
+"XOR_data","A, B",2,1,"Logistic regression with interaction",0.5375,0.5,0.575,0.568125
+"XOR_data","A, B",2,2,"Random forest",0.6,0.575,0.625,0.5921875
+"XOR_data","A, B",2,2,"SVM",0.575,0.6,0.55,0.61875
+"XOR_data","A, B",2,2,"Logistic regression, main effects",0.6,0.65,0.55,0.625
+"XOR_data","A, B",2,2,"Logistic regression with interaction",0.6,0.65,0.55,0.635625
+"XOR_data","A, B",2,3,"Random forest",0.575,0.575,0.575,0.57
+"XOR_data","A, B",2,3,"SVM",0.4875,0.475,0.5,0.5475
+"XOR_data","A, B",2,3,"Logistic regression, main effects",0.65,0.6,0.7,0.678125
+"XOR_data","A, B",2,3,"Logistic regression with interaction",0.675,0.65,0.7,0.691875
+"XOR_data","A, B",2,4,"Random forest",0.5,0.525,0.475,0.52875
+"XOR_data","A, B",2,4,"SVM",0.5125,0.525,0.5,0.529375
+"XOR_data","A, B",2,4,"Logistic regression, main effects",0.55,0.5,0.6,0.543125
+"XOR_data","A, B",2,4,"Logistic regression with interaction",0.5125,0.55,0.475,0.53125
+"XOR_data","A, B",2,5,"Random forest",0.5875,0.65,0.525,0.494375
+"XOR_data","A, B",2,5,"SVM",0.5125,0.575,0.45,0.581875
+"XOR_data","A, B",2,5,"Logistic regression, main effects",0.5125,0.575,0.45,0.57375
+"XOR_data","A, B",2,5,"Logistic regression with interaction",0.5125,0.6,0.425,0.56375
+"XOR_data_nonsig","A, B",2,1,"Random forest",0.4125,0.425,0.4,0.4103125
+"XOR_data_nonsig","A, B",2,1,"SVM",0.4,0.225,0.575,0.405625
+"XOR_data_nonsig","A, B",2,1,"Logistic regression, main effects",0.45,0.475,0.425,0.41125
+"XOR_data_nonsig","A, B",2,1,"Logistic regression with interaction",0.5,0.5,0.5,0.446875
+"XOR_data_nonsig","A, B",2,2,"Random forest",0.5,0.5,0.5,0.490625
+"XOR_data_nonsig","A, B",2,2,"SVM",0.475,0.475,0.475,0.475625
+"XOR_data_nonsig","A, B",2,2,"Logistic regression, main effects",0.475,0.5,0.45,0.49875
+"XOR_data_nonsig","A, B",2,2,"Logistic regression with interaction",0.5125,0.575,0.45,0.55625
+"XOR_data_nonsig","A, B",2,3,"Random forest",0.425,0.45,0.4,0.3709375
+"XOR_data_nonsig","A, B",2,3,"SVM",0.4625,0.425,0.5,0.49
+"XOR_data_nonsig","A, B",2,3,"Logistic regression, main effects",0.4125,0.45,0.375,0.31625
+"XOR_data_nonsig","A, B",2,3,"Logistic regression with interaction",0.45,0.4,0.5,0.338125
+"XOR_data_nonsig","A, B",2,4,"Random forest",0.5125,0.5,0.525,0.535
+"XOR_data_nonsig","A, B",2,4,"SVM",0.475,0.55,0.4,0.405625
+"XOR_data_nonsig","A, B",2,4,"Logistic regression, main effects",0.4625,0.4,0.525,0.436875
+"XOR_data_nonsig","A, B",2,4,"Logistic regression with interaction",0.425,0.475,0.375,0.40125
+"XOR_data_nonsig","A, B",2,5,"Random forest",0.575,0.575,0.575,0.604375
+"XOR_data_nonsig","A, B",2,5,"SVM",0.475,0.5,0.45,0.491875
+"XOR_data_nonsig","A, B",2,5,"Logistic regression, main effects",0.3875,0.425,0.35,0.423125
+"XOR_data_nonsig","A, B",2,5,"Logistic regression with interaction",0.45,0.55,0.35,0.458125
+"XOR_data","C, D",2,1,"Random forest",1,1,1,1
+"XOR_data","C, D",2,1,"SVM",1,1,1,1
+"XOR_data","C, D",2,1,"Logistic regression, main effects",0.4375,0.475,0.4,0.408125
+"XOR_data","C, D",2,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",2,2,"Random forest",1,1,1,1
+"XOR_data","C, D",2,2,"SVM",1,1,1,1
+"XOR_data","C, D",2,2,"Logistic regression, main effects",0.425,0.4,0.45,0.4325
+"XOR_data","C, D",2,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",2,3,"Random forest",1,1,1,1
+"XOR_data","C, D",2,3,"SVM",1,1,1,1
+"XOR_data","C, D",2,3,"Logistic regression, main effects",0.475,0.425,0.525,0.425
+"XOR_data","C, D",2,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",2,4,"Random forest",1,1,1,1
+"XOR_data","C, D",2,4,"SVM",1,1,1,1
+"XOR_data","C, D",2,4,"Logistic regression, main effects",0.45,0.475,0.425,0.41625
+"XOR_data","C, D",2,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",2,5,"Random forest",0.9875,0.975,1,1
+"XOR_data","C, D",2,5,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",2,5,"Logistic regression, main effects",0.5,0.525,0.475,0.466875
+"XOR_data","C, D",2,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",2,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",2,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",2,1,"Logistic regression, main effects",0.4375,0.475,0.4,0.408125
+"XOR_data_nonsig","C, D",2,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",2,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",2,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",2,2,"Logistic regression, main effects",0.425,0.4,0.45,0.4325
+"XOR_data_nonsig","C, D",2,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",2,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",2,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",2,3,"Logistic regression, main effects",0.475,0.425,0.525,0.425
+"XOR_data_nonsig","C, D",2,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",2,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",2,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",2,4,"Logistic regression, main effects",0.45,0.475,0.425,0.41625
+"XOR_data_nonsig","C, D",2,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",2,5,"Random forest",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",2,5,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",2,5,"Logistic regression, main effects",0.5,0.525,0.475,0.466875
+"XOR_data_nonsig","C, D",2,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",3,1,"Random forest",0.575,0.6,0.55,0.583125
+"XOR_data","A, B",3,1,"SVM",0.5625,0.625,0.5,0.573125
+"XOR_data","A, B",3,1,"Logistic regression, main effects",0.55,0.6,0.5,0.571875
+"XOR_data","A, B",3,1,"Logistic regression with interaction",0.5625,0.625,0.5,0.578125
+"XOR_data","A, B",3,2,"Random forest",0.5125,0.625,0.4,0.5078125
+"XOR_data","A, B",3,2,"SVM",0.5625,0.675,0.45,0.5925
+"XOR_data","A, B",3,2,"Logistic regression, main effects",0.55,0.65,0.45,0.611875
+"XOR_data","A, B",3,2,"Logistic regression with interaction",0.5,0.675,0.325,0.593125
+"XOR_data","A, B",3,3,"Random forest",0.4875,0.4,0.575,0.4740625
+"XOR_data","A, B",3,3,"SVM",0.5125,0.375,0.65,0.550625
+"XOR_data","A, B",3,3,"Logistic regression, main effects",0.5625,0.4,0.725,0.59625
+"XOR_data","A, B",3,3,"Logistic regression with interaction",0.575,0.45,0.7,0.59625
+"XOR_data","A, B",3,4,"Random forest",0.4875,0.45,0.525,0.463125
+"XOR_data","A, B",3,4,"SVM",0.575,0.475,0.675,0.644375
+"XOR_data","A, B",3,4,"Logistic regression, main effects",0.6,0.5,0.7,0.643125
+"XOR_data","A, B",3,4,"Logistic regression with interaction",0.6375,0.575,0.7,0.64375
+"XOR_data","A, B",3,5,"Random forest",0.5125,0.55,0.475,0.618125
+"XOR_data","A, B",3,5,"SVM",0.55,0.575,0.525,0.646875
+"XOR_data","A, B",3,5,"Logistic regression, main effects",0.5625,0.55,0.575,0.606875
+"XOR_data","A, B",3,5,"Logistic regression with interaction",0.5625,0.575,0.55,0.60875
+"XOR_data_nonsig","A, B",3,1,"Random forest",0.575,0.55,0.6,0.6334375
+"XOR_data_nonsig","A, B",3,1,"SVM",0.3625,0.325,0.4,0.363125
+"XOR_data_nonsig","A, B",3,1,"Logistic regression, main effects",0.4375,0.525,0.35,0.428125
+"XOR_data_nonsig","A, B",3,1,"Logistic regression with interaction",0.4375,0.5,0.375,0.4225
+"XOR_data_nonsig","A, B",3,2,"Random forest",0.55,0.525,0.575,0.4865625
+"XOR_data_nonsig","A, B",3,2,"SVM",0.525,0.5,0.55,0.484375
+"XOR_data_nonsig","A, B",3,2,"Logistic regression, main effects",0.5125,0.575,0.45,0.498125
+"XOR_data_nonsig","A, B",3,2,"Logistic regression with interaction",0.45,0.625,0.275,0.48375
+"XOR_data_nonsig","A, B",3,3,"Random forest",0.4,0.375,0.425,0.3840625
+"XOR_data_nonsig","A, B",3,3,"SVM",0.4125,0.325,0.5,0.416875
+"XOR_data_nonsig","A, B",3,3,"Logistic regression, main effects",0.425,0.35,0.5,0.4375
+"XOR_data_nonsig","A, B",3,3,"Logistic regression with interaction",0.45,0.275,0.625,0.445625
+"XOR_data_nonsig","A, B",3,4,"Random forest",0.4375,0.475,0.4,0.39875
+"XOR_data_nonsig","A, B",3,4,"SVM",0.4875,0.45,0.525,0.471875
+"XOR_data_nonsig","A, B",3,4,"Logistic regression, main effects",0.525,0.5,0.55,0.5125
+"XOR_data_nonsig","A, B",3,4,"Logistic regression with interaction",0.475,0.55,0.4,0.529375
+"XOR_data_nonsig","A, B",3,5,"Random forest",0.55,0.475,0.625,0.5846875
+"XOR_data_nonsig","A, B",3,5,"SVM",0.4625,0.575,0.35,0.44375
+"XOR_data_nonsig","A, B",3,5,"Logistic regression, main effects",0.45,0.475,0.425,0.47
+"XOR_data_nonsig","A, B",3,5,"Logistic regression with interaction",0.5,0.525,0.475,0.511875
+"XOR_data","C, D",3,1,"Random forest",1,1,1,1
+"XOR_data","C, D",3,1,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",3,1,"Logistic regression, main effects",0.4875,0.55,0.425,0.423125
+"XOR_data","C, D",3,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",3,2,"Random forest",1,1,1,1
+"XOR_data","C, D",3,2,"SVM",1,1,1,1
+"XOR_data","C, D",3,2,"Logistic regression, main effects",0.4125,0.4,0.425,0.39
+"XOR_data","C, D",3,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",3,3,"Random forest",1,1,1,1
+"XOR_data","C, D",3,3,"SVM",1,1,1,1
+"XOR_data","C, D",3,3,"Logistic regression, main effects",0.45,0.45,0.45,0.451875
+"XOR_data","C, D",3,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",3,4,"Random forest",1,1,1,1
+"XOR_data","C, D",3,4,"SVM",1,1,1,1
+"XOR_data","C, D",3,4,"Logistic regression, main effects",0.4875,0.55,0.425,0.428125
+"XOR_data","C, D",3,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",3,5,"Random forest",1,1,1,1
+"XOR_data","C, D",3,5,"SVM",1,1,1,1
+"XOR_data","C, D",3,5,"Logistic regression, main effects",0.4375,0.4,0.475,0.38625
+"XOR_data","C, D",3,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",3,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",3,1,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",3,1,"Logistic regression, main effects",0.4875,0.55,0.425,0.423125
+"XOR_data_nonsig","C, D",3,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",3,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",3,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",3,2,"Logistic regression, main effects",0.4125,0.4,0.425,0.39
+"XOR_data_nonsig","C, D",3,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",3,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",3,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",3,3,"Logistic regression, main effects",0.45,0.45,0.45,0.451875
+"XOR_data_nonsig","C, D",3,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",3,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",3,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",3,4,"Logistic regression, main effects",0.4875,0.55,0.425,0.428125
+"XOR_data_nonsig","C, D",3,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",3,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",3,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",3,5,"Logistic regression, main effects",0.4375,0.4,0.475,0.38625
+"XOR_data_nonsig","C, D",3,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",4,1,"Random forest",0.475,0.475,0.475,0.5278125
+"XOR_data","A, B",4,1,"SVM",0.4875,0.475,0.5,0.535
+"XOR_data","A, B",4,1,"Logistic regression, main effects",0.4875,0.425,0.55,0.5475
+"XOR_data","A, B",4,1,"Logistic regression with interaction",0.5125,0.5,0.525,0.550625
+"XOR_data","A, B",4,2,"Random forest",0.4375,0.4,0.475,0.4759375
+"XOR_data","A, B",4,2,"SVM",0.5125,0.5,0.525,0.576875
+"XOR_data","A, B",4,2,"Logistic regression, main effects",0.5,0.45,0.55,0.565625
+"XOR_data","A, B",4,2,"Logistic regression with interaction",0.5,0.5,0.5,0.581875
+"XOR_data","A, B",4,3,"Random forest",0.525,0.525,0.525,0.5175
+"XOR_data","A, B",4,3,"SVM",0.6,0.65,0.55,0.616875
+"XOR_data","A, B",4,3,"Logistic regression, main effects",0.5625,0.575,0.55,0.605
+"XOR_data","A, B",4,3,"Logistic regression with interaction",0.5875,0.625,0.55,0.613125
+"XOR_data","A, B",4,4,"Random forest",0.475,0.5,0.45,0.4825
+"XOR_data","A, B",4,4,"SVM",0.625,0.625,0.625,0.659375
+"XOR_data","A, B",4,4,"Logistic regression, main effects",0.675,0.65,0.7,0.65125
+"XOR_data","A, B",4,4,"Logistic regression with interaction",0.65,0.7,0.6,0.654375
+"XOR_data","A, B",4,5,"Random forest",0.5375,0.55,0.525,0.5771875
+"XOR_data","A, B",4,5,"SVM",0.6875,0.675,0.7,0.734375
+"XOR_data","A, B",4,5,"Logistic regression, main effects",0.6625,0.625,0.7,0.709375
+"XOR_data","A, B",4,5,"Logistic regression with interaction",0.6625,0.675,0.65,0.70875
+"XOR_data_nonsig","A, B",4,1,"Random forest",0.4875,0.45,0.525,0.52
+"XOR_data_nonsig","A, B",4,1,"SVM",0.4625,0.5,0.425,0.405
+"XOR_data_nonsig","A, B",4,1,"Logistic regression, main effects",0.4625,0.375,0.55,0.428125
+"XOR_data_nonsig","A, B",4,1,"Logistic regression with interaction",0.4375,0.4,0.475,0.44375
+"XOR_data_nonsig","A, B",4,2,"Random forest",0.525,0.55,0.5,0.4915625
+"XOR_data_nonsig","A, B",4,2,"SVM",0.45,0.525,0.375,0.506875
+"XOR_data_nonsig","A, B",4,2,"Logistic regression, main effects",0.425,0.425,0.425,0.485625
+"XOR_data_nonsig","A, B",4,2,"Logistic regression with interaction",0.4625,0.525,0.4,0.495
+"XOR_data_nonsig","A, B",4,3,"Random forest",0.525,0.525,0.525,0.503125
+"XOR_data_nonsig","A, B",4,3,"SVM",0.5375,0.55,0.525,0.56
+"XOR_data_nonsig","A, B",4,3,"Logistic regression, main effects",0.4625,0.4,0.525,0.466875
+"XOR_data_nonsig","A, B",4,3,"Logistic regression with interaction",0.4625,0.5,0.425,0.48
+"XOR_data_nonsig","A, B",4,4,"Random forest",0.4625,0.375,0.55,0.4678125
+"XOR_data_nonsig","A, B",4,4,"SVM",0.5,0.525,0.475,0.475
+"XOR_data_nonsig","A, B",4,4,"Logistic regression, main effects",0.55,0.525,0.575,0.529375
+"XOR_data_nonsig","A, B",4,4,"Logistic regression with interaction",0.5625,0.7,0.425,0.54125
+"XOR_data_nonsig","A, B",4,5,"Random forest",0.575,0.55,0.6,0.5753125
+"XOR_data_nonsig","A, B",4,5,"SVM",0.475,0.7,0.25,0.401875
+"XOR_data_nonsig","A, B",4,5,"Logistic regression, main effects",0.5125,0.4,0.625,0.431875
+"XOR_data_nonsig","A, B",4,5,"Logistic regression with interaction",0.5125,0.275,0.75,0.493125
+"XOR_data","C, D",4,1,"Random forest",1,1,1,1
+"XOR_data","C, D",4,1,"SVM",1,1,1,1
+"XOR_data","C, D",4,1,"Logistic regression, main effects",0.4625,0.45,0.475,0.481875
+"XOR_data","C, D",4,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",4,2,"Random forest",1,1,1,1
+"XOR_data","C, D",4,2,"SVM",1,1,1,1
+"XOR_data","C, D",4,2,"Logistic regression, main effects",0.4125,0.475,0.35,0.344375
+"XOR_data","C, D",4,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",4,3,"Random forest",1,1,1,1
+"XOR_data","C, D",4,3,"SVM",1,1,1,1
+"XOR_data","C, D",4,3,"Logistic regression, main effects",0.5125,0.475,0.55,0.47625
+"XOR_data","C, D",4,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",4,4,"Random forest",1,1,1,1
+"XOR_data","C, D",4,4,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",4,4,"Logistic regression, main effects",0.475,0.5,0.45,0.45125
+"XOR_data","C, D",4,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",4,5,"Random forest",1,1,1,1
+"XOR_data","C, D",4,5,"SVM",1,1,1,1
+"XOR_data","C, D",4,5,"Logistic regression, main effects",0.4375,0.475,0.4,0.404375
+"XOR_data","C, D",4,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",4,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",4,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",4,1,"Logistic regression, main effects",0.4625,0.45,0.475,0.481875
+"XOR_data_nonsig","C, D",4,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",4,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",4,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",4,2,"Logistic regression, main effects",0.4125,0.475,0.35,0.344375
+"XOR_data_nonsig","C, D",4,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",4,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",4,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",4,3,"Logistic regression, main effects",0.5125,0.475,0.55,0.47625
+"XOR_data_nonsig","C, D",4,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",4,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",4,4,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",4,4,"Logistic regression, main effects",0.475,0.5,0.45,0.45125
+"XOR_data_nonsig","C, D",4,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",4,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",4,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",4,5,"Logistic regression, main effects",0.4375,0.475,0.4,0.404375
+"XOR_data_nonsig","C, D",4,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",5,1,"Random forest",0.5375,0.5,0.575,0.5334375
+"XOR_data","A, B",5,1,"SVM",0.55,0.5,0.6,0.596875
+"XOR_data","A, B",5,1,"Logistic regression, main effects",0.575,0.525,0.625,0.6025
+"XOR_data","A, B",5,1,"Logistic regression with interaction",0.575,0.575,0.575,0.59875
+"XOR_data","A, B",5,2,"Random forest",0.575,0.575,0.575,0.55375
+"XOR_data","A, B",5,2,"SVM",0.575,0.575,0.575,0.600625
+"XOR_data","A, B",5,2,"Logistic regression, main effects",0.5625,0.5,0.625,0.63625
+"XOR_data","A, B",5,2,"Logistic regression with interaction",0.6,0.575,0.625,0.649375
+"XOR_data","A, B",5,3,"Random forest",0.375,0.475,0.275,0.375625
+"XOR_data","A, B",5,3,"SVM",0.5,0.55,0.45,0.50625
+"XOR_data","A, B",5,3,"Logistic regression, main effects",0.55,0.625,0.475,0.540625
+"XOR_data","A, B",5,3,"Logistic regression with interaction",0.525,0.625,0.425,0.520625
+"XOR_data","A, B",5,4,"Random forest",0.5,0.575,0.425,0.5425
+"XOR_data","A, B",5,4,"SVM",0.575,0.7,0.45,0.6625
+"XOR_data","A, B",5,4,"Logistic regression, main effects",0.6875,0.7,0.675,0.656875
+"XOR_data","A, B",5,4,"Logistic regression with interaction",0.6375,0.7,0.575,0.663125
+"XOR_data","A, B",5,5,"Random forest",0.5375,0.6,0.475,0.569375
+"XOR_data","A, B",5,5,"SVM",0.6,0.5,0.7,0.675625
+"XOR_data","A, B",5,5,"Logistic regression, main effects",0.6,0.5,0.7,0.67125
+"XOR_data","A, B",5,5,"Logistic regression with interaction",0.6125,0.575,0.65,0.683125
+"XOR_data_nonsig","A, B",5,1,"Random forest",0.4875,0.475,0.5,0.488125
+"XOR_data_nonsig","A, B",5,1,"SVM",0.525,0.725,0.325,0.4675
+"XOR_data_nonsig","A, B",5,1,"Logistic regression, main effects",0.4625,0.4,0.525,0.4925
+"XOR_data_nonsig","A, B",5,1,"Logistic regression with interaction",0.4875,0.525,0.45,0.49375
+"XOR_data_nonsig","A, B",5,2,"Random forest",0.5,0.575,0.425,0.508125
+"XOR_data_nonsig","A, B",5,2,"SVM",0.5625,0.6,0.525,0.490625
+"XOR_data_nonsig","A, B",5,2,"Logistic regression, main effects",0.475,0.425,0.525,0.493125
+"XOR_data_nonsig","A, B",5,2,"Logistic regression with interaction",0.5125,0.4,0.625,0.53875
+"XOR_data_nonsig","A, B",5,3,"Random forest",0.425,0.45,0.4,0.4446875
+"XOR_data_nonsig","A, B",5,3,"SVM",0.4625,0.425,0.5,0.41
+"XOR_data_nonsig","A, B",5,3,"Logistic regression, main effects",0.4875,0.575,0.4,0.421875
+"XOR_data_nonsig","A, B",5,3,"Logistic regression with interaction",0.475,0.625,0.325,0.4225
+"XOR_data_nonsig","A, B",5,4,"Random forest",0.5,0.45,0.55,0.4984375
+"XOR_data_nonsig","A, B",5,4,"SVM",0.5125,0.475,0.55,0.478125
+"XOR_data_nonsig","A, B",5,4,"Logistic regression, main effects",0.4875,0.55,0.425,0.526875
+"XOR_data_nonsig","A, B",5,4,"Logistic regression with interaction",0.55,0.7,0.4,0.586875
+"XOR_data_nonsig","A, B",5,5,"Random forest",0.5,0.55,0.45,0.524375
+"XOR_data_nonsig","A, B",5,5,"SVM",0.5,0.575,0.425,0.449375
+"XOR_data_nonsig","A, B",5,5,"Logistic regression, main effects",0.5375,0.425,0.65,0.550625
+"XOR_data_nonsig","A, B",5,5,"Logistic regression with interaction",0.55,0.475,0.625,0.565
+"XOR_data","C, D",5,1,"Random forest",1,1,1,1
+"XOR_data","C, D",5,1,"SVM",1,1,1,1
+"XOR_data","C, D",5,1,"Logistic regression, main effects",0.375,0.45,0.3,0.30125
+"XOR_data","C, D",5,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",5,2,"Random forest",0.9875,1,0.975,1
+"XOR_data","C, D",5,2,"SVM",1,1,1,1
+"XOR_data","C, D",5,2,"Logistic regression, main effects",0.4375,0.4,0.475,0.40625
+"XOR_data","C, D",5,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",5,3,"Random forest",1,1,1,1
+"XOR_data","C, D",5,3,"SVM",1,1,1,1
+"XOR_data","C, D",5,3,"Logistic regression, main effects",0.425,0.45,0.4,0.4025
+"XOR_data","C, D",5,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",5,4,"Random forest",1,1,1,1
+"XOR_data","C, D",5,4,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",5,4,"Logistic regression, main effects",0.4375,0.425,0.45,0.463125
+"XOR_data","C, D",5,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",5,5,"Random forest",1,1,1,1
+"XOR_data","C, D",5,5,"SVM",1,1,1,1
+"XOR_data","C, D",5,5,"Logistic regression, main effects",0.4875,0.475,0.5,0.5
+"XOR_data","C, D",5,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",5,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",5,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",5,1,"Logistic regression, main effects",0.375,0.45,0.3,0.30125
+"XOR_data_nonsig","C, D",5,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",5,2,"Random forest",0.9875,1,0.975,1
+"XOR_data_nonsig","C, D",5,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",5,2,"Logistic regression, main effects",0.4375,0.4,0.475,0.40625
+"XOR_data_nonsig","C, D",5,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",5,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",5,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",5,3,"Logistic regression, main effects",0.425,0.45,0.4,0.4025
+"XOR_data_nonsig","C, D",5,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",5,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",5,4,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",5,4,"Logistic regression, main effects",0.4375,0.425,0.45,0.463125
+"XOR_data_nonsig","C, D",5,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",5,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",5,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",5,5,"Logistic regression, main effects",0.4875,0.475,0.5,0.5
+"XOR_data_nonsig","C, D",5,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",6,1,"Random forest",0.5125,0.55,0.475,0.505625
+"XOR_data","A, B",6,1,"SVM",0.55,0.65,0.45,0.576875
+"XOR_data","A, B",6,1,"Logistic regression, main effects",0.5625,0.65,0.475,0.58625
+"XOR_data","A, B",6,1,"Logistic regression with interaction",0.5125,0.675,0.35,0.55125
+"XOR_data","A, B",6,2,"Random forest",0.5625,0.55,0.575,0.598125
+"XOR_data","A, B",6,2,"SVM",0.6125,0.55,0.675,0.63125
+"XOR_data","A, B",6,2,"Logistic regression, main effects",0.6625,0.525,0.8,0.688125
+"XOR_data","A, B",6,2,"Logistic regression with interaction",0.65,0.525,0.775,0.6925
+"XOR_data","A, B",6,3,"Random forest",0.55,0.55,0.55,0.5809375
+"XOR_data","A, B",6,3,"SVM",0.575,0.45,0.7,0.625625
+"XOR_data","A, B",6,3,"Logistic regression, main effects",0.6375,0.525,0.75,0.654375
+"XOR_data","A, B",6,3,"Logistic regression with interaction",0.6375,0.6,0.675,0.64125
+"XOR_data","A, B",6,4,"Random forest",0.45,0.6,0.3,0.39875
+"XOR_data","A, B",6,4,"SVM",0.5,0.575,0.425,0.56
+"XOR_data","A, B",6,4,"Logistic regression, main effects",0.4875,0.5,0.475,0.545
+"XOR_data","A, B",6,4,"Logistic regression with interaction",0.5,0.575,0.425,0.57
+"XOR_data","A, B",6,5,"Random forest",0.5375,0.6,0.475,0.5415625
+"XOR_data","A, B",6,5,"SVM",0.625,0.675,0.575,0.65875
+"XOR_data","A, B",6,5,"Logistic regression, main effects",0.6375,0.65,0.625,0.65125
+"XOR_data","A, B",6,5,"Logistic regression with interaction",0.6375,0.675,0.6,0.6575
+"XOR_data_nonsig","A, B",6,1,"Random forest",0.475,0.45,0.5,0.5053125
+"XOR_data_nonsig","A, B",6,1,"SVM",0.4375,0.45,0.425,0.4525
+"XOR_data_nonsig","A, B",6,1,"Logistic regression, main effects",0.525,0.6,0.45,0.49625
+"XOR_data_nonsig","A, B",6,1,"Logistic regression with interaction",0.425,0.575,0.275,0.413125
+"XOR_data_nonsig","A, B",6,2,"Random forest",0.5,0.55,0.45,0.5190625
+"XOR_data_nonsig","A, B",6,2,"SVM",0.6,0.375,0.825,0.5325
+"XOR_data_nonsig","A, B",6,2,"Logistic regression, main effects",0.475,0.375,0.575,0.494375
+"XOR_data_nonsig","A, B",6,2,"Logistic regression with interaction",0.5,0.35,0.65,0.553125
+"XOR_data_nonsig","A, B",6,3,"Random forest",0.4625,0.45,0.475,0.4790625
+"XOR_data_nonsig","A, B",6,3,"SVM",0.5,0.675,0.325,0.491875
+"XOR_data_nonsig","A, B",6,3,"Logistic regression, main effects",0.525,0.4,0.65,0.543125
+"XOR_data_nonsig","A, B",6,3,"Logistic regression with interaction",0.525,0.55,0.5,0.52375
+"XOR_data_nonsig","A, B",6,4,"Random forest",0.5,0.575,0.425,0.5121875
+"XOR_data_nonsig","A, B",6,4,"SVM",0.4375,0.5,0.375,0.46875
+"XOR_data_nonsig","A, B",6,4,"Logistic regression, main effects",0.4375,0.475,0.4,0.4375
+"XOR_data_nonsig","A, B",6,4,"Logistic regression with interaction",0.475,0.575,0.375,0.4775
+"XOR_data_nonsig","A, B",6,5,"Random forest",0.4625,0.475,0.45,0.5
+"XOR_data_nonsig","A, B",6,5,"SVM",0.45,0.575,0.325,0.466875
+"XOR_data_nonsig","A, B",6,5,"Logistic regression, main effects",0.5125,0.55,0.475,0.555625
+"XOR_data_nonsig","A, B",6,5,"Logistic regression with interaction",0.5375,0.6,0.475,0.561875
+"XOR_data","C, D",6,1,"Random forest",1,1,1,1
+"XOR_data","C, D",6,1,"SVM",1,1,1,1
+"XOR_data","C, D",6,1,"Logistic regression, main effects",0.4125,0.375,0.45,0.373125
+"XOR_data","C, D",6,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",6,2,"Random forest",0.9875,0.975,1,1
+"XOR_data","C, D",6,2,"SVM",1,1,1,1
+"XOR_data","C, D",6,2,"Logistic regression, main effects",0.4375,0.475,0.4,0.39625
+"XOR_data","C, D",6,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",6,3,"Random forest",1,1,1,1
+"XOR_data","C, D",6,3,"SVM",1,1,1,1
+"XOR_data","C, D",6,3,"Logistic regression, main effects",0.4625,0.475,0.45,0.445625
+"XOR_data","C, D",6,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",6,4,"Random forest",1,1,1,1
+"XOR_data","C, D",6,4,"SVM",1,1,1,1
+"XOR_data","C, D",6,4,"Logistic regression, main effects",0.4375,0.425,0.45,0.42375
+"XOR_data","C, D",6,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",6,5,"Random forest",1,1,1,1
+"XOR_data","C, D",6,5,"SVM",1,1,1,1
+"XOR_data","C, D",6,5,"Logistic regression, main effects",0.3875,0.35,0.425,0.346875
+"XOR_data","C, D",6,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",6,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",6,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",6,1,"Logistic regression, main effects",0.4125,0.375,0.45,0.373125
+"XOR_data_nonsig","C, D",6,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",6,2,"Random forest",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",6,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",6,2,"Logistic regression, main effects",0.4375,0.475,0.4,0.39625
+"XOR_data_nonsig","C, D",6,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",6,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",6,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",6,3,"Logistic regression, main effects",0.4625,0.475,0.45,0.445625
+"XOR_data_nonsig","C, D",6,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",6,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",6,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",6,4,"Logistic regression, main effects",0.4375,0.425,0.45,0.42375
+"XOR_data_nonsig","C, D",6,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",6,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",6,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",6,5,"Logistic regression, main effects",0.3875,0.35,0.425,0.346875
+"XOR_data_nonsig","C, D",6,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",7,1,"Random forest",0.5375,0.6,0.475,0.5390625
+"XOR_data","A, B",7,1,"SVM",0.5625,0.55,0.575,0.61375
+"XOR_data","A, B",7,1,"Logistic regression, main effects",0.575,0.55,0.6,0.616875
+"XOR_data","A, B",7,1,"Logistic regression with interaction",0.5375,0.55,0.525,0.605
+"XOR_data","A, B",7,2,"Random forest",0.525,0.6,0.45,0.4825
+"XOR_data","A, B",7,2,"SVM",0.575,0.5,0.65,0.569375
+"XOR_data","A, B",7,2,"Logistic regression, main effects",0.525,0.5,0.55,0.5175
+"XOR_data","A, B",7,2,"Logistic regression with interaction",0.525,0.5,0.55,0.526875
+"XOR_data","A, B",7,3,"Random forest",0.4875,0.4,0.575,0.5084375
+"XOR_data","A, B",7,3,"SVM",0.5125,0.4,0.625,0.529375
+"XOR_data","A, B",7,3,"Logistic regression, main effects",0.6125,0.5,0.725,0.645
+"XOR_data","A, B",7,3,"Logistic regression with interaction",0.6375,0.6,0.675,0.631875
+"XOR_data","A, B",7,4,"Random forest",0.4375,0.425,0.45,0.4084375
+"XOR_data","A, B",7,4,"SVM",0.5125,0.65,0.375,0.51375
+"XOR_data","A, B",7,4,"Logistic regression, main effects",0.475,0.55,0.4,0.5375
+"XOR_data","A, B",7,4,"Logistic regression with interaction",0.5125,0.625,0.4,0.55625
+"XOR_data","A, B",7,5,"Random forest",0.525,0.55,0.5,0.5509375
+"XOR_data","A, B",7,5,"SVM",0.5625,0.475,0.65,0.544375
+"XOR_data","A, B",7,5,"Logistic regression, main effects",0.6125,0.6,0.625,0.621875
+"XOR_data","A, B",7,5,"Logistic regression with interaction",0.6125,0.6,0.625,0.6425
+"XOR_data_nonsig","A, B",7,1,"Random forest",0.5,0.5,0.5,0.51625
+"XOR_data_nonsig","A, B",7,1,"SVM",0.5125,0.325,0.7,0.50125
+"XOR_data_nonsig","A, B",7,1,"Logistic regression, main effects",0.5125,0.475,0.55,0.505
+"XOR_data_nonsig","A, B",7,1,"Logistic regression with interaction",0.5125,0.55,0.475,0.505
+"XOR_data_nonsig","A, B",7,2,"Random forest",0.4375,0.4,0.475,0.43875
+"XOR_data_nonsig","A, B",7,2,"SVM",0.475,0.425,0.525,0.47
+"XOR_data_nonsig","A, B",7,2,"Logistic regression, main effects",0.425,0.4,0.45,0.393125
+"XOR_data_nonsig","A, B",7,2,"Logistic regression with interaction",0.425,0.425,0.425,0.399375
+"XOR_data_nonsig","A, B",7,3,"Random forest",0.4625,0.375,0.55,0.406875
+"XOR_data_nonsig","A, B",7,3,"SVM",0.475,0.525,0.425,0.45875
+"XOR_data_nonsig","A, B",7,3,"Logistic regression, main effects",0.5,0.5,0.5,0.441875
+"XOR_data_nonsig","A, B",7,3,"Logistic regression with interaction",0.55,0.5,0.6,0.50375
+"XOR_data_nonsig","A, B",7,4,"Random forest",0.525,0.475,0.575,0.47
+"XOR_data_nonsig","A, B",7,4,"SVM",0.475,0.55,0.4,0.540625
+"XOR_data_nonsig","A, B",7,4,"Logistic regression, main effects",0.4125,0.4,0.425,0.37375
+"XOR_data_nonsig","A, B",7,4,"Logistic regression with interaction",0.375,0.325,0.425,0.384375
+"XOR_data_nonsig","A, B",7,5,"Random forest",0.5125,0.525,0.5,0.5071875
+"XOR_data_nonsig","A, B",7,5,"SVM",0.4625,0.475,0.45,0.458125
+"XOR_data_nonsig","A, B",7,5,"Logistic regression, main effects",0.4625,0.425,0.5,0.415
+"XOR_data_nonsig","A, B",7,5,"Logistic regression with interaction",0.45,0.325,0.575,0.429375
+"XOR_data","C, D",7,1,"Random forest",1,1,1,1
+"XOR_data","C, D",7,1,"SVM",1,1,1,1
+"XOR_data","C, D",7,1,"Logistic regression, main effects",0.4375,0.4,0.475,0.4025
+"XOR_data","C, D",7,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",7,2,"Random forest",1,1,1,1
+"XOR_data","C, D",7,2,"SVM",1,1,1,1
+"XOR_data","C, D",7,2,"Logistic regression, main effects",0.425,0.375,0.475,0.371875
+"XOR_data","C, D",7,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",7,3,"Random forest",1,1,1,1
+"XOR_data","C, D",7,3,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",7,3,"Logistic regression, main effects",0.45,0.45,0.45,0.45125
+"XOR_data","C, D",7,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",7,4,"Random forest",1,1,1,1
+"XOR_data","C, D",7,4,"SVM",1,1,1,1
+"XOR_data","C, D",7,4,"Logistic regression, main effects",0.4375,0.45,0.425,0.431875
+"XOR_data","C, D",7,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",7,5,"Random forest",1,1,1,1
+"XOR_data","C, D",7,5,"SVM",1,1,1,1
+"XOR_data","C, D",7,5,"Logistic regression, main effects",0.425,0.375,0.475,0.369375
+"XOR_data","C, D",7,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",7,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",7,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",7,1,"Logistic regression, main effects",0.4375,0.4,0.475,0.4025
+"XOR_data_nonsig","C, D",7,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",7,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",7,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",7,2,"Logistic regression, main effects",0.425,0.375,0.475,0.371875
+"XOR_data_nonsig","C, D",7,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",7,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",7,3,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",7,3,"Logistic regression, main effects",0.45,0.45,0.45,0.45125
+"XOR_data_nonsig","C, D",7,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",7,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",7,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",7,4,"Logistic regression, main effects",0.4375,0.45,0.425,0.431875
+"XOR_data_nonsig","C, D",7,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",7,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",7,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",7,5,"Logistic regression, main effects",0.425,0.375,0.475,0.369375
+"XOR_data_nonsig","C, D",7,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",8,1,"Random forest",0.5625,0.65,0.475,0.5121875
+"XOR_data","A, B",8,1,"SVM",0.6375,0.725,0.55,0.703125
+"XOR_data","A, B",8,1,"Logistic regression, main effects",0.625,0.7,0.55,0.706875
+"XOR_data","A, B",8,1,"Logistic regression with interaction",0.6,0.725,0.475,0.683125
+"XOR_data","A, B",8,2,"Random forest",0.5125,0.425,0.6,0.55
+"XOR_data","A, B",8,2,"SVM",0.5375,0.575,0.5,0.598125
+"XOR_data","A, B",8,2,"Logistic regression, main effects",0.625,0.55,0.7,0.66875
+"XOR_data","A, B",8,2,"Logistic regression with interaction",0.65,0.6,0.7,0.68
+"XOR_data","A, B",8,3,"Random forest",0.5125,0.475,0.55,0.526875
+"XOR_data","A, B",8,3,"SVM",0.5625,0.425,0.7,0.581875
+"XOR_data","A, B",8,3,"Logistic regression, main effects",0.55,0.4,0.7,0.59625
+"XOR_data","A, B",8,3,"Logistic regression with interaction",0.5625,0.45,0.675,0.6025
+"XOR_data","A, B",8,4,"Random forest",0.475,0.475,0.475,0.435625
+"XOR_data","A, B",8,4,"SVM",0.4625,0.475,0.45,0.483125
+"XOR_data","A, B",8,4,"Logistic regression, main effects",0.425,0.375,0.475,0.471875
+"XOR_data","A, B",8,4,"Logistic regression with interaction",0.4625,0.475,0.45,0.471875
+"XOR_data","A, B",8,5,"Random forest",0.5375,0.575,0.5,0.559375
+"XOR_data","A, B",8,5,"SVM",0.5625,0.625,0.5,0.615
+"XOR_data","A, B",8,5,"Logistic regression, main effects",0.575,0.675,0.475,0.601875
+"XOR_data","A, B",8,5,"Logistic regression with interaction",0.575,0.7,0.45,0.609375
+"XOR_data_nonsig","A, B",8,1,"Random forest",0.4125,0.45,0.375,0.411875
+"XOR_data_nonsig","A, B",8,1,"SVM",0.425,0.475,0.375,0.445
+"XOR_data_nonsig","A, B",8,1,"Logistic regression, main effects",0.45,0.55,0.35,0.41
+"XOR_data_nonsig","A, B",8,1,"Logistic regression with interaction",0.4375,0.475,0.4,0.40125
+"XOR_data_nonsig","A, B",8,2,"Random forest",0.5,0.45,0.55,0.533125
+"XOR_data_nonsig","A, B",8,2,"SVM",0.4125,0.575,0.25,0.368125
+"XOR_data_nonsig","A, B",8,2,"Logistic regression, main effects",0.55,0.525,0.575,0.57625
+"XOR_data_nonsig","A, B",8,2,"Logistic regression with interaction",0.575,0.575,0.575,0.606875
+"XOR_data_nonsig","A, B",8,3,"Random forest",0.4875,0.5,0.475,0.43375
+"XOR_data_nonsig","A, B",8,3,"SVM",0.5375,0.675,0.4,0.596875
+"XOR_data_nonsig","A, B",8,3,"Logistic regression, main effects",0.475,0.325,0.625,0.475625
+"XOR_data_nonsig","A, B",8,3,"Logistic regression with interaction",0.4875,0.4,0.575,0.509375
+"XOR_data_nonsig","A, B",8,4,"Random forest",0.5125,0.5,0.525,0.483125
+"XOR_data_nonsig","A, B",8,4,"SVM",0.375,0.35,0.4,0.38125
+"XOR_data_nonsig","A, B",8,4,"Logistic regression, main effects",0.3625,0.3,0.425,0.3425
+"XOR_data_nonsig","A, B",8,4,"Logistic regression with interaction",0.375,0.375,0.375,0.364375
+"XOR_data_nonsig","A, B",8,5,"Random forest",0.525,0.525,0.525,0.5353125
+"XOR_data_nonsig","A, B",8,5,"SVM",0.45,0.55,0.35,0.49
+"XOR_data_nonsig","A, B",8,5,"Logistic regression, main effects",0.475,0.575,0.375,0.50125
+"XOR_data_nonsig","A, B",8,5,"Logistic regression with interaction",0.4625,0.625,0.3,0.5125
+"XOR_data","C, D",8,1,"Random forest",0.975,0.95,1,1
+"XOR_data","C, D",8,1,"SVM",1,1,1,1
+"XOR_data","C, D",8,1,"Logistic regression, main effects",0.475,0.475,0.475,0.470625
+"XOR_data","C, D",8,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",8,2,"Random forest",1,1,1,1
+"XOR_data","C, D",8,2,"SVM",1,1,1,1
+"XOR_data","C, D",8,2,"Logistic regression, main effects",0.425,0.425,0.425,0.43625
+"XOR_data","C, D",8,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",8,3,"Random forest",1,1,1,1
+"XOR_data","C, D",8,3,"SVM",1,1,1,1
+"XOR_data","C, D",8,3,"Logistic regression, main effects",0.4125,0.4,0.425,0.399375
+"XOR_data","C, D",8,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",8,4,"Random forest",1,1,1,1
+"XOR_data","C, D",8,4,"SVM",1,1,1,1
+"XOR_data","C, D",8,4,"Logistic regression, main effects",0.4125,0.425,0.4,0.425625
+"XOR_data","C, D",8,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",8,5,"Random forest",1,1,1,1
+"XOR_data","C, D",8,5,"SVM",1,1,1,1
+"XOR_data","C, D",8,5,"Logistic regression, main effects",0.4375,0.375,0.5,0.385625
+"XOR_data","C, D",8,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",8,1,"Random forest",0.975,0.95,1,1
+"XOR_data_nonsig","C, D",8,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",8,1,"Logistic regression, main effects",0.475,0.475,0.475,0.470625
+"XOR_data_nonsig","C, D",8,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",8,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",8,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",8,2,"Logistic regression, main effects",0.425,0.425,0.425,0.43625
+"XOR_data_nonsig","C, D",8,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",8,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",8,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",8,3,"Logistic regression, main effects",0.4125,0.4,0.425,0.399375
+"XOR_data_nonsig","C, D",8,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",8,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",8,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",8,4,"Logistic regression, main effects",0.4125,0.425,0.4,0.425625
+"XOR_data_nonsig","C, D",8,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",8,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",8,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",8,5,"Logistic regression, main effects",0.4375,0.375,0.5,0.385625
+"XOR_data_nonsig","C, D",8,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",9,1,"Random forest",0.5375,0.675,0.4,0.5703125
+"XOR_data","A, B",9,1,"SVM",0.525,0.55,0.5,0.570625
+"XOR_data","A, B",9,1,"Logistic regression, main effects",0.5375,0.55,0.525,0.56
+"XOR_data","A, B",9,1,"Logistic regression with interaction",0.525,0.55,0.5,0.568125
+"XOR_data","A, B",9,2,"Random forest",0.4875,0.425,0.55,0.4621875
+"XOR_data","A, B",9,2,"SVM",0.525,0.525,0.525,0.551875
+"XOR_data","A, B",9,2,"Logistic regression, main effects",0.6,0.6,0.6,0.62125
+"XOR_data","A, B",9,2,"Logistic regression with interaction",0.575,0.65,0.5,0.606875
+"XOR_data","A, B",9,3,"Random forest",0.4875,0.45,0.525,0.52625
+"XOR_data","A, B",9,3,"SVM",0.55,0.425,0.675,0.548125
+"XOR_data","A, B",9,3,"Logistic regression, main effects",0.525,0.475,0.575,0.60625
+"XOR_data","A, B",9,3,"Logistic regression with interaction",0.55,0.525,0.575,0.606875
+"XOR_data","A, B",9,4,"Random forest",0.4375,0.425,0.45,0.4825
+"XOR_data","A, B",9,4,"SVM",0.55,0.425,0.675,0.54
+"XOR_data","A, B",9,4,"Logistic regression, main effects",0.65,0.625,0.675,0.693125
+"XOR_data","A, B",9,4,"Logistic regression with interaction",0.675,0.7,0.65,0.711875
+"XOR_data","A, B",9,5,"Random forest",0.5,0.55,0.45,0.4915625
+"XOR_data","A, B",9,5,"SVM",0.45,0.375,0.525,0.5825
+"XOR_data","A, B",9,5,"Logistic regression, main effects",0.5375,0.55,0.525,0.564375
+"XOR_data","A, B",9,5,"Logistic regression with interaction",0.55,0.575,0.525,0.58375
+"XOR_data_nonsig","A, B",9,1,"Random forest",0.5625,0.5,0.625,0.516875
+"XOR_data_nonsig","A, B",9,1,"SVM",0.525,0.65,0.4,0.544375
+"XOR_data_nonsig","A, B",9,1,"Logistic regression, main effects",0.4125,0.4,0.425,0.4475
+"XOR_data_nonsig","A, B",9,1,"Logistic regression with interaction",0.425,0.5,0.35,0.438125
+"XOR_data_nonsig","A, B",9,2,"Random forest",0.45,0.375,0.525,0.365625
+"XOR_data_nonsig","A, B",9,2,"SVM",0.5,0.4,0.6,0.4325
+"XOR_data_nonsig","A, B",9,2,"Logistic regression, main effects",0.525,0.525,0.525,0.530625
+"XOR_data_nonsig","A, B",9,2,"Logistic regression with interaction",0.525,0.625,0.425,0.513125
+"XOR_data_nonsig","A, B",9,3,"Random forest",0.475,0.525,0.425,0.4715625
+"XOR_data_nonsig","A, B",9,3,"SVM",0.5,0.275,0.725,0.48125
+"XOR_data_nonsig","A, B",9,3,"Logistic regression, main effects",0.45,0.325,0.575,0.456875
+"XOR_data_nonsig","A, B",9,3,"Logistic regression with interaction",0.4375,0.3,0.575,0.470625
+"XOR_data_nonsig","A, B",9,4,"Random forest",0.525,0.45,0.6,0.5003125
+"XOR_data_nonsig","A, B",9,4,"SVM",0.5,0.65,0.35,0.528125
+"XOR_data_nonsig","A, B",9,4,"Logistic regression, main effects",0.5375,0.5,0.575,0.525625
+"XOR_data_nonsig","A, B",9,4,"Logistic regression with interaction",0.5375,0.525,0.55,0.559375
+"XOR_data_nonsig","A, B",9,5,"Random forest",0.475,0.475,0.475,0.5290625
+"XOR_data_nonsig","A, B",9,5,"SVM",0.525,0.525,0.525,0.55375
+"XOR_data_nonsig","A, B",9,5,"Logistic regression, main effects",0.3875,0.475,0.3,0.465
+"XOR_data_nonsig","A, B",9,5,"Logistic regression with interaction",0.425,0.55,0.3,0.513125
+"XOR_data","C, D",9,1,"Random forest",1,1,1,1
+"XOR_data","C, D",9,1,"SVM",1,1,1,1
+"XOR_data","C, D",9,1,"Logistic regression, main effects",0.425,0.425,0.425,0.4175
+"XOR_data","C, D",9,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",9,2,"Random forest",0.975,0.95,1,1
+"XOR_data","C, D",9,2,"SVM",1,1,1,1
+"XOR_data","C, D",9,2,"Logistic regression, main effects",0.475,0.475,0.475,0.481875
+"XOR_data","C, D",9,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",9,3,"Random forest",1,1,1,1
+"XOR_data","C, D",9,3,"SVM",1,1,1,1
+"XOR_data","C, D",9,3,"Logistic regression, main effects",0.4125,0.425,0.4,0.395625
+"XOR_data","C, D",9,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",9,4,"Random forest",1,1,1,1
+"XOR_data","C, D",9,4,"SVM",1,1,1,1
+"XOR_data","C, D",9,4,"Logistic regression, main effects",0.425,0.375,0.475,0.378125
+"XOR_data","C, D",9,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",9,5,"Random forest",1,1,1,1
+"XOR_data","C, D",9,5,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",9,5,"Logistic regression, main effects",0.4875,0.5,0.475,0.494375
+"XOR_data","C, D",9,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",9,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",9,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",9,1,"Logistic regression, main effects",0.425,0.425,0.425,0.4175
+"XOR_data_nonsig","C, D",9,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",9,2,"Random forest",0.975,0.95,1,1
+"XOR_data_nonsig","C, D",9,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",9,2,"Logistic regression, main effects",0.475,0.475,0.475,0.481875
+"XOR_data_nonsig","C, D",9,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",9,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",9,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",9,3,"Logistic regression, main effects",0.4125,0.425,0.4,0.395625
+"XOR_data_nonsig","C, D",9,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",9,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",9,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",9,4,"Logistic regression, main effects",0.425,0.375,0.475,0.378125
+"XOR_data_nonsig","C, D",9,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",9,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",9,5,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",9,5,"Logistic regression, main effects",0.4875,0.5,0.475,0.494375
+"XOR_data_nonsig","C, D",9,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",10,1,"Random forest",0.525,0.5,0.55,0.5409375
+"XOR_data","A, B",10,1,"SVM",0.5125,0.475,0.55,0.5625
+"XOR_data","A, B",10,1,"Logistic regression, main effects",0.575,0.65,0.5,0.595
+"XOR_data","A, B",10,1,"Logistic regression with interaction",0.5875,0.675,0.5,0.60625
+"XOR_data","A, B",10,2,"Random forest",0.475,0.525,0.425,0.4909375
+"XOR_data","A, B",10,2,"SVM",0.55,0.525,0.575,0.558125
+"XOR_data","A, B",10,2,"Logistic regression, main effects",0.5625,0.5,0.625,0.575
+"XOR_data","A, B",10,2,"Logistic regression with interaction",0.5625,0.525,0.6,0.556875
+"XOR_data","A, B",10,3,"Random forest",0.45,0.5,0.4,0.45875
+"XOR_data","A, B",10,3,"SVM",0.6,0.55,0.65,0.62875
+"XOR_data","A, B",10,3,"Logistic regression, main effects",0.575,0.5,0.65,0.66125
+"XOR_data","A, B",10,3,"Logistic regression with interaction",0.5875,0.575,0.6,0.6675
+"XOR_data","A, B",10,4,"Random forest",0.5875,0.55,0.625,0.559375
+"XOR_data","A, B",10,4,"SVM",0.6125,0.525,0.7,0.618125
+"XOR_data","A, B",10,4,"Logistic regression, main effects",0.6125,0.525,0.7,0.611875
+"XOR_data","A, B",10,4,"Logistic regression with interaction",0.65,0.6,0.7,0.630625
+"XOR_data","A, B",10,5,"Random forest",0.5,0.625,0.375,0.5015625
+"XOR_data","A, B",10,5,"SVM",0.6,0.625,0.575,0.64875
+"XOR_data","A, B",10,5,"Logistic regression, main effects",0.5875,0.65,0.525,0.63625
+"XOR_data","A, B",10,5,"Logistic regression with interaction",0.6,0.7,0.5,0.646875
+"XOR_data_nonsig","A, B",10,1,"Random forest",0.5125,0.45,0.575,0.508125
+"XOR_data_nonsig","A, B",10,1,"SVM",0.45,0.45,0.45,0.485
+"XOR_data_nonsig","A, B",10,1,"Logistic regression, main effects",0.4875,0.475,0.5,0.478125
+"XOR_data_nonsig","A, B",10,1,"Logistic regression with interaction",0.5625,0.675,0.45,0.506875
+"XOR_data_nonsig","A, B",10,2,"Random forest",0.5125,0.525,0.5,0.4865625
+"XOR_data_nonsig","A, B",10,2,"SVM",0.55,0.375,0.725,0.49375
+"XOR_data_nonsig","A, B",10,2,"Logistic regression, main effects",0.4375,0.375,0.5,0.4475
+"XOR_data_nonsig","A, B",10,2,"Logistic regression with interaction",0.425,0.475,0.375,0.44625
+"XOR_data_nonsig","A, B",10,3,"Random forest",0.4875,0.575,0.4,0.529375
+"XOR_data_nonsig","A, B",10,3,"SVM",0.45,0.525,0.375,0.441875
+"XOR_data_nonsig","A, B",10,3,"Logistic regression, main effects",0.5625,0.475,0.65,0.54125
+"XOR_data_nonsig","A, B",10,3,"Logistic regression with interaction",0.5125,0.6,0.425,0.515625
+"XOR_data_nonsig","A, B",10,4,"Random forest",0.425,0.35,0.5,0.414375
+"XOR_data_nonsig","A, B",10,4,"SVM",0.575,0.625,0.525,0.5575
+"XOR_data_nonsig","A, B",10,4,"Logistic regression, main effects",0.5125,0.375,0.65,0.48625
+"XOR_data_nonsig","A, B",10,4,"Logistic regression with interaction",0.5375,0.45,0.625,0.529375
+"XOR_data_nonsig","A, B",10,5,"Random forest",0.5375,0.625,0.45,0.53125
+"XOR_data_nonsig","A, B",10,5,"SVM",0.475,0.475,0.475,0.445
+"XOR_data_nonsig","A, B",10,5,"Logistic regression, main effects",0.4625,0.45,0.475,0.446875
+"XOR_data_nonsig","A, B",10,5,"Logistic regression with interaction",0.4875,0.425,0.55,0.46875
+"XOR_data","C, D",10,1,"Random forest",1,1,1,1
+"XOR_data","C, D",10,1,"SVM",1,1,1,1
+"XOR_data","C, D",10,1,"Logistic regression, main effects",0.4875,0.5,0.475,0.475625
+"XOR_data","C, D",10,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",10,2,"Random forest",1,1,1,1
+"XOR_data","C, D",10,2,"SVM",1,1,1,1
+"XOR_data","C, D",10,2,"Logistic regression, main effects",0.5,0.55,0.45,0.458125
+"XOR_data","C, D",10,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",10,3,"Random forest",1,1,1,1
+"XOR_data","C, D",10,3,"SVM",1,1,1,1
+"XOR_data","C, D",10,3,"Logistic regression, main effects",0.4625,0.45,0.475,0.440625
+"XOR_data","C, D",10,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",10,4,"Random forest",1,1,1,1
+"XOR_data","C, D",10,4,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",10,4,"Logistic regression, main effects",0.5,0.525,0.475,0.475
+"XOR_data","C, D",10,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",10,5,"Random forest",1,1,1,1
+"XOR_data","C, D",10,5,"SVM",1,1,1,1
+"XOR_data","C, D",10,5,"Logistic regression, main effects",0.45,0.4,0.5,0.4
+"XOR_data","C, D",10,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",10,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",10,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",10,1,"Logistic regression, main effects",0.4875,0.5,0.475,0.475625
+"XOR_data_nonsig","C, D",10,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",10,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",10,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",10,2,"Logistic regression, main effects",0.5,0.55,0.45,0.458125
+"XOR_data_nonsig","C, D",10,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",10,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",10,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",10,3,"Logistic regression, main effects",0.4625,0.45,0.475,0.440625
+"XOR_data_nonsig","C, D",10,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",10,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",10,4,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",10,4,"Logistic regression, main effects",0.5,0.525,0.475,0.475
+"XOR_data_nonsig","C, D",10,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",10,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",10,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",10,5,"Logistic regression, main effects",0.45,0.4,0.5,0.4
+"XOR_data_nonsig","C, D",10,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",11,1,"Random forest",0.4625,0.475,0.45,0.44875
+"XOR_data","A, B",11,1,"SVM",0.55,0.45,0.65,0.530625
+"XOR_data","A, B",11,1,"Logistic regression, main effects",0.5375,0.425,0.65,0.52375
+"XOR_data","A, B",11,1,"Logistic regression with interaction",0.55,0.475,0.625,0.525625
+"XOR_data","A, B",11,2,"Random forest",0.5625,0.575,0.55,0.618125
+"XOR_data","A, B",11,2,"SVM",0.575,0.675,0.475,0.605
+"XOR_data","A, B",11,2,"Logistic regression, main effects",0.6,0.675,0.525,0.595625
+"XOR_data","A, B",11,2,"Logistic regression with interaction",0.5875,0.675,0.5,0.5875
+"XOR_data","A, B",11,3,"Random forest",0.525,0.475,0.575,0.5653125
+"XOR_data","A, B",11,3,"SVM",0.475,0.425,0.525,0.51625
+"XOR_data","A, B",11,3,"Logistic regression, main effects",0.5875,0.6,0.575,0.625625
+"XOR_data","A, B",11,3,"Logistic regression with interaction",0.6,0.625,0.575,0.63375
+"XOR_data","A, B",11,4,"Random forest",0.5125,0.475,0.55,0.496875
+"XOR_data","A, B",11,4,"SVM",0.6,0.575,0.625,0.62375
+"XOR_data","A, B",11,4,"Logistic regression, main effects",0.55,0.5,0.6,0.6225
+"XOR_data","A, B",11,4,"Logistic regression with interaction",0.5625,0.55,0.575,0.626875
+"XOR_data","A, B",11,5,"Random forest",0.5375,0.6,0.475,0.5265625
+"XOR_data","A, B",11,5,"SVM",0.525,0.55,0.5,0.5425
+"XOR_data","A, B",11,5,"Logistic regression, main effects",0.6375,0.65,0.625,0.68625
+"XOR_data","A, B",11,5,"Logistic regression with interaction",0.625,0.675,0.575,0.688125
+"XOR_data_nonsig","A, B",11,1,"Random forest",0.5375,0.55,0.525,0.5534375
+"XOR_data_nonsig","A, B",11,1,"SVM",0.4875,0.325,0.65,0.499375
+"XOR_data_nonsig","A, B",11,1,"Logistic regression, main effects",0.4375,0.325,0.55,0.414375
+"XOR_data_nonsig","A, B",11,1,"Logistic regression with interaction",0.475,0.475,0.475,0.44625
+"XOR_data_nonsig","A, B",11,2,"Random forest",0.4625,0.5,0.425,0.49875
+"XOR_data_nonsig","A, B",11,2,"SVM",0.45,0.4,0.5,0.434375
+"XOR_data_nonsig","A, B",11,2,"Logistic regression, main effects",0.45,0.55,0.35,0.424375
+"XOR_data_nonsig","A, B",11,2,"Logistic regression with interaction",0.4625,0.575,0.35,0.445
+"XOR_data_nonsig","A, B",11,3,"Random forest",0.5375,0.5,0.575,0.5753125
+"XOR_data_nonsig","A, B",11,3,"SVM",0.475,0.625,0.325,0.504375
+"XOR_data_nonsig","A, B",11,3,"Logistic regression, main effects",0.5125,0.525,0.5,0.488125
+"XOR_data_nonsig","A, B",11,3,"Logistic regression with interaction",0.5125,0.6,0.425,0.50125
+"XOR_data_nonsig","A, B",11,4,"Random forest",0.575,0.5,0.65,0.54625
+"XOR_data_nonsig","A, B",11,4,"SVM",0.5875,0.575,0.6,0.623125
+"XOR_data_nonsig","A, B",11,4,"Logistic regression, main effects",0.4875,0.425,0.55,0.54
+"XOR_data_nonsig","A, B",11,4,"Logistic regression with interaction",0.5125,0.525,0.5,0.565625
+"XOR_data_nonsig","A, B",11,5,"Random forest",0.475,0.4,0.55,0.443125
+"XOR_data_nonsig","A, B",11,5,"SVM",0.4375,0.375,0.5,0.41
+"XOR_data_nonsig","A, B",11,5,"Logistic regression, main effects",0.425,0.325,0.525,0.368125
+"XOR_data_nonsig","A, B",11,5,"Logistic regression with interaction",0.4625,0.3,0.625,0.438125
+"XOR_data","C, D",11,1,"Random forest",1,1,1,1
+"XOR_data","C, D",11,1,"SVM",1,1,1,1
+"XOR_data","C, D",11,1,"Logistic regression, main effects",0.4625,0.45,0.475,0.455
+"XOR_data","C, D",11,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",11,2,"Random forest",1,1,1,1
+"XOR_data","C, D",11,2,"SVM",1,1,1,1
+"XOR_data","C, D",11,2,"Logistic regression, main effects",0.5,0.425,0.575,0.425
+"XOR_data","C, D",11,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",11,3,"Random forest",1,1,1,1
+"XOR_data","C, D",11,3,"SVM",1,1,1,1
+"XOR_data","C, D",11,3,"Logistic regression, main effects",0.425,0.375,0.475,0.381875
+"XOR_data","C, D",11,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",11,4,"Random forest",1,1,1,1
+"XOR_data","C, D",11,4,"SVM",1,1,1,1
+"XOR_data","C, D",11,4,"Logistic regression, main effects",0.425,0.4,0.45,0.4
+"XOR_data","C, D",11,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",11,5,"Random forest",1,1,1,1
+"XOR_data","C, D",11,5,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",11,5,"Logistic regression, main effects",0.45,0.425,0.475,0.476875
+"XOR_data","C, D",11,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",11,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",11,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",11,1,"Logistic regression, main effects",0.4625,0.45,0.475,0.455
+"XOR_data_nonsig","C, D",11,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",11,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",11,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",11,2,"Logistic regression, main effects",0.5,0.425,0.575,0.425
+"XOR_data_nonsig","C, D",11,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",11,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",11,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",11,3,"Logistic regression, main effects",0.425,0.375,0.475,0.381875
+"XOR_data_nonsig","C, D",11,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",11,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",11,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",11,4,"Logistic regression, main effects",0.425,0.4,0.45,0.4
+"XOR_data_nonsig","C, D",11,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",11,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",11,5,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",11,5,"Logistic regression, main effects",0.45,0.425,0.475,0.476875
+"XOR_data_nonsig","C, D",11,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",12,1,"Random forest",0.6125,0.625,0.6,0.57625
+"XOR_data","A, B",12,1,"SVM",0.6125,0.575,0.65,0.69125
+"XOR_data","A, B",12,1,"Logistic regression, main effects",0.6125,0.575,0.65,0.67
+"XOR_data","A, B",12,1,"Logistic regression with interaction",0.625,0.6,0.65,0.68125
+"XOR_data","A, B",12,2,"Random forest",0.525,0.575,0.475,0.555
+"XOR_data","A, B",12,2,"SVM",0.6,0.5,0.7,0.67375
+"XOR_data","A, B",12,2,"Logistic regression, main effects",0.6375,0.575,0.7,0.668125
+"XOR_data","A, B",12,2,"Logistic regression with interaction",0.625,0.575,0.675,0.670625
+"XOR_data","A, B",12,3,"Random forest",0.5375,0.625,0.45,0.58
+"XOR_data","A, B",12,3,"SVM",0.5375,0.625,0.45,0.555
+"XOR_data","A, B",12,3,"Logistic regression, main effects",0.5125,0.6,0.425,0.540625
+"XOR_data","A, B",12,3,"Logistic regression with interaction",0.525,0.625,0.425,0.576875
+"XOR_data","A, B",12,4,"Random forest",0.5125,0.55,0.475,0.52875
+"XOR_data","A, B",12,4,"SVM",0.4875,0.4,0.575,0.5525
+"XOR_data","A, B",12,4,"Logistic regression, main effects",0.6125,0.575,0.65,0.65125
+"XOR_data","A, B",12,4,"Logistic regression with interaction",0.65,0.7,0.6,0.6425
+"XOR_data","A, B",12,5,"Random forest",0.45,0.45,0.45,0.4340625
+"XOR_data","A, B",12,5,"SVM",0.5125,0.525,0.5,0.5
+"XOR_data","A, B",12,5,"Logistic regression, main effects",0.525,0.5,0.55,0.5625
+"XOR_data","A, B",12,5,"Logistic regression with interaction",0.5,0.55,0.45,0.5
+"XOR_data_nonsig","A, B",12,1,"Random forest",0.525,0.575,0.475,0.5346875
+"XOR_data_nonsig","A, B",12,1,"SVM",0.5125,0.575,0.45,0.5
+"XOR_data_nonsig","A, B",12,1,"Logistic regression, main effects",0.55,0.475,0.625,0.56375
+"XOR_data_nonsig","A, B",12,1,"Logistic regression with interaction",0.5875,0.625,0.55,0.62375
+"XOR_data_nonsig","A, B",12,2,"Random forest",0.475,0.425,0.525,0.493125
+"XOR_data_nonsig","A, B",12,2,"SVM",0.5,0.45,0.55,0.465
+"XOR_data_nonsig","A, B",12,2,"Logistic regression, main effects",0.5625,0.525,0.6,0.551875
+"XOR_data_nonsig","A, B",12,2,"Logistic regression with interaction",0.525,0.35,0.7,0.540625
+"XOR_data_nonsig","A, B",12,3,"Random forest",0.5125,0.575,0.45,0.57125
+"XOR_data_nonsig","A, B",12,3,"SVM",0.5875,0.65,0.525,0.609375
+"XOR_data_nonsig","A, B",12,3,"Logistic regression, main effects",0.4875,0.55,0.425,0.453125
+"XOR_data_nonsig","A, B",12,3,"Logistic regression with interaction",0.4875,0.625,0.35,0.4975
+"XOR_data_nonsig","A, B",12,4,"Random forest",0.4875,0.575,0.4,0.4125
+"XOR_data_nonsig","A, B",12,4,"SVM",0.4875,0.425,0.55,0.5325
+"XOR_data_nonsig","A, B",12,4,"Logistic regression, main effects",0.55,0.525,0.575,0.53875
+"XOR_data_nonsig","A, B",12,4,"Logistic regression with interaction",0.5625,0.65,0.475,0.5675
+"XOR_data_nonsig","A, B",12,5,"Random forest",0.4625,0.475,0.45,0.4403125
+"XOR_data_nonsig","A, B",12,5,"SVM",0.5375,0.6,0.475,0.540625
+"XOR_data_nonsig","A, B",12,5,"Logistic regression, main effects",0.3875,0.45,0.325,0.454375
+"XOR_data_nonsig","A, B",12,5,"Logistic regression with interaction",0.4,0.5,0.3,0.41
+"XOR_data","C, D",12,1,"Random forest",1,1,1,1
+"XOR_data","C, D",12,1,"SVM",1,1,1,1
+"XOR_data","C, D",12,1,"Logistic regression, main effects",0.4625,0.45,0.475,0.469375
+"XOR_data","C, D",12,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",12,2,"Random forest",1,1,1,1
+"XOR_data","C, D",12,2,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",12,2,"Logistic regression, main effects",0.5,0.5,0.5,0.496875
+"XOR_data","C, D",12,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",12,3,"Random forest",1,1,1,1
+"XOR_data","C, D",12,3,"SVM",1,1,1,1
+"XOR_data","C, D",12,3,"Logistic regression, main effects",0.45,0.45,0.45,0.449375
+"XOR_data","C, D",12,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",12,4,"Random forest",1,1,1,1
+"XOR_data","C, D",12,4,"SVM",1,1,1,1
+"XOR_data","C, D",12,4,"Logistic regression, main effects",0.5375,0.6,0.475,0.475
+"XOR_data","C, D",12,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",12,5,"Random forest",1,1,1,1
+"XOR_data","C, D",12,5,"SVM",1,1,1,1
+"XOR_data","C, D",12,5,"Logistic regression, main effects",0.5125,0.475,0.55,0.475
+"XOR_data","C, D",12,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",12,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",12,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",12,1,"Logistic regression, main effects",0.4625,0.45,0.475,0.469375
+"XOR_data_nonsig","C, D",12,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",12,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",12,2,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",12,2,"Logistic regression, main effects",0.5,0.5,0.5,0.496875
+"XOR_data_nonsig","C, D",12,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",12,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",12,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",12,3,"Logistic regression, main effects",0.45,0.45,0.45,0.449375
+"XOR_data_nonsig","C, D",12,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",12,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",12,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",12,4,"Logistic regression, main effects",0.5375,0.6,0.475,0.475
+"XOR_data_nonsig","C, D",12,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",12,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",12,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",12,5,"Logistic regression, main effects",0.5125,0.475,0.55,0.475
+"XOR_data_nonsig","C, D",12,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",13,1,"Random forest",0.55,0.625,0.475,0.5353125
+"XOR_data","A, B",13,1,"SVM",0.7,0.75,0.65,0.70875
+"XOR_data","A, B",13,1,"Logistic regression, main effects",0.6625,0.625,0.7,0.696875
+"XOR_data","A, B",13,1,"Logistic regression with interaction",0.675,0.7,0.65,0.71
+"XOR_data","A, B",13,2,"Random forest",0.4125,0.45,0.375,0.4640625
+"XOR_data","A, B",13,2,"SVM",0.5625,0.5,0.625,0.586875
+"XOR_data","A, B",13,2,"Logistic regression, main effects",0.55,0.525,0.575,0.56125
+"XOR_data","A, B",13,2,"Logistic regression with interaction",0.5375,0.525,0.55,0.565
+"XOR_data","A, B",13,3,"Random forest",0.5,0.45,0.55,0.555
+"XOR_data","A, B",13,3,"SVM",0.5625,0.6,0.525,0.56125
+"XOR_data","A, B",13,3,"Logistic regression, main effects",0.55,0.575,0.525,0.56
+"XOR_data","A, B",13,3,"Logistic regression with interaction",0.575,0.625,0.525,0.5525
+"XOR_data","A, B",13,4,"Random forest",0.4875,0.4,0.575,0.484375
+"XOR_data","A, B",13,4,"SVM",0.5,0.45,0.55,0.485
+"XOR_data","A, B",13,4,"Logistic regression, main effects",0.5,0.5,0.5,0.565
+"XOR_data","A, B",13,4,"Logistic regression with interaction",0.5,0.5,0.5,0.5725
+"XOR_data","A, B",13,5,"Random forest",0.6625,0.675,0.65,0.5859375
+"XOR_data","A, B",13,5,"SVM",0.6125,0.65,0.575,0.695
+"XOR_data","A, B",13,5,"Logistic regression, main effects",0.6625,0.675,0.65,0.71
+"XOR_data","A, B",13,5,"Logistic regression with interaction",0.6125,0.7,0.525,0.676875
+"XOR_data_nonsig","A, B",13,1,"Random forest",0.5125,0.6,0.425,0.503125
+"XOR_data_nonsig","A, B",13,1,"SVM",0.55,0.55,0.55,0.5525
+"XOR_data_nonsig","A, B",13,1,"Logistic regression, main effects",0.5375,0.575,0.5,0.5475
+"XOR_data_nonsig","A, B",13,1,"Logistic regression with interaction",0.6,0.675,0.525,0.63375
+"XOR_data_nonsig","A, B",13,2,"Random forest",0.4875,0.5,0.475,0.471875
+"XOR_data_nonsig","A, B",13,2,"SVM",0.5125,0.575,0.45,0.505625
+"XOR_data_nonsig","A, B",13,2,"Logistic regression, main effects",0.4375,0.475,0.4,0.448125
+"XOR_data_nonsig","A, B",13,2,"Logistic regression with interaction",0.425,0.475,0.375,0.451875
+"XOR_data_nonsig","A, B",13,3,"Random forest",0.45,0.425,0.475,0.43875
+"XOR_data_nonsig","A, B",13,3,"SVM",0.5375,0.425,0.65,0.545625
+"XOR_data_nonsig","A, B",13,3,"Logistic regression, main effects",0.475,0.5,0.45,0.46
+"XOR_data_nonsig","A, B",13,3,"Logistic regression with interaction",0.5,0.55,0.45,0.49125
+"XOR_data_nonsig","A, B",13,4,"Random forest",0.4875,0.35,0.625,0.4903125
+"XOR_data_nonsig","A, B",13,4,"SVM",0.5375,0.6,0.475,0.535
+"XOR_data_nonsig","A, B",13,4,"Logistic regression, main effects",0.4375,0.4,0.475,0.456875
+"XOR_data_nonsig","A, B",13,4,"Logistic regression with interaction",0.4375,0.45,0.425,0.46125
+"XOR_data_nonsig","A, B",13,5,"Random forest",0.4875,0.425,0.55,0.533125
+"XOR_data_nonsig","A, B",13,5,"SVM",0.5125,0.375,0.65,0.496875
+"XOR_data_nonsig","A, B",13,5,"Logistic regression, main effects",0.4,0.425,0.375,0.420625
+"XOR_data_nonsig","A, B",13,5,"Logistic regression with interaction",0.45,0.4,0.5,0.490625
+"XOR_data","C, D",13,1,"Random forest",1,1,1,1
+"XOR_data","C, D",13,1,"SVM",1,1,1,1
+"XOR_data","C, D",13,1,"Logistic regression, main effects",0.475,0.45,0.5,0.44375
+"XOR_data","C, D",13,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",13,2,"Random forest",1,1,1,1
+"XOR_data","C, D",13,2,"SVM",1,1,1,1
+"XOR_data","C, D",13,2,"Logistic regression, main effects",0.4125,0.4,0.425,0.423125
+"XOR_data","C, D",13,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",13,3,"Random forest",1,1,1,1
+"XOR_data","C, D",13,3,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",13,3,"Logistic regression, main effects",0.4875,0.45,0.525,0.44875
+"XOR_data","C, D",13,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",13,4,"Random forest",1,1,1,1
+"XOR_data","C, D",13,4,"SVM",1,1,1,1
+"XOR_data","C, D",13,4,"Logistic regression, main effects",0.4625,0.45,0.475,0.425
+"XOR_data","C, D",13,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",13,5,"Random forest",1,1,1,1
+"XOR_data","C, D",13,5,"SVM",1,1,1,1
+"XOR_data","C, D",13,5,"Logistic regression, main effects",0.4875,0.45,0.525,0.44875
+"XOR_data","C, D",13,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",13,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",13,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",13,1,"Logistic regression, main effects",0.475,0.45,0.5,0.44375
+"XOR_data_nonsig","C, D",13,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",13,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",13,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",13,2,"Logistic regression, main effects",0.4125,0.4,0.425,0.423125
+"XOR_data_nonsig","C, D",13,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",13,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",13,3,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",13,3,"Logistic regression, main effects",0.4875,0.45,0.525,0.44875
+"XOR_data_nonsig","C, D",13,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",13,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",13,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",13,4,"Logistic regression, main effects",0.4625,0.45,0.475,0.425
+"XOR_data_nonsig","C, D",13,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",13,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",13,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",13,5,"Logistic regression, main effects",0.4875,0.45,0.525,0.44875
+"XOR_data_nonsig","C, D",13,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",14,1,"Random forest",0.4125,0.325,0.5,0.4321875
+"XOR_data","A, B",14,1,"SVM",0.5625,0.525,0.6,0.58125
+"XOR_data","A, B",14,1,"Logistic regression, main effects",0.5875,0.6,0.575,0.578125
+"XOR_data","A, B",14,1,"Logistic regression with interaction",0.6125,0.65,0.575,0.583125
+"XOR_data","A, B",14,2,"Random forest",0.6,0.65,0.55,0.5978125
+"XOR_data","A, B",14,2,"SVM",0.525,0.525,0.525,0.5325
+"XOR_data","A, B",14,2,"Logistic regression, main effects",0.6375,0.75,0.525,0.6775
+"XOR_data","A, B",14,2,"Logistic regression with interaction",0.6125,0.75,0.475,0.624375
+"XOR_data","A, B",14,3,"Random forest",0.5,0.7,0.3,0.56875
+"XOR_data","A, B",14,3,"SVM",0.5125,0.55,0.475,0.645625
+"XOR_data","A, B",14,3,"Logistic regression, main effects",0.4875,0.5,0.475,0.608125
+"XOR_data","A, B",14,3,"Logistic regression with interaction",0.4875,0.525,0.45,0.63125
+"XOR_data","A, B",14,4,"Random forest",0.525,0.375,0.675,0.5090625
+"XOR_data","A, B",14,4,"SVM",0.55,0.45,0.65,0.60125
+"XOR_data","A, B",14,4,"Logistic regression, main effects",0.525,0.375,0.675,0.603125
+"XOR_data","A, B",14,4,"Logistic regression with interaction",0.55,0.45,0.65,0.59875
+"XOR_data","A, B",14,5,"Random forest",0.4375,0.45,0.425,0.434375
+"XOR_data","A, B",14,5,"SVM",0.4875,0.525,0.45,0.503125
+"XOR_data","A, B",14,5,"Logistic regression, main effects",0.5875,0.65,0.525,0.618125
+"XOR_data","A, B",14,5,"Logistic regression with interaction",0.6,0.675,0.525,0.636875
+"XOR_data_nonsig","A, B",14,1,"Random forest",0.4625,0.4,0.525,0.548125
+"XOR_data_nonsig","A, B",14,1,"SVM",0.525,0.7,0.35,0.5125
+"XOR_data_nonsig","A, B",14,1,"Logistic regression, main effects",0.5375,0.55,0.525,0.471875
+"XOR_data_nonsig","A, B",14,1,"Logistic regression with interaction",0.5125,0.55,0.475,0.50875
+"XOR_data_nonsig","A, B",14,2,"Random forest",0.5,0.45,0.55,0.4759375
+"XOR_data_nonsig","A, B",14,2,"SVM",0.4,0.375,0.425,0.348125
+"XOR_data_nonsig","A, B",14,2,"Logistic regression, main effects",0.4875,0.5,0.475,0.50375
+"XOR_data_nonsig","A, B",14,2,"Logistic regression with interaction",0.4375,0.4,0.475,0.446875
+"XOR_data_nonsig","A, B",14,3,"Random forest",0.5,0.525,0.475,0.51625
+"XOR_data_nonsig","A, B",14,3,"SVM",0.525,0.325,0.725,0.45
+"XOR_data_nonsig","A, B",14,3,"Logistic regression, main effects",0.45,0.525,0.375,0.425625
+"XOR_data_nonsig","A, B",14,3,"Logistic regression with interaction",0.5,0.65,0.35,0.461875
+"XOR_data_nonsig","A, B",14,4,"Random forest",0.5,0.45,0.55,0.4625
+"XOR_data_nonsig","A, B",14,4,"SVM",0.525,0.675,0.375,0.51375
+"XOR_data_nonsig","A, B",14,4,"Logistic regression, main effects",0.4875,0.35,0.625,0.496875
+"XOR_data_nonsig","A, B",14,4,"Logistic regression with interaction",0.525,0.45,0.6,0.5225
+"XOR_data_nonsig","A, B",14,5,"Random forest",0.425,0.35,0.5,0.439375
+"XOR_data_nonsig","A, B",14,5,"SVM",0.525,0.6,0.45,0.5675
+"XOR_data_nonsig","A, B",14,5,"Logistic regression, main effects",0.4625,0.475,0.45,0.470625
+"XOR_data_nonsig","A, B",14,5,"Logistic regression with interaction",0.5625,0.475,0.65,0.51625
+"XOR_data","C, D",14,1,"Random forest",1,1,1,1
+"XOR_data","C, D",14,1,"SVM",1,1,1,1
+"XOR_data","C, D",14,1,"Logistic regression, main effects",0.4125,0.425,0.4,0.39625
+"XOR_data","C, D",14,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",14,2,"Random forest",1,1,1,1
+"XOR_data","C, D",14,2,"SVM",1,1,1,1
+"XOR_data","C, D",14,2,"Logistic regression, main effects",0.45,0.425,0.475,0.425
+"XOR_data","C, D",14,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",14,3,"Random forest",1,1,1,1
+"XOR_data","C, D",14,3,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",14,3,"Logistic regression, main effects",0.4375,0.45,0.425,0.465625
+"XOR_data","C, D",14,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",14,4,"Random forest",1,1,1,1
+"XOR_data","C, D",14,4,"SVM",1,1,1,1
+"XOR_data","C, D",14,4,"Logistic regression, main effects",0.4375,0.45,0.425,0.413125
+"XOR_data","C, D",14,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",14,5,"Random forest",1,1,1,1
+"XOR_data","C, D",14,5,"SVM",1,1,1,1
+"XOR_data","C, D",14,5,"Logistic regression, main effects",0.425,0.4,0.45,0.385
+"XOR_data","C, D",14,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",14,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",14,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",14,1,"Logistic regression, main effects",0.4125,0.425,0.4,0.39625
+"XOR_data_nonsig","C, D",14,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",14,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",14,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",14,2,"Logistic regression, main effects",0.45,0.425,0.475,0.425
+"XOR_data_nonsig","C, D",14,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",14,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",14,3,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",14,3,"Logistic regression, main effects",0.4375,0.45,0.425,0.465625
+"XOR_data_nonsig","C, D",14,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",14,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",14,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",14,4,"Logistic regression, main effects",0.4375,0.45,0.425,0.413125
+"XOR_data_nonsig","C, D",14,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",14,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",14,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",14,5,"Logistic regression, main effects",0.425,0.4,0.45,0.385
+"XOR_data_nonsig","C, D",14,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",15,1,"Random forest",0.5375,0.5,0.575,0.5065625
+"XOR_data","A, B",15,1,"SVM",0.5375,0.575,0.5,0.57875
+"XOR_data","A, B",15,1,"Logistic regression, main effects",0.525,0.525,0.525,0.581875
+"XOR_data","A, B",15,1,"Logistic regression with interaction",0.55,0.65,0.45,0.56375
+"XOR_data","A, B",15,2,"Random forest",0.575,0.5,0.65,0.5846875
+"XOR_data","A, B",15,2,"SVM",0.7,0.75,0.65,0.70125
+"XOR_data","A, B",15,2,"Logistic regression, main effects",0.7125,0.775,0.65,0.748125
+"XOR_data","A, B",15,2,"Logistic regression with interaction",0.6875,0.775,0.6,0.756875
+"XOR_data","A, B",15,3,"Random forest",0.425,0.375,0.475,0.4371875
+"XOR_data","A, B",15,3,"SVM",0.4625,0.45,0.475,0.468125
+"XOR_data","A, B",15,3,"Logistic regression, main effects",0.55,0.4,0.7,0.5825
+"XOR_data","A, B",15,3,"Logistic regression with interaction",0.5625,0.475,0.65,0.583125
+"XOR_data","A, B",15,4,"Random forest",0.4875,0.5,0.475,0.52625
+"XOR_data","A, B",15,4,"SVM",0.575,0.5,0.65,0.569375
+"XOR_data","A, B",15,4,"Logistic regression, main effects",0.5625,0.5,0.625,0.55125
+"XOR_data","A, B",15,4,"Logistic regression with interaction",0.575,0.55,0.6,0.564375
+"XOR_data","A, B",15,5,"Random forest",0.475,0.525,0.425,0.5309375
+"XOR_data","A, B",15,5,"SVM",0.525,0.525,0.525,0.58875
+"XOR_data","A, B",15,5,"Logistic regression, main effects",0.5375,0.525,0.55,0.58625
+"XOR_data","A, B",15,5,"Logistic regression with interaction",0.525,0.525,0.525,0.58875
+"XOR_data_nonsig","A, B",15,1,"Random forest",0.5375,0.525,0.55,0.493125
+"XOR_data_nonsig","A, B",15,1,"SVM",0.4625,0.55,0.375,0.471875
+"XOR_data_nonsig","A, B",15,1,"Logistic regression, main effects",0.4375,0.45,0.425,0.486875
+"XOR_data_nonsig","A, B",15,1,"Logistic regression with interaction",0.4875,0.575,0.4,0.44875
+"XOR_data_nonsig","A, B",15,2,"Random forest",0.5375,0.425,0.65,0.5040625
+"XOR_data_nonsig","A, B",15,2,"SVM",0.475,0.425,0.525,0.48
+"XOR_data_nonsig","A, B",15,2,"Logistic regression, main effects",0.425,0.475,0.375,0.406875
+"XOR_data_nonsig","A, B",15,2,"Logistic regression with interaction",0.4625,0.425,0.5,0.47125
+"XOR_data_nonsig","A, B",15,3,"Random forest",0.45,0.425,0.475,0.4590625
+"XOR_data_nonsig","A, B",15,3,"SVM",0.525,0.6,0.45,0.564375
+"XOR_data_nonsig","A, B",15,3,"Logistic regression, main effects",0.4375,0.325,0.55,0.438125
+"XOR_data_nonsig","A, B",15,3,"Logistic regression with interaction",0.45,0.45,0.45,0.4825
+"XOR_data_nonsig","A, B",15,4,"Random forest",0.5125,0.5,0.525,0.4990625
+"XOR_data_nonsig","A, B",15,4,"SVM",0.5,0.525,0.475,0.495625
+"XOR_data_nonsig","A, B",15,4,"Logistic regression, main effects",0.5125,0.475,0.55,0.454375
+"XOR_data_nonsig","A, B",15,4,"Logistic regression with interaction",0.5125,0.475,0.55,0.48375
+"XOR_data_nonsig","A, B",15,5,"Random forest",0.5,0.6,0.4,0.505
+"XOR_data_nonsig","A, B",15,5,"SVM",0.525,0.525,0.525,0.5175
+"XOR_data_nonsig","A, B",15,5,"Logistic regression, main effects",0.45,0.45,0.45,0.474375
+"XOR_data_nonsig","A, B",15,5,"Logistic regression with interaction",0.475,0.475,0.475,0.504375
+"XOR_data","C, D",15,1,"Random forest",1,1,1,1
+"XOR_data","C, D",15,1,"SVM",1,1,1,1
+"XOR_data","C, D",15,1,"Logistic regression, main effects",0.5125,0.6,0.425,0.425
+"XOR_data","C, D",15,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",15,2,"Random forest",1,1,1,1
+"XOR_data","C, D",15,2,"SVM",1,1,1,1
+"XOR_data","C, D",15,2,"Logistic regression, main effects",0.4875,0.525,0.45,0.44125
+"XOR_data","C, D",15,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",15,3,"Random forest",1,1,1,1
+"XOR_data","C, D",15,3,"SVM",1,1,1,1
+"XOR_data","C, D",15,3,"Logistic regression, main effects",0.4875,0.5,0.475,0.453125
+"XOR_data","C, D",15,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",15,4,"Random forest",0.9875,0.975,1,1
+"XOR_data","C, D",15,4,"SVM",1,1,1,1
+"XOR_data","C, D",15,4,"Logistic regression, main effects",0.4625,0.5,0.425,0.420625
+"XOR_data","C, D",15,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",15,5,"Random forest",1,1,1,1
+"XOR_data","C, D",15,5,"SVM",1,1,1,1
+"XOR_data","C, D",15,5,"Logistic regression, main effects",0.45,0.425,0.475,0.525
+"XOR_data","C, D",15,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",15,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",15,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",15,1,"Logistic regression, main effects",0.5125,0.6,0.425,0.425
+"XOR_data_nonsig","C, D",15,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",15,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",15,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",15,2,"Logistic regression, main effects",0.4875,0.525,0.45,0.44125
+"XOR_data_nonsig","C, D",15,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",15,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",15,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",15,3,"Logistic regression, main effects",0.4875,0.5,0.475,0.453125
+"XOR_data_nonsig","C, D",15,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",15,4,"Random forest",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",15,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",15,4,"Logistic regression, main effects",0.4625,0.5,0.425,0.420625
+"XOR_data_nonsig","C, D",15,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",15,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",15,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",15,5,"Logistic regression, main effects",0.45,0.425,0.475,0.525
+"XOR_data_nonsig","C, D",15,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",16,1,"Random forest",0.575,0.575,0.575,0.52125
+"XOR_data","A, B",16,1,"SVM",0.5875,0.55,0.625,0.601875
+"XOR_data","A, B",16,1,"Logistic regression, main effects",0.5625,0.525,0.6,0.628125
+"XOR_data","A, B",16,1,"Logistic regression with interaction",0.6125,0.65,0.575,0.65625
+"XOR_data","A, B",16,2,"Random forest",0.575,0.575,0.575,0.6621875
+"XOR_data","A, B",16,2,"SVM",0.65,0.6,0.7,0.716875
+"XOR_data","A, B",16,2,"Logistic regression, main effects",0.675,0.6,0.75,0.7125
+"XOR_data","A, B",16,2,"Logistic regression with interaction",0.65,0.625,0.675,0.71625
+"XOR_data","A, B",16,3,"Random forest",0.525,0.525,0.525,0.5525
+"XOR_data","A, B",16,3,"SVM",0.625,0.6,0.65,0.668125
+"XOR_data","A, B",16,3,"Logistic regression, main effects",0.625,0.55,0.7,0.66
+"XOR_data","A, B",16,3,"Logistic regression with interaction",0.6125,0.575,0.65,0.673125
+"XOR_data","A, B",16,4,"Random forest",0.45,0.5,0.4,0.45375
+"XOR_data","A, B",16,4,"SVM",0.5,0.5,0.5,0.508125
+"XOR_data","A, B",16,4,"Logistic regression, main effects",0.55,0.575,0.525,0.55125
+"XOR_data","A, B",16,4,"Logistic regression with interaction",0.4875,0.575,0.4,0.544375
+"XOR_data","A, B",16,5,"Random forest",0.45,0.475,0.425,0.4471875
+"XOR_data","A, B",16,5,"SVM",0.4875,0.525,0.45,0.47875
+"XOR_data","A, B",16,5,"Logistic regression, main effects",0.5,0.525,0.475,0.504375
+"XOR_data","A, B",16,5,"Logistic regression with interaction",0.5125,0.575,0.45,0.511875
+"XOR_data_nonsig","A, B",16,1,"Random forest",0.55,0.425,0.675,0.5540625
+"XOR_data_nonsig","A, B",16,1,"SVM",0.5,0.325,0.675,0.48875
+"XOR_data_nonsig","A, B",16,1,"Logistic regression, main effects",0.5,0.475,0.525,0.500625
+"XOR_data_nonsig","A, B",16,1,"Logistic regression with interaction",0.5125,0.575,0.45,0.563125
+"XOR_data_nonsig","A, B",16,2,"Random forest",0.6125,0.575,0.65,0.59625
+"XOR_data_nonsig","A, B",16,2,"SVM",0.45,0.4,0.5,0.439375
+"XOR_data_nonsig","A, B",16,2,"Logistic regression, main effects",0.4125,0.425,0.4,0.3675
+"XOR_data_nonsig","A, B",16,2,"Logistic regression with interaction",0.4875,0.35,0.625,0.469375
+"XOR_data_nonsig","A, B",16,3,"Random forest",0.5125,0.5,0.525,0.4953125
+"XOR_data_nonsig","A, B",16,3,"SVM",0.4875,0.525,0.45,0.485
+"XOR_data_nonsig","A, B",16,3,"Logistic regression, main effects",0.4875,0.375,0.6,0.516875
+"XOR_data_nonsig","A, B",16,3,"Logistic regression with interaction",0.55,0.525,0.575,0.559375
+"XOR_data_nonsig","A, B",16,4,"Random forest",0.4625,0.425,0.5,0.435625
+"XOR_data_nonsig","A, B",16,4,"SVM",0.5,0.325,0.675,0.465625
+"XOR_data_nonsig","A, B",16,4,"Logistic regression, main effects",0.45,0.45,0.45,0.439375
+"XOR_data_nonsig","A, B",16,4,"Logistic regression with interaction",0.4375,0.55,0.325,0.468125
+"XOR_data_nonsig","A, B",16,5,"Random forest",0.4875,0.575,0.4,0.524375
+"XOR_data_nonsig","A, B",16,5,"SVM",0.475,0.525,0.425,0.49875
+"XOR_data_nonsig","A, B",16,5,"Logistic regression, main effects",0.425,0.45,0.4,0.3875
+"XOR_data_nonsig","A, B",16,5,"Logistic regression with interaction",0.4625,0.55,0.375,0.434375
+"XOR_data","C, D",16,1,"Random forest",1,1,1,1
+"XOR_data","C, D",16,1,"SVM",1,1,1,1
+"XOR_data","C, D",16,1,"Logistic regression, main effects",0.425,0.5,0.35,0.35
+"XOR_data","C, D",16,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",16,2,"Random forest",1,1,1,1
+"XOR_data","C, D",16,2,"SVM",1,1,1,1
+"XOR_data","C, D",16,2,"Logistic regression, main effects",0.475,0.45,0.5,0.453125
+"XOR_data","C, D",16,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",16,3,"Random forest",1,1,1,1
+"XOR_data","C, D",16,3,"SVM",1,1,1,1
+"XOR_data","C, D",16,3,"Logistic regression, main effects",0.475,0.4,0.55,0.39875
+"XOR_data","C, D",16,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",16,4,"Random forest",1,1,1,1
+"XOR_data","C, D",16,4,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",16,4,"Logistic regression, main effects",0.4,0.425,0.375,0.425
+"XOR_data","C, D",16,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",16,5,"Random forest",1,1,1,1
+"XOR_data","C, D",16,5,"SVM",1,1,1,1
+"XOR_data","C, D",16,5,"Logistic regression, main effects",0.425,0.425,0.425,0.425
+"XOR_data","C, D",16,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",16,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",16,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",16,1,"Logistic regression, main effects",0.425,0.5,0.35,0.35
+"XOR_data_nonsig","C, D",16,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",16,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",16,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",16,2,"Logistic regression, main effects",0.475,0.45,0.5,0.453125
+"XOR_data_nonsig","C, D",16,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",16,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",16,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",16,3,"Logistic regression, main effects",0.475,0.4,0.55,0.39875
+"XOR_data_nonsig","C, D",16,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",16,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",16,4,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",16,4,"Logistic regression, main effects",0.4,0.425,0.375,0.425
+"XOR_data_nonsig","C, D",16,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",16,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",16,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",16,5,"Logistic regression, main effects",0.425,0.425,0.425,0.425
+"XOR_data_nonsig","C, D",16,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",17,1,"Random forest",0.5375,0.6,0.475,0.5390625
+"XOR_data","A, B",17,1,"SVM",0.55,0.525,0.575,0.56875
+"XOR_data","A, B",17,1,"Logistic regression, main effects",0.55,0.5,0.6,0.549375
+"XOR_data","A, B",17,1,"Logistic regression with interaction",0.5625,0.525,0.6,0.558125
+"XOR_data","A, B",17,2,"Random forest",0.4375,0.5,0.375,0.403125
+"XOR_data","A, B",17,2,"SVM",0.525,0.575,0.475,0.57
+"XOR_data","A, B",17,2,"Logistic regression, main effects",0.525,0.55,0.5,0.564375
+"XOR_data","A, B",17,2,"Logistic regression with interaction",0.5375,0.625,0.45,0.576875
+"XOR_data","A, B",17,3,"Random forest",0.5,0.475,0.525,0.5215625
+"XOR_data","A, B",17,3,"SVM",0.575,0.55,0.6,0.640625
+"XOR_data","A, B",17,3,"Logistic regression, main effects",0.6125,0.55,0.675,0.635
+"XOR_data","A, B",17,3,"Logistic regression with interaction",0.5875,0.575,0.6,0.646875
+"XOR_data","A, B",17,4,"Random forest",0.5625,0.5,0.625,0.565625
+"XOR_data","A, B",17,4,"SVM",0.65,0.475,0.825,0.66375
+"XOR_data","A, B",17,4,"Logistic regression, main effects",0.6625,0.6,0.725,0.690625
+"XOR_data","A, B",17,4,"Logistic regression with interaction",0.675,0.625,0.725,0.69375
+"XOR_data","A, B",17,5,"Random forest",0.55,0.7,0.4,0.541875
+"XOR_data","A, B",17,5,"SVM",0.6125,0.725,0.5,0.63
+"XOR_data","A, B",17,5,"Logistic regression, main effects",0.6,0.575,0.625,0.650625
+"XOR_data","A, B",17,5,"Logistic regression with interaction",0.5875,0.675,0.5,0.656875
+"XOR_data_nonsig","A, B",17,1,"Random forest",0.5875,0.5,0.675,0.6303125
+"XOR_data_nonsig","A, B",17,1,"SVM",0.5,0.575,0.425,0.521875
+"XOR_data_nonsig","A, B",17,1,"Logistic regression, main effects",0.4625,0.425,0.5,0.446875
+"XOR_data_nonsig","A, B",17,1,"Logistic regression with interaction",0.4625,0.5,0.425,0.474375
+"XOR_data_nonsig","A, B",17,2,"Random forest",0.475,0.525,0.425,0.44
+"XOR_data_nonsig","A, B",17,2,"SVM",0.4875,0.5,0.475,0.5075
+"XOR_data_nonsig","A, B",17,2,"Logistic regression, main effects",0.4625,0.5,0.425,0.4575
+"XOR_data_nonsig","A, B",17,2,"Logistic regression with interaction",0.45,0.55,0.35,0.48
+"XOR_data_nonsig","A, B",17,3,"Random forest",0.475,0.45,0.5,0.43125
+"XOR_data_nonsig","A, B",17,3,"SVM",0.5,0.65,0.35,0.495
+"XOR_data_nonsig","A, B",17,3,"Logistic regression, main effects",0.55,0.45,0.65,0.539375
+"XOR_data_nonsig","A, B",17,3,"Logistic regression with interaction",0.5,0.5,0.5,0.514375
+"XOR_data_nonsig","A, B",17,4,"Random forest",0.6125,0.475,0.75,0.565625
+"XOR_data_nonsig","A, B",17,4,"SVM",0.5,0.6,0.4,0.4625
+"XOR_data_nonsig","A, B",17,4,"Logistic regression, main effects",0.4625,0.4,0.525,0.459375
+"XOR_data_nonsig","A, B",17,4,"Logistic regression with interaction",0.5125,0.425,0.6,0.509375
+"XOR_data_nonsig","A, B",17,5,"Random forest",0.45,0.525,0.375,0.4115625
+"XOR_data_nonsig","A, B",17,5,"SVM",0.4,0.525,0.275,0.37375
+"XOR_data_nonsig","A, B",17,5,"Logistic regression, main effects",0.45,0.4,0.5,0.415625
+"XOR_data_nonsig","A, B",17,5,"Logistic regression with interaction",0.4625,0.35,0.575,0.475625
+"XOR_data","C, D",17,1,"Random forest",1,1,1,1
+"XOR_data","C, D",17,1,"SVM",1,1,1,1
+"XOR_data","C, D",17,1,"Logistic regression, main effects",0.475,0.4,0.55,0.395625
+"XOR_data","C, D",17,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",17,2,"Random forest",1,1,1,1
+"XOR_data","C, D",17,2,"SVM",1,1,1,1
+"XOR_data","C, D",17,2,"Logistic regression, main effects",0.425,0.45,0.4,0.428125
+"XOR_data","C, D",17,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",17,3,"Random forest",1,1,1,1
+"XOR_data","C, D",17,3,"SVM",1,1,1,1
+"XOR_data","C, D",17,3,"Logistic regression, main effects",0.4625,0.425,0.5,0.425
+"XOR_data","C, D",17,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",17,4,"Random forest",1,1,1,1
+"XOR_data","C, D",17,4,"SVM",1,1,1,1
+"XOR_data","C, D",17,4,"Logistic regression, main effects",0.4375,0.45,0.425,0.450625
+"XOR_data","C, D",17,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",17,5,"Random forest",1,1,1,1
+"XOR_data","C, D",17,5,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",17,5,"Logistic regression, main effects",0.45,0.475,0.425,0.46125
+"XOR_data","C, D",17,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",17,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",17,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",17,1,"Logistic regression, main effects",0.475,0.4,0.55,0.395625
+"XOR_data_nonsig","C, D",17,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",17,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",17,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",17,2,"Logistic regression, main effects",0.425,0.45,0.4,0.428125
+"XOR_data_nonsig","C, D",17,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",17,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",17,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",17,3,"Logistic regression, main effects",0.4625,0.425,0.5,0.425
+"XOR_data_nonsig","C, D",17,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",17,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",17,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",17,4,"Logistic regression, main effects",0.4375,0.45,0.425,0.450625
+"XOR_data_nonsig","C, D",17,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",17,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",17,5,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",17,5,"Logistic regression, main effects",0.45,0.475,0.425,0.46125
+"XOR_data_nonsig","C, D",17,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",18,1,"Random forest",0.4875,0.475,0.5,0.5115625
+"XOR_data","A, B",18,1,"SVM",0.65,0.7,0.6,0.649375
+"XOR_data","A, B",18,1,"Logistic regression, main effects",0.675,0.6,0.75,0.6575
+"XOR_data","A, B",18,1,"Logistic regression with interaction",0.6625,0.625,0.7,0.659375
+"XOR_data","A, B",18,2,"Random forest",0.575,0.55,0.6,0.60125
+"XOR_data","A, B",18,2,"SVM",0.6125,0.6,0.625,0.65125
+"XOR_data","A, B",18,2,"Logistic regression, main effects",0.6125,0.55,0.675,0.653125
+"XOR_data","A, B",18,2,"Logistic regression with interaction",0.6,0.6,0.6,0.6525
+"XOR_data","A, B",18,3,"Random forest",0.45,0.5,0.4,0.4159375
+"XOR_data","A, B",18,3,"SVM",0.5375,0.625,0.45,0.563125
+"XOR_data","A, B",18,3,"Logistic regression, main effects",0.5375,0.6,0.475,0.543125
+"XOR_data","A, B",18,3,"Logistic regression with interaction",0.5375,0.625,0.45,0.570625
+"XOR_data","A, B",18,4,"Random forest",0.5875,0.575,0.6,0.6253125
+"XOR_data","A, B",18,4,"SVM",0.625,0.65,0.6,0.690625
+"XOR_data","A, B",18,4,"Logistic regression, main effects",0.625,0.6,0.65,0.680625
+"XOR_data","A, B",18,4,"Logistic regression with interaction",0.6375,0.65,0.625,0.69125
+"XOR_data","A, B",18,5,"Random forest",0.5375,0.525,0.55,0.53125
+"XOR_data","A, B",18,5,"SVM",0.4875,0.475,0.5,0.535625
+"XOR_data","A, B",18,5,"Logistic regression, main effects",0.5,0.475,0.525,0.535625
+"XOR_data","A, B",18,5,"Logistic regression with interaction",0.475,0.5,0.45,0.53125
+"XOR_data_nonsig","A, B",18,1,"Random forest",0.575,0.525,0.625,0.5596875
+"XOR_data_nonsig","A, B",18,1,"SVM",0.4875,0.45,0.525,0.45875
+"XOR_data_nonsig","A, B",18,1,"Logistic regression, main effects",0.5625,0.5,0.625,0.53125
+"XOR_data_nonsig","A, B",18,1,"Logistic regression with interaction",0.5625,0.625,0.5,0.558125
+"XOR_data_nonsig","A, B",18,2,"Random forest",0.525,0.575,0.475,0.5325
+"XOR_data_nonsig","A, B",18,2,"SVM",0.4875,0.475,0.5,0.504375
+"XOR_data_nonsig","A, B",18,2,"Logistic regression, main effects",0.5,0.475,0.525,0.540625
+"XOR_data_nonsig","A, B",18,2,"Logistic regression with interaction",0.525,0.6,0.45,0.56125
+"XOR_data_nonsig","A, B",18,3,"Random forest",0.45,0.4,0.5,0.4284375
+"XOR_data_nonsig","A, B",18,3,"SVM",0.55,0.55,0.55,0.525
+"XOR_data_nonsig","A, B",18,3,"Logistic regression, main effects",0.425,0.475,0.375,0.436875
+"XOR_data_nonsig","A, B",18,3,"Logistic regression with interaction",0.425,0.6,0.25,0.47375
+"XOR_data_nonsig","A, B",18,4,"Random forest",0.425,0.5,0.35,0.434375
+"XOR_data_nonsig","A, B",18,4,"SVM",0.4875,0.35,0.625,0.490625
+"XOR_data_nonsig","A, B",18,4,"Logistic regression, main effects",0.575,0.55,0.6,0.59
+"XOR_data_nonsig","A, B",18,4,"Logistic regression with interaction",0.55,0.6,0.5,0.589375
+"XOR_data_nonsig","A, B",18,5,"Random forest",0.525,0.5,0.55,0.520625
+"XOR_data_nonsig","A, B",18,5,"SVM",0.475,0.625,0.325,0.455625
+"XOR_data_nonsig","A, B",18,5,"Logistic regression, main effects",0.4125,0.425,0.4,0.438125
+"XOR_data_nonsig","A, B",18,5,"Logistic regression with interaction",0.4125,0.45,0.375,0.43875
+"XOR_data","C, D",18,1,"Random forest",1,1,1,1
+"XOR_data","C, D",18,1,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",18,1,"Logistic regression, main effects",0.45,0.475,0.425,0.47375
+"XOR_data","C, D",18,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",18,2,"Random forest",1,1,1,1
+"XOR_data","C, D",18,2,"SVM",1,1,1,1
+"XOR_data","C, D",18,2,"Logistic regression, main effects",0.4375,0.4,0.475,0.4
+"XOR_data","C, D",18,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",18,3,"Random forest",1,1,1,1
+"XOR_data","C, D",18,3,"SVM",1,1,1,1
+"XOR_data","C, D",18,3,"Logistic regression, main effects",0.5125,0.525,0.5,0.508125
+"XOR_data","C, D",18,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",18,4,"Random forest",1,1,1,1
+"XOR_data","C, D",18,4,"SVM",1,1,1,1
+"XOR_data","C, D",18,4,"Logistic regression, main effects",0.45,0.425,0.475,0.4375
+"XOR_data","C, D",18,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",18,5,"Random forest",1,1,1,1
+"XOR_data","C, D",18,5,"SVM",1,1,1,1
+"XOR_data","C, D",18,5,"Logistic regression, main effects",0.475,0.425,0.525,0.4275
+"XOR_data","C, D",18,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",18,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",18,1,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",18,1,"Logistic regression, main effects",0.45,0.475,0.425,0.47375
+"XOR_data_nonsig","C, D",18,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",18,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",18,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",18,2,"Logistic regression, main effects",0.4375,0.4,0.475,0.4
+"XOR_data_nonsig","C, D",18,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",18,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",18,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",18,3,"Logistic regression, main effects",0.5125,0.525,0.5,0.508125
+"XOR_data_nonsig","C, D",18,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",18,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",18,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",18,4,"Logistic regression, main effects",0.45,0.425,0.475,0.4375
+"XOR_data_nonsig","C, D",18,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",18,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",18,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",18,5,"Logistic regression, main effects",0.475,0.425,0.525,0.4275
+"XOR_data_nonsig","C, D",18,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",19,1,"Random forest",0.4625,0.55,0.375,0.43625
+"XOR_data","A, B",19,1,"SVM",0.5375,0.625,0.45,0.574375
+"XOR_data","A, B",19,1,"Logistic regression, main effects",0.625,0.65,0.6,0.651875
+"XOR_data","A, B",19,1,"Logistic regression with interaction",0.6,0.675,0.525,0.645
+"XOR_data","A, B",19,2,"Random forest",0.5125,0.475,0.55,0.486875
+"XOR_data","A, B",19,2,"SVM",0.525,0.325,0.725,0.5575
+"XOR_data","A, B",19,2,"Logistic regression, main effects",0.7375,0.75,0.725,0.759375
+"XOR_data","A, B",19,2,"Logistic regression with interaction",0.75,0.775,0.725,0.75
+"XOR_data","A, B",19,3,"Random forest",0.525,0.575,0.475,0.6334375
+"XOR_data","A, B",19,3,"SVM",0.65,0.75,0.55,0.656875
+"XOR_data","A, B",19,3,"Logistic regression, main effects",0.6375,0.7,0.575,0.668125
+"XOR_data","A, B",19,3,"Logistic regression with interaction",0.65,0.775,0.525,0.654375
+"XOR_data","A, B",19,4,"Random forest",0.5,0.625,0.375,0.484375
+"XOR_data","A, B",19,4,"SVM",0.45,0.475,0.425,0.4675
+"XOR_data","A, B",19,4,"Logistic regression, main effects",0.425,0.45,0.4,0.4575
+"XOR_data","A, B",19,4,"Logistic regression with interaction",0.4125,0.5,0.325,0.480625
+"XOR_data","A, B",19,5,"Random forest",0.45,0.35,0.55,0.4675
+"XOR_data","A, B",19,5,"SVM",0.5625,0.425,0.7,0.576875
+"XOR_data","A, B",19,5,"Logistic regression, main effects",0.525,0.35,0.7,0.561875
+"XOR_data","A, B",19,5,"Logistic regression with interaction",0.55,0.4,0.7,0.573125
+"XOR_data_nonsig","A, B",19,1,"Random forest",0.425,0.5,0.35,0.455
+"XOR_data_nonsig","A, B",19,1,"SVM",0.4,0.5,0.3,0.4025
+"XOR_data_nonsig","A, B",19,1,"Logistic regression, main effects",0.5625,0.55,0.575,0.539375
+"XOR_data_nonsig","A, B",19,1,"Logistic regression with interaction",0.525,0.675,0.375,0.505
+"XOR_data_nonsig","A, B",19,2,"Random forest",0.3875,0.425,0.35,0.3671875
+"XOR_data_nonsig","A, B",19,2,"SVM",0.425,0.375,0.475,0.37875
+"XOR_data_nonsig","A, B",19,2,"Logistic regression, main effects",0.4375,0.4,0.475,0.3625
+"XOR_data_nonsig","A, B",19,2,"Logistic regression with interaction",0.475,0.35,0.6,0.415625
+"XOR_data_nonsig","A, B",19,3,"Random forest",0.6,0.65,0.55,0.591875
+"XOR_data_nonsig","A, B",19,3,"SVM",0.6,0.475,0.725,0.61375
+"XOR_data_nonsig","A, B",19,3,"Logistic regression, main effects",0.525,0.575,0.475,0.56375
+"XOR_data_nonsig","A, B",19,3,"Logistic regression with interaction",0.525,0.55,0.5,0.494375
+"XOR_data_nonsig","A, B",19,4,"Random forest",0.4375,0.45,0.425,0.4734375
+"XOR_data_nonsig","A, B",19,4,"SVM",0.6,0.575,0.625,0.5825
+"XOR_data_nonsig","A, B",19,4,"Logistic regression, main effects",0.35,0.375,0.325,0.368125
+"XOR_data_nonsig","A, B",19,4,"Logistic regression with interaction",0.3875,0.45,0.325,0.41125
+"XOR_data_nonsig","A, B",19,5,"Random forest",0.4625,0.425,0.5,0.455
+"XOR_data_nonsig","A, B",19,5,"SVM",0.5,0.525,0.475,0.528125
+"XOR_data_nonsig","A, B",19,5,"Logistic regression, main effects",0.4375,0.3,0.575,0.465625
+"XOR_data_nonsig","A, B",19,5,"Logistic regression with interaction",0.4875,0.425,0.55,0.490625
+"XOR_data","C, D",19,1,"Random forest",1,1,1,1
+"XOR_data","C, D",19,1,"SVM",1,1,1,1
+"XOR_data","C, D",19,1,"Logistic regression, main effects",0.4375,0.35,0.525,0.35625
+"XOR_data","C, D",19,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",19,2,"Random forest",1,1,1,1
+"XOR_data","C, D",19,2,"SVM",1,1,1,1
+"XOR_data","C, D",19,2,"Logistic regression, main effects",0.45,0.5,0.4,0.398125
+"XOR_data","C, D",19,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",19,3,"Random forest",1,1,1,1
+"XOR_data","C, D",19,3,"SVM",1,1,1,1
+"XOR_data","C, D",19,3,"Logistic regression, main effects",0.475,0.65,0.3,0.3
+"XOR_data","C, D",19,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",19,4,"Random forest",1,1,1,1
+"XOR_data","C, D",19,4,"SVM",1,1,1,1
+"XOR_data","C, D",19,4,"Logistic regression, main effects",0.4625,0.45,0.475,0.510625
+"XOR_data","C, D",19,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",19,5,"Random forest",1,1,1,1
+"XOR_data","C, D",19,5,"SVM",1,1,1,1
+"XOR_data","C, D",19,5,"Logistic regression, main effects",0.4375,0.375,0.5,0.369375
+"XOR_data","C, D",19,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",19,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",19,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",19,1,"Logistic regression, main effects",0.4375,0.35,0.525,0.35625
+"XOR_data_nonsig","C, D",19,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",19,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",19,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",19,2,"Logistic regression, main effects",0.45,0.5,0.4,0.398125
+"XOR_data_nonsig","C, D",19,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",19,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",19,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",19,3,"Logistic regression, main effects",0.475,0.65,0.3,0.3
+"XOR_data_nonsig","C, D",19,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",19,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",19,4,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",19,4,"Logistic regression, main effects",0.4625,0.45,0.475,0.510625
+"XOR_data_nonsig","C, D",19,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",19,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",19,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",19,5,"Logistic regression, main effects",0.4375,0.375,0.5,0.369375
+"XOR_data_nonsig","C, D",19,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data","A, B",20,1,"Random forest",0.4875,0.525,0.45,0.50375
+"XOR_data","A, B",20,1,"SVM",0.55,0.625,0.475,0.613125
+"XOR_data","A, B",20,1,"Logistic regression, main effects",0.5875,0.625,0.55,0.639375
+"XOR_data","A, B",20,1,"Logistic regression with interaction",0.5625,0.65,0.475,0.645625
+"XOR_data","A, B",20,2,"Random forest",0.5,0.5,0.5,0.481875
+"XOR_data","A, B",20,2,"SVM",0.6,0.65,0.55,0.595625
+"XOR_data","A, B",20,2,"Logistic regression, main effects",0.625,0.65,0.6,0.648125
+"XOR_data","A, B",20,2,"Logistic regression with interaction",0.6375,0.7,0.575,0.644375
+"XOR_data","A, B",20,3,"Random forest",0.45,0.425,0.475,0.5175
+"XOR_data","A, B",20,3,"SVM",0.65,0.6,0.7,0.6875
+"XOR_data","A, B",20,3,"Logistic regression, main effects",0.7,0.65,0.75,0.676875
+"XOR_data","A, B",20,3,"Logistic regression with interaction",0.6875,0.675,0.7,0.67625
+"XOR_data","A, B",20,4,"Random forest",0.4125,0.45,0.375,0.419375
+"XOR_data","A, B",20,4,"SVM",0.4625,0.425,0.5,0.48125
+"XOR_data","A, B",20,4,"Logistic regression, main effects",0.4625,0.45,0.475,0.489375
+"XOR_data","A, B",20,4,"Logistic regression with interaction",0.475,0.475,0.475,0.49625
+"XOR_data","A, B",20,5,"Random forest",0.5625,0.65,0.475,0.55625
+"XOR_data","A, B",20,5,"SVM",0.575,0.55,0.6,0.605625
+"XOR_data","A, B",20,5,"Logistic regression, main effects",0.55,0.5,0.6,0.6125
+"XOR_data","A, B",20,5,"Logistic regression with interaction",0.5625,0.55,0.575,0.59875
+"XOR_data_nonsig","A, B",20,1,"Random forest",0.525,0.5,0.55,0.503125
+"XOR_data_nonsig","A, B",20,1,"SVM",0.4875,0.45,0.525,0.526875
+"XOR_data_nonsig","A, B",20,1,"Logistic regression, main effects",0.4625,0.4,0.525,0.4675
+"XOR_data_nonsig","A, B",20,1,"Logistic regression with interaction",0.425,0.375,0.475,0.425625
+"XOR_data_nonsig","A, B",20,2,"Random forest",0.5,0.425,0.575,0.4821875
+"XOR_data_nonsig","A, B",20,2,"SVM",0.4,0.225,0.575,0.38375
+"XOR_data_nonsig","A, B",20,2,"Logistic regression, main effects",0.375,0.45,0.3,0.416875
+"XOR_data_nonsig","A, B",20,2,"Logistic regression with interaction",0.4375,0.425,0.45,0.4475
+"XOR_data_nonsig","A, B",20,3,"Random forest",0.4375,0.4,0.475,0.443125
+"XOR_data_nonsig","A, B",20,3,"SVM",0.475,0.425,0.525,0.474375
+"XOR_data_nonsig","A, B",20,3,"Logistic regression, main effects",0.5625,0.525,0.6,0.564375
+"XOR_data_nonsig","A, B",20,3,"Logistic regression with interaction",0.5875,0.65,0.525,0.615625
+"XOR_data_nonsig","A, B",20,4,"Random forest",0.525,0.525,0.525,0.5015625
+"XOR_data_nonsig","A, B",20,4,"SVM",0.525,0.55,0.5,0.53375
+"XOR_data_nonsig","A, B",20,4,"Logistic regression, main effects",0.4125,0.4,0.425,0.404375
+"XOR_data_nonsig","A, B",20,4,"Logistic regression with interaction",0.4125,0.4,0.425,0.40875
+"XOR_data_nonsig","A, B",20,5,"Random forest",0.5375,0.6,0.475,0.551875
+"XOR_data_nonsig","A, B",20,5,"SVM",0.475,0.65,0.3,0.4525
+"XOR_data_nonsig","A, B",20,5,"Logistic regression, main effects",0.45,0.45,0.45,0.516875
+"XOR_data_nonsig","A, B",20,5,"Logistic regression with interaction",0.4375,0.5,0.375,0.5225
+"XOR_data","C, D",20,1,"Random forest",1,1,1,1
+"XOR_data","C, D",20,1,"SVM",1,1,1,1
+"XOR_data","C, D",20,1,"Logistic regression, main effects",0.4375,0.475,0.4,0.4075
+"XOR_data","C, D",20,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",20,2,"Random forest",1,1,1,1
+"XOR_data","C, D",20,2,"SVM",1,1,1,1
+"XOR_data","C, D",20,2,"Logistic regression, main effects",0.45,0.525,0.375,0.375625
+"XOR_data","C, D",20,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",20,3,"Random forest",1,1,1,1
+"XOR_data","C, D",20,3,"SVM",1,1,1,1
+"XOR_data","C, D",20,3,"Logistic regression, main effects",0.5125,0.475,0.55,0.475
+"XOR_data","C, D",20,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",20,4,"Random forest",1,1,1,1
+"XOR_data","C, D",20,4,"SVM",0.9875,0.975,1,1
+"XOR_data","C, D",20,4,"Logistic regression, main effects",0.4625,0.475,0.45,0.46875
+"XOR_data","C, D",20,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data","C, D",20,5,"Random forest",1,1,1,1
+"XOR_data","C, D",20,5,"SVM",1,1,1,1
+"XOR_data","C, D",20,5,"Logistic regression, main effects",0.4625,0.475,0.45,0.4475
+"XOR_data","C, D",20,5,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",20,1,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",20,1,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",20,1,"Logistic regression, main effects",0.4375,0.475,0.4,0.4075
+"XOR_data_nonsig","C, D",20,1,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",20,2,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",20,2,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",20,2,"Logistic regression, main effects",0.45,0.525,0.375,0.375625
+"XOR_data_nonsig","C, D",20,2,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",20,3,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",20,3,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",20,3,"Logistic regression, main effects",0.5125,0.475,0.55,0.475
+"XOR_data_nonsig","C, D",20,3,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",20,4,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",20,4,"SVM",0.9875,0.975,1,1
+"XOR_data_nonsig","C, D",20,4,"Logistic regression, main effects",0.4625,0.475,0.45,0.46875
+"XOR_data_nonsig","C, D",20,4,"Logistic regression with interaction",1,1,1,1
+"XOR_data_nonsig","C, D",20,5,"Random forest",1,1,1,1
+"XOR_data_nonsig","C, D",20,5,"SVM",1,1,1,1
+"XOR_data_nonsig","C, D",20,5,"Logistic regression, main effects",0.4625,0.475,0.45,0.4475
+"XOR_data_nonsig","C, D",20,5,"Logistic regression with interaction",1,1,1,1

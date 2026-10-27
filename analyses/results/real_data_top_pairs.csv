@@ -1,0 +1,11 @@
+"dataset","var1","var2","xor_shape_detected","candidate_pattern","xor_purity","purity_lower","coverage_ok","p_adjusted","tau_class1","tau_class2"
+"MS_lipidomics","GluCerC16_AKS","SphA_AKS",FALSE,"rotated",0.822741935483871,0.769176731643649,FALSE,1e-04,NA,NA
+"MS_lipidomics","GluCerC16_AKS","C24.1Sphanin_AKS",FALSE,"rotated",0.799030172413793,0.734733220147632,FALSE,1e-04,NA,NA
+"MS_lipidomics","C20Cer_AKS","GluCerC16_AKS",FALSE,"rotated",0.797856614929786,0.735358089310377,FALSE,1e-04,NA,NA
+"MS_lipidomics","Neopterin_AKS","GluCerC16_AKS",FALSE,"rotated",0.790018832391714,0.726171161816072,FALSE,3e-04,NA,NA
+"MS_lipidomics","PGD2_AKS","GluCerC16_AKS",FALSE,"rotated",0.784436701509872,0.720160241260062,FALSE,4e-04,NA,NA
+"Pima_diabetes","npreg","bmi",FALSE,"rotated",0.642465753424658,0.5839304885923,TRUE,0.0018,NA,NA
+"Pima_diabetes","npreg","age",FALSE,"rotated",0.618806384455239,0.552937503117994,TRUE,0.0236,NA,NA
+"Pima_diabetes","glu","bmi",FALSE,"rotated",0.605152640930383,0.548696141810384,TRUE,0.0786,NA,NA
+"Pima_diabetes","skin","age",FALSE,"default",0.584866767219708,0.525216558799776,TRUE,0.3474,NA,NA
+"Pima_diabetes","npreg","skin",FALSE,"rotated",0.582922762070795,0.526831838345832,TRUE,0.3893,NA,NA

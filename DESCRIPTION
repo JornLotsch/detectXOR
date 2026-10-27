@@ -1,6 +1,6 @@
 Package: detectXOR
 Title: XOR Pattern Detection and Visualization
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(person(given = "Jorn", family = "Lotsch",
                     role = c("aut", "cre"),
                     email = "j.lotsch@em.uni-frankfurt.de",
@@ -40,8 +40,9 @@ Suggests:
     future (>= 1.28.0),
     future.apply (>= 1.10.0),
     pbmcapply (>= 1.5.0)
-RoxygenNote: 7.2.3
+Config/testthat/edition: 3
 SystemRequirements: GNU make
 Depends: R (>= 3.5.0)
 URL: https://github.com/JornLotsch/detectXOR
 BugReports: https://github.com/JornLotsch/detectXOR/issues
+Config/roxygen2/version: 8.1.1
