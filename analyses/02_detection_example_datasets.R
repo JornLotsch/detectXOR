@@ -196,7 +196,8 @@ print(slide_summary)
 
 params$XOR <- factor(ifelse(params$xor_shape_detected, "detected", "not detected"), levels = c("detected", "not detected"))
 figure7 <- ggplot(params, aes(x = m1 - m2, y = S)) +
-  ggforce::geom_voronoi_tile(aes(fill = XOR, group = -1L), alpha = 0.3, bound = c(-8, 8, 0, 5.6)) +
+  ggforce::geom_voronoi_tile(aes(fill = XOR, group = -1L), alpha = 0.3, bound = c(-8, 8, 0, 5.6), colour = "grey50",
+                             linewidth = 0.5) +
   geom_point(aes(color = XOR, fill = XOR), shape = 21, size = 4, alpha = 0.6) +
   scale_color_manual(values = c("detected" = "#E69F00", "not detected" = "#000000")) +
   scale_fill_manual(values = c("detected" = "#E69F00", "not detected" = "#000000")) +
